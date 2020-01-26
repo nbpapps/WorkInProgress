@@ -1,5 +1,5 @@
 # DiscountBankApp
 
-#This code was written by Niv Ben-Porath
+This code was written by Niv Ben-Porath
 
 
