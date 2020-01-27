@@ -22,7 +22,7 @@ class DBAImageView: UIImageView {
        }
        
        private func config() {
-           layer.cornerRadius = 10
+        layer.cornerRadius = Values.shared.imageViewCornerRadius
            clipsToBounds = true
            image = placeHolderImage
            translatesAutoresizingMaskIntoConstraints = false

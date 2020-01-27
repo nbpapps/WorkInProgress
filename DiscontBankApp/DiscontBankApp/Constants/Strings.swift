@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Strings {
+public struct Strings {
     static let shared = Strings()
     
     //MARK: - end points
@@ -18,7 +18,6 @@ struct Strings {
     let selectBankTitle = "Select Bank"
     
     //MARK:- general
-    let noStoryboradImplementation = "Storyboard not implemented"
     let placeholder = "placeholder"
     
     //MARK:- colors
@@ -26,5 +25,11 @@ struct Strings {
     
     //MARK:- identifiers
     let bankCell = "BankCell"
+    
+    //MARK:- errors
+    let noStoryboradImplementation = "Storyboard not implemented"
+    let incorrectCell = "Incorrect cell setup for collection view"
+    let noBankInRow = "No bank for this row"
+    let dataInvalid = "the data is invalide"
     
 }

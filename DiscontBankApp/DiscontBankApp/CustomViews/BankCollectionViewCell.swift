@@ -13,7 +13,7 @@ class BankCollectionViewCell: UICollectionViewCell {
     static let reuseId = Strings.shared.bankCell
     
     let bankImageView = DBAImageView(frame: .zero)
-    let bankNameLabel = DBALabel(textAlignment: .center, fontSize: 16, weight: .bold)
+    let bankNameLabel = DBALabel(textAlignment: .center, fontSize: Values.shared.bankNameFontSize, weight: .bold)
     
     
     override init(frame: CGRect) {
@@ -28,6 +28,7 @@ class BankCollectionViewCell: UICollectionViewCell {
     
 
     private func configure() {
+        bankImageView.backgroundColor = .white
         addSubview(bankImageView)
         addSubview(bankNameLabel)
         contentView.layer.cornerRadius = Values.shared.cellRadius

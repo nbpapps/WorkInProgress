@@ -30,7 +30,7 @@ class DBALabel: UILabel {
     private func configure() {
         textColor = .label
         adjustsFontSizeToFitWidth = true
-        minimumScaleFactor = 0.9
+        minimumScaleFactor = Values.shared.minimumScaleFactor
         lineBreakMode = .byTruncatingTail
         translatesAutoresizingMaskIntoConstraints = false
     }

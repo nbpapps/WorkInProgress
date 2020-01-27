@@ -26,5 +26,11 @@ struct Values {
     
     //MARK:- labels
     let labelheight : CGFloat = 20
+    let minimumScaleFactor : CGFloat = 0.9
+    let bankNameFontSize : CGFloat = 16
+    
+    //MARK:- image view
+    let imageViewCornerRadius : CGFloat = 10
+    
 
 }

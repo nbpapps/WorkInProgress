@@ -38,12 +38,12 @@ final class BankListDataSource : NSObject, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BankCollectionViewCell.reuseId, for: indexPath) as? BankCollectionViewCell else {
-            preconditionFailure("Incorrect cell setup for collection view")
+            preconditionFailure(Strings.shared.incorrectCell)
 
         }
         
         guard let bank = bankList?[indexPath.row] else {
-            preconditionFailure("No bank for this row")
+            preconditionFailure(Strings.shared.noBankInRow)
 
         }
         cell.bankNameLabel.text = bank.name

@@ -10,7 +10,7 @@ import Foundation
 
 public enum JsonError : String,Error { //conforms to error protocol
 
-    case invalideData = "the data is invalide"
+    case invalideData
 
 }
 
