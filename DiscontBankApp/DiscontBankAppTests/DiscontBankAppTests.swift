@@ -30,5 +30,22 @@ class DiscontBankAppTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func testJsonParser() {
+        
+        let bank = Bank(name: "First Intl", stk: "FINT", img: "http://fint.com/pic", priority: "111")
+        let encoder = JSONEncoder()
+        let jsonData = try! encoder.encode(bank)
+        
+        let jsonParser = JsonParser(data: jsonData)
+        let banks : Result<Bank,DBAError> = jsonParser.decode()
+        let bankList = try! banks.get()
+        XCTAssertEqual(bankList.name, "First Intl", "bank name is incorrect")
+        XCTAssertEqual(bankList.stk, "FINT", "bank stk is incorrect")
+        XCTAssertEqual(bankList.img, "http://fint.com/pic", "bank image is incorrect")
+        XCTAssertEqual(bankList.priority, "111", "bank priority is incorrect")
+        
+        
+    }
 
 }
