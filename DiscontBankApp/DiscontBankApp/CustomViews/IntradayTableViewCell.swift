@@ -10,7 +10,7 @@ import UIKit
 
 class IntradayTableViewCell: UITableViewCell {
 
-    static let reuseId = Strings.shared.intraDayCell
+    static let reuseId = Strings.intraDayCell
 
     
     override func awakeFromNib() {

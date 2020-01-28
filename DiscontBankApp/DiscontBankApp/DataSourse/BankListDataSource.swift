@@ -30,17 +30,17 @@ final class BankListDataSource : NSObject, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return bankList?.count ?? 0
+        return bankList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BankCollectionViewCell.reuseId, for: indexPath) as? BankCollectionViewCell else {
-            preconditionFailure(Strings.shared.incorrectCell)
+            preconditionFailure(Strings.incorrectCell)
         }
         
         guard let bank = bankList?[indexPath.row] else {
-            preconditionFailure(Strings.shared.noBankInRow)
+            preconditionFailure(Strings.noBankInRow)
         }
         
         cell.bankNameLabel.text = bank.name

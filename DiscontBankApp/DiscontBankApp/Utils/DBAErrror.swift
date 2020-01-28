@@ -8,10 +8,8 @@
 
 import Foundation
 
-public enum JsonError : String,Error { //conforms to error protocol
-
-    case invalideData
-
+public enum JsonError : Error { //conforms to error protocol
+    case invalideJson(errorMessage : String)
 }
 
 public enum NetworkError : Error {

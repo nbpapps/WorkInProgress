@@ -16,7 +16,7 @@ class DBALabel: UILabel {
     }
     
     required init?(coder: NSCoder) {
-        fatalError(Strings.shared.noStoryboradImplementation)
+        fatalError(Strings.noStoryboradImplementation)
     }
     
     init(textAlignment : NSTextAlignment, fontSize : CGFloat,weight : UIFont.Weight) {
@@ -30,7 +30,7 @@ class DBALabel: UILabel {
     private func configure() {
         textColor = .label
         adjustsFontSizeToFitWidth = true
-        minimumScaleFactor = Values.shared.minimumScaleFactor
+        minimumScaleFactor = Values.minimumScaleFactor
         lineBreakMode = .byTruncatingTail
         translatesAutoresizingMaskIntoConstraints = false
     }

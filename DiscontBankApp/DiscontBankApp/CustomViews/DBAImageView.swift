@@ -10,7 +10,7 @@ import UIKit
 
 class DBAImageView: UIImageView {
 
-    let placeHolderImage = UIImage(named: Strings.shared.placeholder)!
+    let placeHolderImage = UIImage(named: Strings.placeholder)!
 
     override init(frame: CGRect) {
            super.init(frame: frame)
@@ -18,11 +18,11 @@ class DBAImageView: UIImageView {
        }
        
        required init?(coder: NSCoder) {
-        fatalError(Strings.shared.noStoryboradImplementation)
+        fatalError(Strings.noStoryboradImplementation)
        }
        
        private func config() {
-        layer.cornerRadius = Values.shared.imageViewCornerRadius
+        layer.cornerRadius = Values.imageViewCornerRadius
            clipsToBounds = true
            image = placeHolderImage
            translatesAutoresizingMaskIntoConstraints = false

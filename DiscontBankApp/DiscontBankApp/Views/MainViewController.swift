@@ -11,7 +11,7 @@ import UIKit
 class MainViewController: UIViewController {
 
     var collectionView : UICollectionView!
-    let collectionViewDatasource = BankListDataSource(with:Bundle.main.data(from: Strings.shared.banksJson))
+    let collectionViewDatasource = BankListDataSource(with:Bundle.main.data(from: Strings.banksJson))
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +21,12 @@ class MainViewController: UIViewController {
     
     //MARK:- config
     func configureView() {
-        title = Strings.shared.selectBankTitle
+        title = Strings.selectBankTitle
         view.backgroundColor = .systemBackground
     }
     
     func configureCollectionView() {
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout:UIConfig.createFlowLayout(in: view, numberOfColums: Values.shared.numberOfCollectionViewColums))
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout:UIConfig.createFlowLayout(in: view, numberOfColums: Values.numberOfCollectionViewColums))
         view.addSubview(collectionView)
         collectionView.backgroundColor = .systemBackground
         collectionView.register(BankCollectionViewCell.self, forCellWithReuseIdentifier: BankCollectionViewCell.reuseId)

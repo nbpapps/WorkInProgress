@@ -10,30 +10,29 @@ import UIKit
 
 
 struct Values {
-    static let shared = Values()
     
     //MARK:- config
-    let numberOfCollectionViewColums = 2
+    static let numberOfCollectionViewColums = 2
     
     //MARK:- Cells
-    let cellPadding : CGFloat = 8
-    let cellRadius : CGFloat = 15
+    static let cellPadding : CGFloat = 8
+    static let cellRadius : CGFloat = 15
     
     //MARK:- collection view
-    let collectionViewPadding : CGFloat = 12
-    let collectionViewMinItemSpacing : CGFloat = 5
-    let collectionViewAdditionalItemHeight : CGFloat = 30
+    static let collectionViewPadding : CGFloat = 12
+    static let collectionViewMinItemSpacing : CGFloat = 5
+    static let collectionViewAdditionalItemHeight : CGFloat = 30
     
     //MARK:- labels
-    let labelheight : CGFloat = 20
-    let minimumScaleFactor : CGFloat = 0.9
-    let bankNameFontSize : CGFloat = 16
+    static let labelheight : CGFloat = 20
+    static let minimumScaleFactor : CGFloat = 0.9
+    static let bankNameFontSize : CGFloat = 16
     
     //MARK:- image view
-    let imageViewCornerRadius : CGFloat = 10
+    static let imageViewCornerRadius : CGFloat = 10
     
     //MARK:- Intraday table view
-    let intraDayTableViewPadding :CGFloat = 8
+    static let intraDayTableViewPadding :CGFloat = 8
     
     
 

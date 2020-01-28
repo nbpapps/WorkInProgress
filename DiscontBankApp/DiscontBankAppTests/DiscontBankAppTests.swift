@@ -57,5 +57,6 @@ class DiscontBankAppTests: XCTestCase {
         XCTAssertEqual(bank.img, "http://fint.com/pic", "bank image is incorrect")
         XCTAssertEqual(bank.priority, "111", "bank priority is incorrect")
     }
+    
 
 }

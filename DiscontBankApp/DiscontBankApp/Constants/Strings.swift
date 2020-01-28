@@ -9,28 +9,42 @@
 import Foundation
 
 public struct Strings {
-    static let shared = Strings()
+    
+    //MARK:- network
+    //https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=JPM&interval=1min&apikey=Z8EW6CI3PHR9SUTK
+    static let scheme = "https"
+      
+    static let baseHost = "www.alphavantage.co"
+    static let path = "/query"
+    
+    static let apiKey = "apikey"
+    static let apiValue = "4YK7EU2STGWQ2SFK"
+    static let functionKey = "function"
+    static let functionValue = "TIME_SERIES_INTRADAY"
+    static let symbolKey = "symbol"
+    static let intervalKey = "interval"
+    static let defualtInterval = "1min"
     
     //MARK: - end points
-    let banksJson = "banks.json"
+   static let banksJson = "banks.json"
     
     //MARK:- titles
-    let selectBankTitle = "Select Bank"
-    
+   static let selectBankTitle = "Select Bank"
+   
     //MARK:- general
-    let placeholder = "placeholder"
-    
+   static let placeholder = "placeholder"
+   
     //MARK:- colors
-    let appMainColor = "MainColor"
-    
+   static let appMainColor = "MainColor"
+   
     //MARK:- identifiers
-    let bankCell = "BankCell"
-    let intraDayCell = "intraDayCell"
-    
+   static let bankCell = "BankCell"
+   static let intraDayCell = "intraDayCell"
+   
     //MARK:- errors
-    let noStoryboradImplementation = "Storyboard not implemented"
-    let incorrectCell = "Incorrect cell setup for collection view"
-    let noBankInRow = "No bank for this row"
-    let dataInvalid = "the data is invalide"
+   static let noStoryboradImplementation = "Storyboard not implemented"
+   static let incorrectCell = "Incorrect cell setup for collection view"
+   static let noBankInRow = "No bank for this row"
+   static let dataInvalid = "the data is invalide"
     
 }
