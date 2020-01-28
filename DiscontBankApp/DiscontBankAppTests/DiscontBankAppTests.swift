@@ -10,7 +10,7 @@ import XCTest
 @testable import DiscontBankApp
 
 class DiscontBankAppTests: XCTestCase {
-
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -32,20 +32,30 @@ class DiscontBankAppTests: XCTestCase {
     }
     
     func testJsonParser() {
-        
-        let bank = Bank(name: "First Intl", stk: "FINT", img: "http://fint.com/pic", priority: "111")
-        let encoder = JSONEncoder()
-        let jsonData = try! encoder.encode(bank)
-        
-        let jsonParser = JsonParser(data: jsonData)
+        let bankJsonString = """
+                        { "name":"First Intl", "stk":"FINT","img":"http://fint.com/pic","priority":"111"}
+                        """
+        let bankJsonData = Data(bankJsonString.utf8)
+        let jsonParser = JsonParser(data: bankJsonData)
         let banks : Result<Bank,JsonError> = jsonParser.decode()
         let bankList = try! banks.get()
         XCTAssertEqual(bankList.name, "First Intl", "bank name is incorrect")
         XCTAssertEqual(bankList.stk, "FINT", "bank stk is incorrect")
         XCTAssertEqual(bankList.img, "http://fint.com/pic", "bank image is incorrect")
         XCTAssertEqual(bankList.priority, "111", "bank priority is incorrect")
-        
-        
+    }
+    
+    func testBankAtIndex() {
+        let bankJsonString = """
+                               [{ "name":"First Intl", "stk":"FINT","img":"http://fint.com/pic","priority":"111"}]
+                               """
+        let bankJsonData = Data(bankJsonString.utf8)
+        let bankDataSource = BankListDataSource(with: bankJsonData)
+        let bank = bankDataSource.bank(at: 0)
+        XCTAssertEqual(bank.name, "First Intl", "bank name is incorrect")
+        XCTAssertEqual(bank.stk, "FINT", "bank stk is incorrect")
+        XCTAssertEqual(bank.img, "http://fint.com/pic", "bank image is incorrect")
+        XCTAssertEqual(bank.priority, "111", "bank priority is incorrect")
     }
 
 }

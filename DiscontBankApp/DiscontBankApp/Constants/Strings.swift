@@ -25,6 +25,7 @@ public struct Strings {
     
     //MARK:- identifiers
     let bankCell = "BankCell"
+    let intraDayCell = "intraDayCell"
     
     //MARK:- errors
     let noStoryboradImplementation = "Storyboard not implemented"

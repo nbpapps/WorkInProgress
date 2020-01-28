@@ -12,10 +12,8 @@ final class BankListDataSource : NSObject, UICollectionViewDataSource {
     
     private var bankList : [Bank]!
     
-    override init() {
-        let banksData = Bundle.main.data(from: Strings.shared.banksJson)
-                   
-        let banksParser = JsonParser(data: banksData)
+    init(with data : Data) {
+        let banksParser = JsonParser(data: data)
         let banksResult : Result<[Bank],JsonError> = banksParser.decode()
         switch banksResult {
         case .success(let banks):
@@ -39,17 +37,20 @@ final class BankListDataSource : NSObject, UICollectionViewDataSource {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BankCollectionViewCell.reuseId, for: indexPath) as? BankCollectionViewCell else {
             preconditionFailure(Strings.shared.incorrectCell)
-
         }
         
         guard let bank = bankList?[indexPath.row] else {
             preconditionFailure(Strings.shared.noBankInRow)
-
         }
+        
         cell.bankNameLabel.text = bank.name
         cell.bankImageView.downloadBankImageWithCache(bank.img)
         return cell
         
+    }
+    
+    func bank(at index : Int) -> Bank {
+        return bankList[index]
     }
     
     

@@ -21,8 +21,8 @@ struct Values {
     
     //MARK:- collection view
     let collectionViewPadding : CGFloat = 12
-    let collectionViewMinItemSpacing : CGFloat = 10
-    let collectionViewAdditionalItemHeight : CGFloat = 40
+    let collectionViewMinItemSpacing : CGFloat = 5
+    let collectionViewAdditionalItemHeight : CGFloat = 30
     
     //MARK:- labels
     let labelheight : CGFloat = 20
@@ -31,6 +31,10 @@ struct Values {
     
     //MARK:- image view
     let imageViewCornerRadius : CGFloat = 10
+    
+    //MARK:- Intraday table view
+    let intraDayTableViewPadding :CGFloat = 8
+    
     
 
 }

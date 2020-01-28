@@ -10,6 +10,11 @@
 		E82B2B1523DF31DF001AF680 /* DBAImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B1423DF31DF001AF680 /* DBAImageView.swift */; };
 		E82B2B1723DF36EE001AF680 /* UIImageView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B1623DF36EE001AF680 /* UIImageView+Utils.swift */; };
 		E82B2B1A23DF3766001AF680 /* DataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B1923DF3766001AF680 /* DataFetch.swift */; };
+		E82B2B1C23DF7000001AF680 /* IntradayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B1B23DF7000001AF680 /* IntradayViewController.swift */; };
+		E82B2B1E23DF727E001AF680 /* Intraday.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B1D23DF727E001AF680 /* Intraday.swift */; };
+		E82B2B2023DF7362001AF680 /* IntradayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B1F23DF7362001AF680 /* IntradayTableViewCell.swift */; };
+		E82B2B2223E02B10001AF680 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B2123E02B10001AF680 /* NetworkService.swift */; };
+		E82B2B2423E03474001AF680 /* UrlBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B2323E03474001AF680 /* UrlBuilder.swift */; };
 		E8B38B4023DEFBC6009B7E7E /* Bundle+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B38B3F23DEFBC6009B7E7E /* Bundle+Utils.swift */; };
 		E8B38B4423DF2B79009B7E7E /* BankListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B38B4323DF2B79009B7E7E /* BankListDataSource.swift */; };
 		E8C1568B23DEE4FA004C6DDB /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C1568A23DEE4FA004C6DDB /* JsonParser.swift */; };
@@ -44,6 +49,11 @@
 		E82B2B1423DF31DF001AF680 /* DBAImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBAImageView.swift; sourceTree = "<group>"; };
 		E82B2B1623DF36EE001AF680 /* UIImageView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Utils.swift"; sourceTree = "<group>"; };
 		E82B2B1923DF3766001AF680 /* DataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetch.swift; sourceTree = "<group>"; };
+		E82B2B1B23DF7000001AF680 /* IntradayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntradayViewController.swift; sourceTree = "<group>"; };
+		E82B2B1D23DF727E001AF680 /* Intraday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intraday.swift; sourceTree = "<group>"; };
+		E82B2B1F23DF7362001AF680 /* IntradayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntradayTableViewCell.swift; sourceTree = "<group>"; };
+		E82B2B2123E02B10001AF680 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		E82B2B2323E03474001AF680 /* UrlBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlBuilder.swift; sourceTree = "<group>"; };
 		E8B38B3F23DEFBC6009B7E7E /* Bundle+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Utils.swift"; sourceTree = "<group>"; };
 		E8B38B4323DF2B79009B7E7E /* BankListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankListDataSource.swift; sourceTree = "<group>"; };
 		E8C1568A23DEE4FA004C6DDB /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
@@ -90,6 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				E82B2B1923DF3766001AF680 /* DataFetch.swift */,
+				E82B2B2123E02B10001AF680 /* NetworkService.swift */,
+				E82B2B2323E03474001AF680 /* UrlBuilder.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -170,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				E8C2CF3323DDFE6300301EE1 /* MainViewController.swift */,
+				E82B2B1B23DF7000001AF680 /* IntradayViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				E8C2CF2D23DDF3F500301EE1 /* Bank.swift */,
+				E82B2B1D23DF727E001AF680 /* Intraday.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,6 +214,7 @@
 				E8C2CF3923DE184200301EE1 /* DBALabel.swift */,
 				E8C2CF4023DE231100301EE1 /* BankCollectionViewCell.swift */,
 				E82B2B1423DF31DF001AF680 /* DBAImageView.swift */,
+				E82B2B1F23DF7362001AF680 /* IntradayTableViewCell.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -315,15 +330,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8C2CF3A23DE184200301EE1 /* DBALabel.swift in Sources */,
+				E82B2B2023DF7362001AF680 /* IntradayTableViewCell.swift in Sources */,
 				E8C1568E23DEE77A004C6DDB /* UIconfig.swift in Sources */,
 				E8C2CF3F23DE1AA300301EE1 /* Values.swift in Sources */,
 				E8C2CF1323DDF30200301EE1 /* DiscontBankApp.xcdatamodeld in Sources */,
+				E82B2B2423E03474001AF680 /* UrlBuilder.swift in Sources */,
 				E8C2CF3D23DE188400301EE1 /* Strings.swift in Sources */,
 				E82B2B1523DF31DF001AF680 /* DBAImageView.swift in Sources */,
+				E82B2B1C23DF7000001AF680 /* IntradayViewController.swift in Sources */,
 				E8C2CF2E23DDF3F500301EE1 /* Bank.swift in Sources */,
+				E82B2B1E23DF727E001AF680 /* Intraday.swift in Sources */,
 				E8C2CF0923DDF30200301EE1 /* AppDelegate.swift in Sources */,
 				E8C1568B23DEE4FA004C6DDB /* JsonParser.swift in Sources */,
 				E8C2CF0B23DDF30200301EE1 /* SceneDelegate.swift in Sources */,
+				E82B2B2223E02B10001AF680 /* NetworkService.swift in Sources */,
 				E82B2B1723DF36EE001AF680 /* UIImageView+Utils.swift in Sources */,
 				E82B2B1A23DF3766001AF680 /* DataFetch.swift in Sources */,
 				E8C1569023DEEEE6004C6DDB /* DBAErrror.swift in Sources */,

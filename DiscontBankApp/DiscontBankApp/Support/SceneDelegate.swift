@@ -23,7 +23,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = createMainNavCont()
         window?.makeKeyAndVisible()
         
-//        configureNavigationBar()
     }
     
     func createMainNavCont() -> UINavigationController {
