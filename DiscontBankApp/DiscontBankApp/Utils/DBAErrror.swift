@@ -23,4 +23,8 @@ public enum DataParseError : Error {
     case invalidData(errorMessage  :String)
 }
 
+public enum FetchError : Error {
+    case invalid
+}
+
 

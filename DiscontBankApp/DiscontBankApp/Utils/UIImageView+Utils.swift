@@ -8,22 +8,24 @@
 
 import UIKit
 
-private let imageCache = NSCache<AnyObject, AnyObject>()
 
 public extension UIImageView {
     func downloadBankImageWithCache(_ bankImageUrlString: String) {        
         //check if we have an image in cache
-        image = UIImage(named: Strings.placeholder)
-        if let imageFromCache = imageCache.object(forKey: bankImageUrlString as AnyObject) as? UIImage {
+        if let imageFromCache = ImageCache.shared.getImage(for: bankImageUrlString) {
             self.image = imageFromCache
+            return
         }else{
             let dataFetch = DataFetch()
             dataFetch.fetchBankImage(foUrlString: bankImageUrlString) { (result) in
             switch result {
-                case .failure(_): break //if we fail to fetch an image, we will not do anything special
+                case .failure(_):
+                    DispatchQueue.main.async {
+                        self.image = UIImage(named: Strings.placeholder)
+                    }
                 case .success(let data):
                     if let downloadedImage = UIImage(data: data) {
-                        imageCache.setObject(downloadedImage, forKey: bankImageUrlString as AnyObject)
+                        ImageCache.shared.set(image: downloadedImage, for: bankImageUrlString)
                         DispatchQueue.main.async {
                             self.image = downloadedImage
                         }

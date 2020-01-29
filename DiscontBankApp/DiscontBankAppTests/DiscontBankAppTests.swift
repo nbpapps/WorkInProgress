@@ -64,10 +64,6 @@ class DiscontBankAppTests: XCTestCase {
         }
         
         waitForExpectations(timeout: 1, handler: nil)
-        
-        
-//        let bankDataSource = BankListDataSource(with: bankJsonData)
-        
     }
     
 

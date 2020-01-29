@@ -33,10 +33,15 @@ struct DataParser {
             timeSeriesArray.sort { (lhs, rhs) -> Bool in
                 return lhs.time > rhs.time
             }
-            
-            return .success(timeSeriesArray)
+            if !timeSeriesArray.isEmpty {
+                return .success(timeSeriesArray)
+            }else{
+                print("no dictionary for Time Series")
+                return .failure(.invalidData(errorMessage:""))
+            }
         }
         catch {
+            print("decode \(error.localizedDescription)")
             return .failure(.invalidData(errorMessage: error.localizedDescription))
         }
     }

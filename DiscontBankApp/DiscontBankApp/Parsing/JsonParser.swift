@@ -26,6 +26,7 @@ public struct JsonParser {
             return .success(decodedObject)
         }
         catch {
+            print("decoce invalide json")
             return .failure(.invalidJson(errorMessage: error.localizedDescription))
         }
     }

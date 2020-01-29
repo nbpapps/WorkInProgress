@@ -30,7 +30,7 @@ final class BankListDataSource : NSObject, UICollectionViewDataSource {
             completion()
             
         case .failure(let error):
-            print(error)
+            print("extractBankList \(error)")
         }
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IntradayViewController: UIViewController {
+final class IntradayViewController: UIViewController {
 
     var bank : Bank!
     let timeSeriesDataSource = TimeSeriesDataSource()
@@ -16,11 +16,18 @@ class IntradayViewController: UIViewController {
     var timeSeriesTableView : UITableView!
     var timeIntervalSelectionSegmentControl : DBASegmentControl!
     
+    let loadingViewController = LoadingViewController()
+
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
         configureTableView()
         configureTimeIntervalSegments()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         getIntradayData(for: bank.stk, and: Strings.defualtInterval)
     }
     
@@ -72,20 +79,30 @@ class IntradayViewController: UIViewController {
     
     //MARK:- get Intraday data
     func getIntradayData(for symbol : String, and timeInterval : String) {
-        timeSeriesDataSource.fetchIntradayData(for: symbol, and: timeInterval) {
-            DispatchQueue.main.async {
+        showLoading()
+        timeSeriesDataSource.fetchIntradayData(for: symbol, and: timeInterval) { (error,success) in      DispatchQueue.main.async {
                 self.timeSeriesTableView.reloadData()
+                self.removeLoading()
             }
         }
     }
     
     
-    
     //MARK:- time intervall segment control
     @objc func userSelectedTimeInterval(sender : DBASegmentControl) {
-//        print(sender.selectedSegmentIndex)
         let timeInterval = TimeIntervals().getInterval(at: sender.selectedSegmentIndex)
         getIntradayData(for: bank.stk, and: timeInterval)
+    }
+    
+    //MARK:- loading
+    func showLoading() {
+        view.alpha = 0.7
+        add(loadingViewController)
+    }
+
+    func removeLoading() {
+        view.alpha = 1.0
+        self.loadingViewController.remove()
     }
     
 }

@@ -10,7 +10,8 @@ import UIKit
 
 class TimeSeriesDataSource: NSObject, UITableViewDataSource {
    
-    typealias fetchCompletion = () -> Void
+//    typealias fetchCompletion = () -> Void
+    typealias fetchCompletion = (_ error : Error?,_ success : Bool ) -> Void
 
     private var timeSeriesArray : [TimeSeriesValues]?
         
@@ -20,7 +21,7 @@ class TimeSeriesDataSource: NSObject, UITableViewDataSource {
 
         if let timeSeriesArray = TimeSeriesData.shared.timeSeriesArray(for: key) {
             self.timeSeriesArray = timeSeriesArray
-            completion()
+            completion(nil,true)
         }else{
             let dataFetch = DataFetch()
             dataFetch.fetchTimeSeriesIntraday(for: symbol, and: timeInterval) { [weak self] (result) in
@@ -35,21 +36,27 @@ class TimeSeriesDataSource: NSObject, UITableViewDataSource {
             let dataParser = DataParser(data: networkData)
             let timeSeiresResults = dataParser.decode(with: timeInterval)
             extractTimeSeriesFrom(result: timeSeiresResults, with: completion, for: symbol+timeInterval)
-        case .failure(let networkError):
-            print(networkError)
+        case .failure(let error):
+            print("parse \(error)")
+            completion(error,false)
         }
     }
     
     private func extractTimeSeriesFrom(result : Result<[TimeSeriesValues], DataParseError>,with completion : @escaping fetchCompletion,for key : String) {
         switch result {
         case .success(let timeSerise):
-            TimeSeriesData.shared.save(timeSeriesArray: timeSerise, forKey: key)
-            self.timeSeriesArray = timeSerise
-            print(timeSerise)
-            completion()
+            if !timeSerise.isEmpty {
+                TimeSeriesData.shared.save(timeSeriesArray: timeSerise, forKey: key)
+                self.timeSeriesArray = timeSerise
+            }else{
+                self.timeSeriesArray = []
+            }
+            
+            completion(nil,true)
             
         case .failure(let error):
-            print(error)
+            print("extractTimeSeriesFrom \(error)")
+            completion(error,false)
         }
     }
     

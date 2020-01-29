@@ -13,6 +13,7 @@ typealias networkCompletion =  (Result<Data,NetworkError>) -> Void
 struct DataFetch {
     public func fetchBankImage(foUrlString : String, with completion : @escaping networkCompletion) {
         guard let url = URL(string: foUrlString) else {
+            print("fail fetchBankImage")
             completion(.failure(.invalidUrl(errorMessage: "The input was \(foUrlString)")))
             return
         }
