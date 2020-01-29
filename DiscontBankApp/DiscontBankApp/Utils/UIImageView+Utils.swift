@@ -13,6 +13,7 @@ private let imageCache = NSCache<AnyObject, AnyObject>()
 public extension UIImageView {
     func downloadBankImageWithCache(_ bankImageUrlString: String) {        
         //check if we have an image in cache
+        image = UIImage(named: Strings.placeholder)
         if let imageFromCache = imageCache.object(forKey: bankImageUrlString as AnyObject) as? UIImage {
             self.image = imageFromCache
         }else{

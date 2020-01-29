@@ -19,16 +19,16 @@ class DBALabel: UILabel {
         fatalError(Strings.noStoryboradImplementation)
     }
     
-    init(textAlignment : NSTextAlignment, fontSize : CGFloat,weight : UIFont.Weight) {
+    init(textAlignment : NSTextAlignment, fontSize : CGFloat,weight : UIFont.Weight,color : UIColor = .label) {
         super.init(frame: .zero)
         self.textAlignment = textAlignment
         self.font = UIFont.systemFont(ofSize: fontSize, weight: weight)
+        self.textColor = color
         configure()
                     
     }
     
     private func configure() {
-        textColor = .label
         adjustsFontSizeToFitWidth = true
         minimumScaleFactor = Values.minimumScaleFactor
         lineBreakMode = .byTruncatingTail

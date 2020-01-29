@@ -27,12 +27,17 @@ struct Values {
     static let labelheight : CGFloat = 20
     static let minimumScaleFactor : CGFloat = 0.9
     static let bankNameFontSize : CGFloat = 16
+    static let timeSeriesLabelFontSize : CGFloat = 18
+    static let timeIntervalLabelFontSize : CGFloat = 15
     
     //MARK:- image view
     static let imageViewCornerRadius : CGFloat = 10
     
-    //MARK:- Intraday table view
+    //MARK:- Intraday time series screen
     static let intraDayTableViewPadding :CGFloat = 8
+    static let buttonPadding : CGFloat = 10
+    
+    
     
     
 

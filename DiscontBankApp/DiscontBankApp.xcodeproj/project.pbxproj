@@ -19,6 +19,13 @@
 		E82B2B2B23E061DB001AF680 /* TimeSerisValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B2A23E061DB001AF680 /* TimeSerisValues.swift */; };
 		E82B2B2D23E06C68001AF680 /* TimeSeriesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B2C23E06C68001AF680 /* TimeSeriesDataSource.swift */; };
 		E82B2B2F23E09448001AF680 /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B2E23E09448001AF680 /* DataParser.swift */; };
+		E82B2B3023E17E5A001AF680 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C2CF3C23DE188400301EE1 /* Strings.swift */; };
+		E82B2B3123E17E5D001AF680 /* Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C2CF3E23DE1AA300301EE1 /* Values.swift */; };
+		E82B2B3323E18DC5001AF680 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B3223E18DC5001AF680 /* String+Utils.swift */; };
+		E82B2B3623E19213001AF680 /* TimeSeriesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B3523E19212001AF680 /* TimeSeriesData.swift */; };
+		E82B2B3823E197B5001AF680 /* DBAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B3723E197B5001AF680 /* DBAButton.swift */; };
+		E82B2B3A23E1C7CE001AF680 /* TimeIntevalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B3923E1C7CE001AF680 /* TimeIntevalTableViewCell.swift */; };
+		E82B2B3C23E1C9E2001AF680 /* DBASegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B3B23E1C9E2001AF680 /* DBASegmentControl.swift */; };
 		E8B38B4023DEFBC6009B7E7E /* Bundle+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B38B3F23DEFBC6009B7E7E /* Bundle+Utils.swift */; };
 		E8B38B4423DF2B79009B7E7E /* BankListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B38B4323DF2B79009B7E7E /* BankListDataSource.swift */; };
 		E8C1568B23DEE4FA004C6DDB /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C1568A23DEE4FA004C6DDB /* JsonParser.swift */; };
@@ -61,6 +68,11 @@
 		E82B2B2A23E061DB001AF680 /* TimeSerisValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSerisValues.swift; sourceTree = "<group>"; };
 		E82B2B2C23E06C68001AF680 /* TimeSeriesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSeriesDataSource.swift; sourceTree = "<group>"; };
 		E82B2B2E23E09448001AF680 /* DataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
+		E82B2B3223E18DC5001AF680 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
+		E82B2B3523E19212001AF680 /* TimeSeriesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSeriesData.swift; sourceTree = "<group>"; };
+		E82B2B3723E197B5001AF680 /* DBAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBAButton.swift; sourceTree = "<group>"; };
+		E82B2B3923E1C7CE001AF680 /* TimeIntevalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntevalTableViewCell.swift; sourceTree = "<group>"; };
+		E82B2B3B23E1C9E2001AF680 /* DBASegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBASegmentControl.swift; sourceTree = "<group>"; };
 		E8B38B3F23DEFBC6009B7E7E /* Bundle+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Utils.swift"; sourceTree = "<group>"; };
 		E8B38B4323DF2B79009B7E7E /* BankListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankListDataSource.swift; sourceTree = "<group>"; };
 		E8C1568A23DEE4FA004C6DDB /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
@@ -113,6 +125,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		E82B2B3423E191F4001AF680 /* TimeSeriesData */ = {
+			isa = PBXGroup;
+			children = (
+				E82B2B3523E19212001AF680 /* TimeSeriesData.swift */,
+			);
+			path = TimeSeriesData;
+			sourceTree = "<group>";
+		};
 		E8B38B4523DF2B8E009B7E7E /* DataSourse */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +158,7 @@
 				E8C1568F23DEEEE5004C6DDB /* DBAErrror.swift */,
 				E8B38B3F23DEFBC6009B7E7E /* Bundle+Utils.swift */,
 				E82B2B1623DF36EE001AF680 /* UIImageView+Utils.swift */,
+				E82B2B3223E18DC5001AF680 /* String+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -163,6 +184,7 @@
 		E8C2CF0723DDF30200301EE1 /* DiscontBankApp */ = {
 			isa = PBXGroup;
 			children = (
+				E82B2B3423E191F4001AF680 /* TimeSeriesData */,
 				E82B2B1823DF3752001AF680 /* Network */,
 				E8B38B4523DF2B8E009B7E7E /* DataSourse */,
 				E8C1568C23DEE75D004C6DDB /* Utils */,
@@ -225,6 +247,9 @@
 				E8C2CF4023DE231100301EE1 /* BankCollectionViewCell.swift */,
 				E82B2B1423DF31DF001AF680 /* DBAImageView.swift */,
 				E82B2B1F23DF7362001AF680 /* IntradayTableViewCell.swift */,
+				E82B2B3723E197B5001AF680 /* DBAButton.swift */,
+				E82B2B3923E1C7CE001AF680 /* TimeIntevalTableViewCell.swift */,
+				E82B2B3B23E1C9E2001AF680 /* DBASegmentControl.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -340,7 +365,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E82B2B2623E04030001AF680 /* TimeIntervals.swift in Sources */,
+				E82B2B3823E197B5001AF680 /* DBAButton.swift in Sources */,
 				E8C2CF3A23DE184200301EE1 /* DBALabel.swift in Sources */,
+				E82B2B3623E19213001AF680 /* TimeSeriesData.swift in Sources */,
 				E82B2B2023DF7362001AF680 /* IntradayTableViewCell.swift in Sources */,
 				E8C1568E23DEE77A004C6DDB /* UIconfig.swift in Sources */,
 				E8C2CF3F23DE1AA300301EE1 /* Values.swift in Sources */,
@@ -355,10 +382,13 @@
 				E8C2CF0923DDF30200301EE1 /* AppDelegate.swift in Sources */,
 				E8C1568B23DEE4FA004C6DDB /* JsonParser.swift in Sources */,
 				E8C2CF0B23DDF30200301EE1 /* SceneDelegate.swift in Sources */,
+				E82B2B3323E18DC5001AF680 /* String+Utils.swift in Sources */,
 				E82B2B2223E02B10001AF680 /* NetworkService.swift in Sources */,
 				E82B2B1723DF36EE001AF680 /* UIImageView+Utils.swift in Sources */,
 				E82B2B1A23DF3766001AF680 /* DataFetch.swift in Sources */,
 				E8C1569023DEEEE6004C6DDB /* DBAErrror.swift in Sources */,
+				E82B2B3C23E1C9E2001AF680 /* DBASegmentControl.swift in Sources */,
+				E82B2B3A23E1C7CE001AF680 /* TimeIntevalTableViewCell.swift in Sources */,
 				E8C2CF4123DE231100301EE1 /* BankCollectionViewCell.swift in Sources */,
 				E8B38B4023DEFBC6009B7E7E /* Bundle+Utils.swift in Sources */,
 				E8B38B4423DF2B79009B7E7E /* BankListDataSource.swift in Sources */,
@@ -372,7 +402,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8C2CF2323DDF30500301EE1 /* DiscontBankAppTests.swift in Sources */,
+				E82B2B3023E17E5A001AF680 /* Strings.swift in Sources */,
 				E82B2B2723E04378001AF680 /* TimeIntervals.swift in Sources */,
+				E82B2B3123E17E5D001AF680 /* Values.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

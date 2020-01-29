@@ -9,14 +9,16 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
-    var collectionView : UICollectionView!
-    let collectionViewDatasource = BankListDataSource(with:Bundle.main.data(from: Strings.banksJson))
+    
+    var bankListCollectionView : UICollectionView!
+    let bankListCollectionViewDatasource = BankListDataSource()
+        
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
         configureCollectionView()
+        configureBankListDataSource()
     }
     
     //MARK:- config
@@ -26,20 +28,30 @@ class MainViewController: UIViewController {
     }
     
     func configureCollectionView() {
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout:UIConfig.createFlowLayout(in: view, numberOfColums: Values.numberOfCollectionViewColums))
-        view.addSubview(collectionView)
-        collectionView.backgroundColor = .systemBackground
-        collectionView.register(BankCollectionViewCell.self, forCellWithReuseIdentifier: BankCollectionViewCell.reuseId)
-        collectionView.delegate = self
-        collectionView.dataSource = collectionViewDatasource
+        bankListCollectionView = UICollectionView(frame: view.bounds, collectionViewLayout:UIConfig.createFlowLayout(in: view, numberOfColums: Values.numberOfCollectionViewColums))
+        view.addSubview(bankListCollectionView)
+        bankListCollectionView.backgroundColor = .systemBackground
+        bankListCollectionView.register(BankCollectionViewCell.self, forCellWithReuseIdentifier: BankCollectionViewCell.reuseId)
+        bankListCollectionView.delegate = self
+        bankListCollectionView.dataSource = bankListCollectionViewDatasource
+    }
+    
+    func configureBankListDataSource() {
+        bankListCollectionViewDatasource.extractBankList(from: Bundle.main.data(from: Strings.banksJson)) {
+            DispatchQueue.main.async {
+                self.bankListCollectionView.reloadData()
+            }
+        }
     }
 }
 
 extension MainViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let destViewController = IntradayViewController()
-        destViewController.bank = collectionViewDatasource.bank(at: indexPath.row)
-        navigationController?.pushViewController(destViewController, animated: true)
+        if let bank = bankListCollectionViewDatasource.bank(at: indexPath.row) {
+            destViewController.bank = bank
+            navigationController?.pushViewController(destViewController, animated: true)
+        }
     }
 }
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct TimeSerisValues {//}: Codable  {
+struct TimeSeriesValues {//}: Codable  {
     var open : String
     var high : String
     var low : String

@@ -9,7 +9,7 @@
 import Foundation
 
 public enum JsonError : Error { //conforms to error protocol
-    case invalideJson(errorMessage : String)
+    case invalidJson(errorMessage : String)
 }
 
 public enum NetworkError : Error {
@@ -17,7 +17,10 @@ public enum NetworkError : Error {
     case netwokError(errorMessage : String)
     case invalidResponse(errorMessage : String)
     case invalidData
-    
+}
+
+public enum DataParseError : Error {
+    case invalidData(errorMessage  :String)
 }
 
 

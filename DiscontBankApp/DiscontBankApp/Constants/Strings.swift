@@ -44,7 +44,7 @@ public struct Strings {
     //MARK:- errors
    static let noStoryboradImplementation = "Storyboard not implemented"
    static let incorrectCell = "Incorrect cell setup for collection view"
-   static let noBankInRow = "No bank for this row"
+   static let noItemInRow = "No itme for this row"
    static let dataInvalid = "the data is invalide"
     
 }

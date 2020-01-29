@@ -50,12 +50,24 @@ class DiscontBankAppTests: XCTestCase {
                                [{ "name":"First Intl", "stk":"FINT","img":"http://fint.com/pic","priority":"111"}]
                                """
         let bankJsonData = Data(bankJsonString.utf8)
-        let bankDataSource = BankListDataSource(with: bankJsonData)
-        let bank = bankDataSource.bank(at: 0)
-        XCTAssertEqual(bank.name, "First Intl", "bank name is incorrect")
-        XCTAssertEqual(bank.stk, "FINT", "bank stk is incorrect")
-        XCTAssertEqual(bank.img, "http://fint.com/pic", "bank image is incorrect")
-        XCTAssertEqual(bank.priority, "111", "bank priority is incorrect")
+        let bankDataSource = BankListDataSource()
+        let testExpectation = expectation(description: "Expected bank to be fetched")
+
+        bankDataSource.extractBankList(from: bankJsonData) {
+            let bank = bankDataSource.bank(at: 0)
+            XCTAssertEqual(bank!.name, "First Intl", "bank name is incorrect")
+            XCTAssertEqual(bank!.stk, "FINT", "bank stk is incorrect")
+            XCTAssertEqual(bank!.img, "http://fint.com/pic", "bank image is incorrect")
+            XCTAssertEqual(bank!.priority, "111", "bank priority is incorrect")
+            
+            testExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1, handler: nil)
+        
+        
+//        let bankDataSource = BankListDataSource(with: bankJsonData)
+        
     }
     
 
