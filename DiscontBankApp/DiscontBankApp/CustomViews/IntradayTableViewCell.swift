@@ -69,7 +69,5 @@ class IntradayTableViewCell: UITableViewCell {
             mainStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Values.cellPadding),
             mainStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Values.cellPadding)
         ])
-        
     }
-
 }

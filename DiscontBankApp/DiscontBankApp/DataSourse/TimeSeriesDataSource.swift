@@ -10,7 +10,6 @@ import UIKit
 
 class TimeSeriesDataSource: NSObject, UITableViewDataSource {
    
-//    typealias fetchCompletion = () -> Void
     typealias fetchCompletion = (_ error : Error?,_ success : Bool ) -> Void
 
     private var timeSeriesArray : [TimeSeriesValues]?
@@ -61,8 +60,6 @@ class TimeSeriesDataSource: NSObject, UITableViewDataSource {
     }
     
     
-    
-    
     //MARK:- table view
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -87,6 +84,4 @@ class TimeSeriesDataSource: NSObject, UITableViewDataSource {
         
         return cell
     }
-    
-
 }

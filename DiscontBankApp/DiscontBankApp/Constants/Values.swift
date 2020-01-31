@@ -36,9 +36,5 @@ struct Values {
     //MARK:- Intraday time series screen
     static let intraDayTableViewPadding :CGFloat = 8
     static let buttonPadding : CGFloat = 10
-    
-    
-    
-    
 
 }

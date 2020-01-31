@@ -32,6 +32,6 @@ class DBAButton: UIButton {
         layer.cornerRadius = 10
         setTitleColor(.label, for: .normal)
         titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline) //this is for dynamic type
-        translatesAutoresizingMaskIntoConstraints = false //this will let us use AutoLayout!!!
+        translatesAutoresizingMaskIntoConstraints = false //this will let us use AutoLayout
     }
 }

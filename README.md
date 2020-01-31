@@ -2,7 +2,6 @@
 
 This code was written by Niv Ben-Porath
 
-App features:
 Bank list Screen:
 * Shows a grid of banks.
 * The information shown will be the Bank name and image. The banks are ordered by Priority value, from high to low

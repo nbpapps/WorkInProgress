@@ -30,5 +30,4 @@ public struct JsonParser {
             return .failure(.invalidJson(errorMessage: error.localizedDescription))
         }
     }
-    
 }

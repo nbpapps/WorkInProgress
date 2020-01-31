@@ -25,8 +25,6 @@ class BankCollectionViewCell: UICollectionViewCell {
         fatalError(Strings.noStoryboradImplementation)
     }
     
-    
-
     private func configure() {
         bankImageView.backgroundColor = .white
         addSubview(bankImageView)
@@ -48,5 +46,4 @@ class BankCollectionViewCell: UICollectionViewCell {
         
         ])
     }
-
 }

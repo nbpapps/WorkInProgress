@@ -29,8 +29,4 @@ class LoadingViewController: UIViewController {
             spiner.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
-    
-
-   
-
 }

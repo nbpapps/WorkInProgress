@@ -45,8 +45,4 @@ struct DataParser {
             return .failure(.invalidData(errorMessage: error.localizedDescription))
         }
     }
-    
-    
-    
-    
 }

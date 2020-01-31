@@ -46,5 +46,6 @@ public struct Strings {
    static let incorrectCell = "Incorrect cell setup for collection view"
    static let noItemInRow = "No itme for this row"
    static let dataInvalid = "the data is invalide"
+   static let urlInvalid = "URL is invalid"
     
 }

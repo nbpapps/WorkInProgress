@@ -11,7 +11,7 @@ import UIKit
 struct ImageCache {
     static let shared = ImageCache()
     
-     var imageCache = NSCache<NSString, UIImage>()
+    private var imageCache = NSCache<NSString, UIImage>()
     
     func getImage(for key : String) -> UIImage? {
         return imageCache.object(forKey: NSString(string: key))

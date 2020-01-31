@@ -24,13 +24,10 @@ class DBASegmentControl: UISegmentedControl {
         fatalError(Strings.noStoryboradImplementation)
     }
     
-    
-    
     private func configure() {
         selectedSegmentIndex = 0
         selectedSegmentTintColor = UIColor(named: Strings.appMainColor)
         layer.cornerRadius = 10
-        translatesAutoresizingMaskIntoConstraints = false //this will let us use AutoLayout!!!
+        translatesAutoresizingMaskIntoConstraints = false //this will let us use AutoLayout!
     }
-
 }

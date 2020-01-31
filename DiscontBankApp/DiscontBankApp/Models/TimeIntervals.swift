@@ -28,8 +28,6 @@ struct TimeIntervals {
     public func getAllIntervalOptions() -> [String] {
         return timeIntervals
     }
-    
-    
 }
 
 

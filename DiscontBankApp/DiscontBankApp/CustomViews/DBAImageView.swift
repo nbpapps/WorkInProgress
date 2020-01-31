@@ -9,23 +9,22 @@
 import UIKit
 
 class DBAImageView: UIImageView {
-
+    
     let placeHolderImage = UIImage(named: Strings.placeholder)!
-
+    
     override init(frame: CGRect) {
-           super.init(frame: frame)
-           config()
-       }
-       
-       required init?(coder: NSCoder) {
+        super.init(frame: frame)
+        config()
+    }
+    
+    required init?(coder: NSCoder) {
         fatalError(Strings.noStoryboradImplementation)
-       }
-       
-       private func config() {
+    }
+    
+    private func config() {
         layer.cornerRadius = Values.imageViewCornerRadius
-           clipsToBounds = true
-           image = placeHolderImage
-           translatesAutoresizingMaskIntoConstraints = false
-       }
-
+        clipsToBounds = true
+        image = placeHolderImage
+        translatesAutoresizingMaskIntoConstraints = false
+    }
 }

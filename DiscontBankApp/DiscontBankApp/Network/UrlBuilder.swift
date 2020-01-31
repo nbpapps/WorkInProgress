@@ -29,7 +29,9 @@ struct UrlBuilder {
         comps.path = self.path
         comps.queryItems = self.queryItmes
         
-        return comps.url! //we return unwraped b/c if this is not a URL, we need to look at the values we passed it, and we can't continue with getting data from the network
-        
+        guard let url = comps.url else {
+             preconditionFailure(Strings.urlInvalid)
+        }
+        return url
     }
 }

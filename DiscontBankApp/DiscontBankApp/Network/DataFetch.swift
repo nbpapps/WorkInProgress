@@ -38,6 +38,5 @@ struct DataFetch {
         networkService.makeNetworkCall(for: timeSeriesIntradayUrl) { (result) in
             completion(result)
         }
-        
     }
 }

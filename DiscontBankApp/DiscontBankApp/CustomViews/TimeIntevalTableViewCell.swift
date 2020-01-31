@@ -31,5 +31,4 @@ class TimeIntevalTableViewCell: UITableViewCell {
             timeIntervalLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Values.cellPadding)
         ])
     }
-
 }

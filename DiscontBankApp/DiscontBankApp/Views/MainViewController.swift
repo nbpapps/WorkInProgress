@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UICollectionViewDelegate{
     
     var bankListCollectionView : UICollectionView!
     let bankListCollectionViewDatasource = BankListDataSource()
@@ -43,9 +43,8 @@ class MainViewController: UIViewController {
             }
         }
     }
-}
-
-extension MainViewController : UICollectionViewDelegate {
+    
+    //MARK: - collection view delegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let destViewController = IntradayViewController()
         if let bank = bankListCollectionViewDatasource.bank(at: indexPath.row) {
@@ -54,5 +53,7 @@ extension MainViewController : UICollectionViewDelegate {
         }
     }
 }
+
+
 
 

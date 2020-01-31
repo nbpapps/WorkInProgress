@@ -59,7 +59,4 @@ final class BankListDataSource : NSObject, UICollectionViewDataSource {
         }
         return bank
     }
-    
-    
-
 }

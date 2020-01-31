@@ -63,7 +63,6 @@ final class IntradayViewController: UIViewController {
         timeSeriesTableView.dataSource = timeSeriesDataSource
         
         timeSeriesTableView.translatesAutoresizingMaskIntoConstraints = false
-
         view.addSubview(timeSeriesTableView)
     }
 
@@ -75,8 +74,6 @@ final class IntradayViewController: UIViewController {
         view.addSubview(timeIntervalSelectionSegmentControl)
     }
     
-
-    
     //MARK:- get Intraday data
     func getIntradayData(for symbol : String, and timeInterval : String) {
         showLoading()
@@ -86,7 +83,6 @@ final class IntradayViewController: UIViewController {
             }
         }
     }
-    
     
     //MARK:- time intervall segment control
     @objc func userSelectedTimeInterval(sender : DBASegmentControl) {
@@ -104,6 +100,5 @@ final class IntradayViewController: UIViewController {
         view.alpha = 1.0
         self.loadingViewController.remove()
     }
-    
 }
 
