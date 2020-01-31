@@ -10,6 +10,7 @@ Bank list Screen:
 
 Time Series information Screen:
 * The banks "skt" value and a defult "timeInterval" value of "1min" are used to populate the Time Series table view
+* Change the Time Interval is done with the segment control at the top of the page
 
 
 Known issues and bugs
