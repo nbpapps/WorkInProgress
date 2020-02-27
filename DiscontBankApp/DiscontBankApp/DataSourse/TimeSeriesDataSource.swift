@@ -9,15 +9,15 @@
 import UIKit
 
 class TimeSeriesDataSource: NSObject, UITableViewDataSource {
-   
+    
     typealias fetchCompletion = (_ error : Error?,_ success : Bool ) -> Void
-
+    
     private var timeSeriesArray : [TimeSeriesValues]?
-        
+    
     //MARK:- retrive data
-    public func fetchIntradayData(for symbol : String, and timeInterval : String,with completion : @escaping fetchCompletion) {
+    func fetchIntradayData(for symbol : String, and timeInterval : String,with completion : @escaping fetchCompletion) {
         let key = symbol + timeInterval
-
+        
         if let timeSeriesArray = TimeSeriesData.shared.timeSeriesArray(for: key) {
             self.timeSeriesArray = timeSeriesArray
             completion(nil,true)
@@ -62,11 +62,11 @@ class TimeSeriesDataSource: NSObject, UITableViewDataSource {
     
     //MARK:- table view
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return timeSeriesArray?.count ?? 0
     }
     
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: IntradayTableViewCell.reuseId, for: indexPath) as? IntradayTableViewCell else {
             preconditionFailure(Strings.incorrectCell)
         }

@@ -14,7 +14,7 @@ struct TimeSeriesData {
     
     private var timeSeriesDictionary = [String:[TimeSeriesValues]]()
 
-    public func isTimeSeriesInDictionary(for key :String) -> Bool {
+    func isTimeSeriesInDictionary(for key :String) -> Bool {
         if (timeSeriesDictionary[key] != nil) {
             return true
         }else{
@@ -22,11 +22,11 @@ struct TimeSeriesData {
         }
     }
     
-    public mutating func save(timeSeriesArray : [TimeSeriesValues],forKey key : String) {
+    mutating func save(timeSeriesArray : [TimeSeriesValues],forKey key : String) {
         timeSeriesDictionary[key] = timeSeriesArray
     }
     
-    public func timeSeriesArray(for key :String) -> [TimeSeriesValues]? {
+    func timeSeriesArray(for key :String) -> [TimeSeriesValues]? {
         if isTimeSeriesInDictionary(for: key) {
             return timeSeriesDictionary[key]
         }else{

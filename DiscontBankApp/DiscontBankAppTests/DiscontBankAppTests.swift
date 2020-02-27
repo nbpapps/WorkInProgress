@@ -14,16 +14,16 @@ class DiscontBankAppTests: XCTestCase {
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-
+    
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
+    
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
-
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
@@ -52,7 +52,7 @@ class DiscontBankAppTests: XCTestCase {
         let bankJsonData = Data(bankJsonString.utf8)
         let bankDataSource = BankListDataSource()
         let testExpectation = expectation(description: "Expected bank to be fetched")
-
+        
         bankDataSource.extractBankList(from: bankJsonData) {
             let bank = bankDataSource.bank(at: 0)
             XCTAssertEqual(bank!.name, "First Intl", "bank name is incorrect")

@@ -9,7 +9,7 @@
 import UIKit
 
 class DBASegmentControl: UISegmentedControl {
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -21,12 +21,12 @@ class DBASegmentControl: UISegmentedControl {
     }
     
     required init?(coder: NSCoder) {
-        fatalError(Strings.noStoryboradImplementation)
+        fatalError(Strings.noStoryboardImplementation)
     }
     
     private func configure() {
         selectedSegmentIndex = 0
-        selectedSegmentTintColor = UIColor(named: Strings.appMainColor)
+        selectedSegmentTintColor = .mainColor
         layer.cornerRadius = 10
         translatesAutoresizingMaskIntoConstraints = false //this will let us use AutoLayout!
     }

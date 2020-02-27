@@ -17,11 +17,11 @@ class DBAButton: UIButton {
     
     required init?(coder: NSCoder) {
         //this is the init for story board
-        fatalError(Strings.noStoryboradImplementation)
+        fatalError(Strings.noStoryboardImplementation)
     }
     
     
-    init(backgroundColor : UIColor = UIColor(named: Strings.appMainColor) ?? .green,title : String) {
+    init(backgroundColor : UIColor = UIColor.mainColor ,title : String) {
         super.init(frame: .zero)
         self.backgroundColor = backgroundColor
         self.setTitle(title, for: .normal)

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension String {
+extension String {
     func extractTimeFromDate() -> String {
         let dateTimeArray = self.split(separator: " ")
         if dateTimeArray.count == 2 {

@@ -9,41 +9,41 @@
 import UIKit
 
 class BankCollectionViewCell: UICollectionViewCell {
-
-    static let reuseId = Strings.bankCell
+    
+    static let reuseId = "BankCell"
     
     let bankImageView = DBAImageView(frame: .zero)
-    let bankNameLabel = DBALabel(textAlignment: .center, fontSize: Values.bankNameFontSize, weight: .bold)
+    let bankNameLabel = DBALabel(textAlignment: .center, fontSize: UILabel.bankNameLabelFontSize, weight: .bold)
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
     }
-       
+    
     required init?(coder: NSCoder) {
-        fatalError(Strings.noStoryboradImplementation)
+        fatalError(Strings.noStoryboardImplementation)
     }
     
     private func configure() {
         bankImageView.backgroundColor = .white
         addSubview(bankImageView)
         addSubview(bankNameLabel)
-        contentView.layer.cornerRadius = Values.cellRadius
-        contentView.backgroundColor = UIColor(named: Strings.appMainColor)
+        contentView.layer.cornerRadius = UICollectionViewCell.cellRadius
+        contentView.backgroundColor = .mainColor
         NSLayoutConstraint.activate([
             
-            bankImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Values.cellPadding),
-            bankImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Values.cellPadding),
-            bankImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Values.cellPadding),
+            bankImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: UICollectionViewCell.cellPadding),
+            bankImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: UICollectionViewCell.cellPadding),
+            bankImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -UICollectionViewCell.cellPadding),
             bankImageView.heightAnchor.constraint(equalTo: bankImageView.widthAnchor),
-
             
-            bankNameLabel.topAnchor.constraint(equalTo: bankImageView.bottomAnchor, constant: Values.cellPadding),
-            bankNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Values.cellPadding),
-            bankNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Values.cellPadding),
-            bankNameLabel.heightAnchor.constraint(equalToConstant: Values.labelheight)
-        
+            
+            bankNameLabel.topAnchor.constraint(equalTo: bankImageView.bottomAnchor, constant: UICollectionViewCell.cellPadding),
+            bankNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: UICollectionViewCell.cellPadding),
+            bankNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -UICollectionViewCell.cellPadding),
+            bankNameLabel.heightAnchor.constraint(equalToConstant: UILabel.labelheight)
+            
         ])
     }
 }

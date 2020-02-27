@@ -11,8 +11,10 @@ import UIKit
 final class BankListDataSource : NSObject, UICollectionViewDataSource {
     
     typealias fetchCompletion = () -> Void
-
+    
     private var bankList : [Bank]?
+    
+    static let bankListEndPointJson = "banks.json"
     
     func extractBankList(from data : Data,with completion : @escaping fetchCompletion) {
         let banksParser = JsonParser(data: data)
@@ -26,7 +28,7 @@ final class BankListDataSource : NSObject, UICollectionViewDataSource {
                 }
                 return lhsPriority > rhsPriority
             })
-
+            
             completion()
             
         case .failure(let error):

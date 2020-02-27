@@ -9,14 +9,14 @@
 import UIKit
 
 class DBALabel: UILabel {
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
     }
     
     required init?(coder: NSCoder) {
-        fatalError(Strings.noStoryboradImplementation)
+        fatalError(Strings.noStoryboardImplementation)
     }
     
     init(textAlignment : NSTextAlignment, fontSize : CGFloat,weight : UIFont.Weight,color : UIColor = .label) {
@@ -25,12 +25,12 @@ class DBALabel: UILabel {
         self.font = UIFont.systemFont(ofSize: fontSize, weight: weight)
         self.textColor = color
         configure()
-                    
+        
     }
     
     private func configure() {
         adjustsFontSizeToFitWidth = true
-        minimumScaleFactor = Values.minimumScaleFactor
+        minimumScaleFactor = UILabel.minimumScaleFactorForLabel
         lineBreakMode = .byTruncatingTail
         translatesAutoresizingMaskIntoConstraints = false
     }

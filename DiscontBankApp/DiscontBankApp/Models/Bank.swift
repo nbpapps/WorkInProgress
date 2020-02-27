@@ -8,10 +8,10 @@
 
 import Foundation
 
-public struct Bank : Codable {
+struct Bank : Codable {
     
-    public var name : String
-    public var stk : String
-    public var img : String
-    public var priority : String
+    var name : String
+    var stk : String
+    var img : String
+    var priority : String
 }

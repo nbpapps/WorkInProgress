@@ -14,7 +14,7 @@ struct TimeIntervals {
     
     private var timeIntervals : [String] = ["1min", "5min", "15min", "30min", "60min"]
     
-    public func getInterval(at index : Int) -> String{
+    func getInterval(at index : Int) -> String{
         guard timeIntervals.count > index else {
             if timeIntervals.isEmpty {
                 return Strings.defualtInterval
@@ -25,7 +25,7 @@ struct TimeIntervals {
         return timeIntervals[index]
     }
     
-    public func getAllIntervalOptions() -> [String] {
+    func getAllIntervalOptions() -> [String] {
         return timeIntervals
     }
 }

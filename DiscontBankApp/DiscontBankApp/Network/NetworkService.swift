@@ -9,7 +9,7 @@
 import Foundation
 
 struct NetworkService {
-    public func makeNetworkCall(for url : URL,with completion : @escaping networkCompletion) {
+    func makeNetworkCall(for url : URL,with completion : @escaping networkCompletion) {
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
             if let networkError = error {
@@ -29,7 +29,7 @@ struct NetworkService {
                 completion(.failure(.invalidData))
                 return
             }
-
+            
             completion(.success(receivedData))
         }
         

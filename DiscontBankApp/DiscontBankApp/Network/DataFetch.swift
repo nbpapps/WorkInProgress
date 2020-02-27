@@ -11,7 +11,7 @@ import Foundation
 typealias networkCompletion =  (Result<Data,NetworkError>) -> Void
 
 struct DataFetch {
-    public func fetchBankImage(foUrlString : String, with completion : @escaping networkCompletion) {
+    func fetchBankImage(foUrlString : String, with completion : @escaping networkCompletion) {
         guard let url = URL(string: foUrlString) else {
             print("fail fetchBankImage")
             completion(.failure(.invalidUrl(errorMessage: "The input was \(foUrlString)")))
@@ -24,16 +24,15 @@ struct DataFetch {
         }
     }
     
-    public func fetchTimeSeriesIntraday(for symbol : String,and timeInterval : String, with completion : @escaping networkCompletion) {
+    func fetchTimeSeriesIntraday(for symbol : String,and timeInterval : String, with completion : @escaping networkCompletion) {
         let queryItmes : [URLQueryItem] = [
-            URLQueryItem(name: Strings.apiKey, value: Strings.apiValue),
-            URLQueryItem(name: Strings.functionKey, value: Strings.functionValue),
-            URLQueryItem(name: Strings.symbolKey, value: symbol),
-            URLQueryItem(name: Strings.intervalKey, value: timeInterval)
+            URLQueryItem(name: UrlBuilder.apiKey, value: UrlBuilder.apiValue),
+            URLQueryItem(name: UrlBuilder.functionKey, value: UrlBuilder.functionValue),
+            URLQueryItem(name: UrlBuilder.symbolKey, value: symbol),
+            URLQueryItem(name: UrlBuilder.intervalKey, value: timeInterval)
         ]
         
-        let timeSeriesIntradayUrl = UrlBuilder(scheme: Strings.scheme, host: Strings.baseHost, path: Strings.path, queryItmes: queryItmes).buildUrl()
-        
+        let timeSeriesIntradayUrl = UrlBuilder(queryItmes: queryItmes).buildUrlForTimeSeriesIntraday()
         let networkService = NetworkService()
         networkService.makeNetworkCall(for: timeSeriesIntradayUrl) { (result) in
             completion(result)

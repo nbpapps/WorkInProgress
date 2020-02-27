@@ -8,8 +8,10 @@
 
 import UIKit
 
-
-public extension UIImageView {
+extension UIImageView {
+    
+    static let imageViewCornerRadius : CGFloat = 10
+    
     func downloadBankImageWithCache(_ bankImageUrlString: String) {        
         //check if we have an image in cache
         if let imageFromCache = ImageCache.shared.getImage(for: bankImageUrlString) {
@@ -18,10 +20,10 @@ public extension UIImageView {
         }else{
             let dataFetch = DataFetch()
             dataFetch.fetchBankImage(foUrlString: bankImageUrlString) { (result) in
-            switch result {
+                switch result {
                 case .failure(_):
                     DispatchQueue.main.async {
-                        self.image = UIImage(named: Strings.placeholder)
+                        self.image = UIImage(named: UIImage.imagePlaceHolderName)
                     }
                 case .success(let data):
                     if let downloadedImage = UIImage(data: data) {

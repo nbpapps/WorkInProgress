@@ -8,22 +8,22 @@
 
 import Foundation
 
-public enum JsonError : Error { //conforms to error protocol
+enum JsonError : Error { //conforms to error protocol
     case invalidJson(errorMessage : String)
 }
 
-public enum NetworkError : Error {
+enum NetworkError : Error {
     case invalidUrl(errorMessage : String)
     case netwokError(errorMessage : String)
     case invalidResponse(errorMessage : String)
     case invalidData
 }
 
-public enum DataParseError : Error {
+enum DataParseError : Error {
     case invalidData(errorMessage  :String)
 }
 
-public enum FetchError : Error {
+enum FetchError : Error {
     case invalid
 }
 

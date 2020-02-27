@@ -10,15 +10,22 @@ import UIKit
 
 class MainViewController: UIViewController, UICollectionViewDelegate{
     
-    var bankListCollectionView : UICollectionView!
+    private lazy var bankListCollectionView = makeCollectionView()
     let bankListCollectionViewDatasource = BankListDataSource()
-        
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
         configureCollectionView()
         configureBankListDataSource()
+    }
+    
+    private func makeCollectionView() -> UICollectionView {
+        let colllectionView =  UICollectionView(frame: view.bounds, collectionViewLayout:UIConfig.createFlowLayout(in: view, numberOfColums: Values.numberOfCollectionViewColums))
+        
+        return colllectionView
+        
     }
     
     //MARK:- config
@@ -28,7 +35,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate{
     }
     
     func configureCollectionView() {
-        bankListCollectionView = UICollectionView(frame: view.bounds, collectionViewLayout:UIConfig.createFlowLayout(in: view, numberOfColums: Values.numberOfCollectionViewColums))
         view.addSubview(bankListCollectionView)
         bankListCollectionView.backgroundColor = .systemBackground
         bankListCollectionView.register(BankCollectionViewCell.self, forCellWithReuseIdentifier: BankCollectionViewCell.reuseId)
@@ -37,7 +43,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate{
     }
     
     func configureBankListDataSource() {
-        bankListCollectionViewDatasource.extractBankList(from: Bundle.main.data(from: Strings.banksJson)) {
+        bankListCollectionViewDatasource.extractBankList(from: Bundle.main.data(from: BankListDataSource.bankListEndPointJson)) {
             DispatchQueue.main.async {
                 self.bankListCollectionView.reloadData()
             }

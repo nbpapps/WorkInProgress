@@ -9,17 +9,17 @@
 import Foundation
 
 
-public struct JsonParser {
+struct JsonParser {
     
     private var data : Data
     private var decoder : JSONDecoder
-
+    
     init(data : Data,decoder : JSONDecoder = JSONDecoder()) {
         self.data = data
         self.decoder = decoder
     }
     
-    public func decode<T : Decodable>() -> Result<T,JsonError>{
+    func decode<T : Decodable>() -> Result<T,JsonError>{
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         do {
             let decodedObject = try decoder.decode(T.self, from: data)

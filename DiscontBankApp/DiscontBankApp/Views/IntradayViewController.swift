@@ -9,21 +9,33 @@
 import UIKit
 
 final class IntradayViewController: UIViewController {
-
+    
     var bank : Bank!
     let timeSeriesDataSource = TimeSeriesDataSource()
-
-    var timeSeriesTableView : UITableView!
-    var timeIntervalSelectionSegmentControl : DBASegmentControl!
+    
+    private lazy var timeSeriesTableView  = makeTimeSeriesTableView()
+    private lazy var timeIntervalSelectionSegmentControl = makeSegmentControl()
     
     let loadingViewController = LoadingViewController()
-
-        
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
         configureTableView()
         configureTimeIntervalSegments()
+        layoutView()
+    }
+    
+    private func makeTimeSeriesTableView() -> UITableView {
+        let tableView = UITableView(frame: view.bounds, style: .plain)
+        return tableView
+    }
+    
+    private func makeSegmentControl() -> UISegmentedControl {
+        let allTimeIntevals = TimeIntervals().getAllIntervalOptions()
+        let segCont = DBASegmentControl(items: allTimeIntevals)
+        return segCont
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -34,19 +46,23 @@ final class IntradayViewController: UIViewController {
     //MARK: - layout
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
+    }
+    
+    //MARK: - layout
+    
+    func layoutView() {
         NSLayoutConstraint.activate([
             
-            timeIntervalSelectionSegmentControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Values.buttonPadding),
-            timeIntervalSelectionSegmentControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Values.buttonPadding),
-            timeIntervalSelectionSegmentControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Values.buttonPadding),
+            timeIntervalSelectionSegmentControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: UISegmentedControl.padding),
+            timeIntervalSelectionSegmentControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: UISegmentedControl.padding),
+            timeIntervalSelectionSegmentControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -UISegmentedControl.padding),
             timeIntervalSelectionSegmentControl.heightAnchor.constraint(equalToConstant: 44.0),
             
-            timeSeriesTableView.topAnchor.constraint(equalTo: timeIntervalSelectionSegmentControl.bottomAnchor, constant: Values.intraDayTableViewPadding),
-            timeSeriesTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Values.intraDayTableViewPadding),
-            timeSeriesTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Values.intraDayTableViewPadding),
-            timeSeriesTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -Values.intraDayTableViewPadding)
-        
+            timeSeriesTableView.topAnchor.constraint(equalTo: timeIntervalSelectionSegmentControl.bottomAnchor, constant: UITableView.tableViewPadding),
+            timeSeriesTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: UITableView.tableViewPadding),
+            timeSeriesTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -UITableView.tableViewPadding),
+            timeSeriesTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -UITableView.tableViewPadding)
+            
         ])
     }
     
@@ -57,7 +73,6 @@ final class IntradayViewController: UIViewController {
     }
     
     func configureTableView() {
-        timeSeriesTableView = UITableView(frame: view.bounds, style: .plain)
         timeSeriesTableView.backgroundColor = .systemBackground
         timeSeriesTableView.register(IntradayTableViewCell.self, forCellReuseIdentifier: IntradayTableViewCell.reuseId)
         timeSeriesTableView.dataSource = timeSeriesDataSource
@@ -65,7 +80,7 @@ final class IntradayViewController: UIViewController {
         timeSeriesTableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(timeSeriesTableView)
     }
-
+    
     
     func configureTimeIntervalSegments() {
         let allTimeIntevals = TimeIntervals().getAllIntervalOptions()
@@ -78,8 +93,8 @@ final class IntradayViewController: UIViewController {
     func getIntradayData(for symbol : String, and timeInterval : String) {
         showLoading()
         timeSeriesDataSource.fetchIntradayData(for: symbol, and: timeInterval) { (error,success) in      DispatchQueue.main.async {
-                self.timeSeriesTableView.reloadData()
-                self.removeLoading()
+            self.timeSeriesTableView.reloadData()
+            self.removeLoading()
             }
         }
     }
@@ -95,7 +110,7 @@ final class IntradayViewController: UIViewController {
         view.alpha = 0.7
         add(loadingViewController)
     }
-
+    
     func removeLoading() {
         view.alpha = 1.0
         self.loadingViewController.remove()
