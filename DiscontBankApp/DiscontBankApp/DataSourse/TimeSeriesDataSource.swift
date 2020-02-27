@@ -75,12 +75,12 @@ class TimeSeriesDataSource: NSObject, UITableViewDataSource {
             preconditionFailure(Strings.noItemInRow)
         }
         
-        cell.timeValueLabel.text = timeSeries.time.extractTimeFromDate()
-        cell.openValueLabel.text = timeSeries.open
-        cell.highValueLabel.text = timeSeries.high
-        cell.lowValueLabel.text = timeSeries.low
-        cell.closeValueLabel.text = timeSeries.close
-        cell.volumeValueLabel.text = timeSeries.volume
+        cell.timeView.update(title: Strings.timeTitle, value: timeSeries.time.extractTimeFromDate(), textColor: .timeColor)
+        cell.openView.update(title: Strings.openTitle, value: timeSeries.open, textColor: .openColor)
+        cell.highView.update(title: Strings.highTitle, value: timeSeries.high, textColor: .highColor)
+        cell.lowView.update(title: Strings.lowTitle, value: timeSeries.low, textColor: .lowColor)
+        cell.closeView.update(title: Strings.closeTitle, value: timeSeries.close, textColor: .closeColor)
+        cell.volumeView.update(title: Strings.volumeTitle, value: timeSeries.volume, textColor: .volumeColor)
         
         return cell
     }

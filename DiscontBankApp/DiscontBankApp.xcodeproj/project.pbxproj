@@ -24,7 +24,6 @@
 		E82B2B3323E18DC5001AF680 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B3223E18DC5001AF680 /* String+Utils.swift */; };
 		E82B2B3623E19213001AF680 /* TimeSeriesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B3523E19212001AF680 /* TimeSeriesData.swift */; };
 		E82B2B3823E197B5001AF680 /* DBAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B3723E197B5001AF680 /* DBAButton.swift */; };
-		E82B2B3A23E1C7CE001AF680 /* TimeIntevalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B3923E1C7CE001AF680 /* TimeIntevalTableViewCell.swift */; };
 		E82B2B3C23E1C9E2001AF680 /* DBASegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B3B23E1C9E2001AF680 /* DBASegmentControl.swift */; };
 		E82B2B3E23E1D86E001AF680 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B3D23E1D86E001AF680 /* LoadingViewController.swift */; };
 		E82B2B4023E1D9AC001AF680 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B3F23E1D9AC001AF680 /* UIViewController+Utils.swift */; };
@@ -37,6 +36,7 @@
 		E851185B2407EDBC0026EB89 /* UISegment+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E851185A2407EDBC0026EB89 /* UISegment+Config.swift */; };
 		E851185D2407FB380026EB89 /* UIImage+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E851185C2407FB380026EB89 /* UIImage+Config.swift */; };
 		E851185F2407FCBA0026EB89 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E851185E2407FCBA0026EB89 /* Colors.swift */; };
+		E8A9A84024084B9500B53188 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A9A83F24084B9500B53188 /* TestVC.swift */; };
 		E8B38B4023DEFBC6009B7E7E /* Bundle+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B38B3F23DEFBC6009B7E7E /* Bundle+Utils.swift */; };
 		E8B38B4423DF2B79009B7E7E /* BankListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B38B4323DF2B79009B7E7E /* BankListDataSource.swift */; };
 		E8C1568B23DEE4FA004C6DDB /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C1568A23DEE4FA004C6DDB /* JsonParser.swift */; };
@@ -82,7 +82,6 @@
 		E82B2B3223E18DC5001AF680 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 		E82B2B3523E19212001AF680 /* TimeSeriesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSeriesData.swift; sourceTree = "<group>"; };
 		E82B2B3723E197B5001AF680 /* DBAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBAButton.swift; sourceTree = "<group>"; };
-		E82B2B3923E1C7CE001AF680 /* TimeIntevalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntevalTableViewCell.swift; sourceTree = "<group>"; };
 		E82B2B3B23E1C9E2001AF680 /* DBASegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBASegmentControl.swift; sourceTree = "<group>"; };
 		E82B2B3D23E1D86E001AF680 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		E82B2B3F23E1D9AC001AF680 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
@@ -95,6 +94,7 @@
 		E851185A2407EDBC0026EB89 /* UISegment+Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegment+Config.swift"; sourceTree = "<group>"; };
 		E851185C2407FB380026EB89 /* UIImage+Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Config.swift"; sourceTree = "<group>"; };
 		E851185E2407FCBA0026EB89 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		E8A9A83F24084B9500B53188 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
 		E8B38B3F23DEFBC6009B7E7E /* Bundle+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Utils.swift"; sourceTree = "<group>"; };
 		E8B38B4323DF2B79009B7E7E /* BankListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankListDataSource.swift; sourceTree = "<group>"; };
 		E8C1568A23DEE4FA004C6DDB /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
@@ -245,6 +245,7 @@
 				E8C2CF3323DDFE6300301EE1 /* MainViewController.swift */,
 				E82B2B1B23DF7000001AF680 /* IntradayViewController.swift */,
 				E82B2B3D23E1D86E001AF680 /* LoadingViewController.swift */,
+				E8A9A83F24084B9500B53188 /* TestVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -279,7 +280,6 @@
 				E82B2B1423DF31DF001AF680 /* DBAImageView.swift */,
 				E82B2B1F23DF7362001AF680 /* IntradayTableViewCell.swift */,
 				E82B2B3723E197B5001AF680 /* DBAButton.swift */,
-				E82B2B3923E1C7CE001AF680 /* TimeIntevalTableViewCell.swift */,
 				E82B2B3B23E1C9E2001AF680 /* DBASegmentControl.swift */,
 				E85118502407E6900026EB89 /* IntradayItemInfoView.swift */,
 			);
@@ -430,7 +430,7 @@
 				E85118532407EA670026EB89 /* UICollectionView+Config.swift in Sources */,
 				E851185B2407EDBC0026EB89 /* UISegment+Config.swift in Sources */,
 				E82B2B3C23E1C9E2001AF680 /* DBASegmentControl.swift in Sources */,
-				E82B2B3A23E1C7CE001AF680 /* TimeIntevalTableViewCell.swift in Sources */,
+				E8A9A84024084B9500B53188 /* TestVC.swift in Sources */,
 				E82B2B3E23E1D86E001AF680 /* LoadingViewController.swift in Sources */,
 				E8C2CF4123DE231100301EE1 /* BankCollectionViewCell.swift in Sources */,
 				E8B38B4023DEFBC6009B7E7E /* Bundle+Utils.swift in Sources */,

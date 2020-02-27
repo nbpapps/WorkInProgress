@@ -18,23 +18,35 @@ class IntradayItemInfoView: UIView {
         config()
     }
     
-    init(title : String,value: String,textColor : UIColor) {
-        super.init(frame: .zero)
-        itemTitleLabel.text = title
-        itemValueLabel.text = value
-        
-        itemTitleLabel.textColor = textColor
-        itemValueLabel.textColor = textColor
-        
-        config()
-    }
     
     required init?(coder: NSCoder) {
         fatalError(Strings.noStoryboardImplementation)
     }
     
+    func update(title : String, value: String,textColor : UIColor) {
+        itemTitleLabel.text = title
+        itemValueLabel.text = value
+        
+        itemTitleLabel.textColor = textColor
+        itemValueLabel.textColor = textColor
+    }
+    
     private func config() {
+        let stackView = UIStackView(arrangedSubviews: [itemTitleLabel,itemValueLabel])
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: self.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            
+        ])
+        
     }
     
 }

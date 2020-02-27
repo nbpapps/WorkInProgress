@@ -18,7 +18,7 @@ final class IntradayViewController: UIViewController {
     
     let loadingViewController = LoadingViewController()
     
-    
+    //MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
@@ -27,6 +27,12 @@ final class IntradayViewController: UIViewController {
         layoutView()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        getIntradayData(for: bank.stk, and: Strings.defualtInterval)
+    }
+    
+    //MARK: - factory
     private func makeTimeSeriesTableView() -> UITableView {
         let tableView = UITableView(frame: view.bounds, style: .plain)
         return tableView
@@ -36,16 +42,6 @@ final class IntradayViewController: UIViewController {
         let allTimeIntevals = TimeIntervals().getAllIntervalOptions()
         let segCont = DBASegmentControl(items: allTimeIntevals)
         return segCont
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        getIntradayData(for: bank.stk, and: Strings.defualtInterval)
-    }
-    
-    //MARK: - layout
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
     }
     
     //MARK: - layout
