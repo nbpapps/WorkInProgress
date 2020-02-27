@@ -13,25 +13,11 @@ class IntradayTableViewCell: UITableViewCell {
     static let reuseId = "IntraDayCell"
     
     let timeView = IntradayItemInfoView(frame: .zero)
-    
-    let timeTitleLabel = DBALabel(textAlignment: .left, fontSize: UILabel.timeSeriesLabelFontSize, weight: .regular, color: .systemBlue)
-    let timeValueLabel = DBALabel(textAlignment: .right, fontSize: UILabel.timeSeriesLabelFontSize, weight: .regular,color: .systemBlue)
-    
-    let openTitleLabel = DBALabel(textAlignment: .left, fontSize: UILabel.timeSeriesLabelFontSize, weight: .regular,color:.systemOrange)
-    let openValueLabel = DBALabel(textAlignment: .right, fontSize: UILabel.timeSeriesLabelFontSize, weight: .regular,color: .systemOrange)
-    
-    let highTitleLabel = DBALabel(textAlignment: .left, fontSize: UILabel.timeSeriesLabelFontSize, weight: .regular,color: .systemGreen)
-    let highValueLabel = DBALabel(textAlignment: .right, fontSize: UILabel.timeSeriesLabelFontSize, weight: .regular,color: .systemGreen)
-    
-    let lowTitleLabel = DBALabel(textAlignment: .left, fontSize: UILabel.timeSeriesLabelFontSize, weight: .regular,color: .systemRed)
-    let lowValueLabel = DBALabel(textAlignment: .right, fontSize: UILabel.timeSeriesLabelFontSize, weight: .regular,color: .systemRed)
-    
-    let closeTitleLabel = DBALabel(textAlignment: .left, fontSize: UILabel.timeSeriesLabelFontSize, weight: .regular,color: .systemPurple)
-    let closeValueLabel = DBALabel(textAlignment: .right, fontSize: UILabel.timeSeriesLabelFontSize, weight: .regular,color: .systemPurple)
-    
-    let volumeTitleLabel = DBALabel(textAlignment: .left, fontSize: UILabel.timeSeriesLabelFontSize, weight: .regular,color: .systemIndigo)
-    let volumeValueLabel = DBALabel(textAlignment: .right, fontSize: UILabel.timeSeriesLabelFontSize, weight: .regular,color: .systemIndigo)
-    
+    let openView = IntradayItemInfoView(frame: .zero)
+    let highView = IntradayItemInfoView(frame: .zero)
+    let lowView = IntradayItemInfoView(frame: .zero)
+    let closeView = IntradayItemInfoView(frame: .zero)
+    let volumeView = IntradayItemInfoView(frame: .zero)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -43,27 +29,11 @@ class IntradayTableViewCell: UITableViewCell {
     }
     
     private func configue() {
-        timeTitleLabel.text = Strings.timeTitle
-        openTitleLabel.text = Strings.openTitle
-        highTitleLabel.text = Strings.highTitle
-        lowTitleLabel.text = Strings.lowTitle
-        closeTitleLabel.text = Strings.closeTitle
-        volumeTitleLabel.text = Strings.volumeTitle
-        
-        let titleStackView = UIStackView(arrangedSubviews: [timeTitleLabel,openTitleLabel,highTitleLabel,lowTitleLabel,closeTitleLabel,volumeTitleLabel])
-        titleStackView.axis = .vertical
-        titleStackView.distribution = .fill
-        
-        let valueStackView = UIStackView(arrangedSubviews: [timeValueLabel,openValueLabel,highValueLabel,lowValueLabel,closeValueLabel,volumeValueLabel])
-        valueStackView.axis = .vertical
-        valueStackView.distribution = .fill
-        
-        let mainStackView = UIStackView(arrangedSubviews: [titleStackView,valueStackView])
-        mainStackView.axis = .horizontal
-        mainStackView.distribution = .fillProportionally
-        
-        contentView.addSubview(mainStackView)
+        let mainStackView = UIStackView(arrangedSubviews: [timeView,openView,highView,lowView,closeView,volumeView])
+        mainStackView.axis = .vertical
+        mainStackView.distribution = .fill
         mainStackView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(mainStackView)
         
         NSLayoutConstraint.activate([
             mainStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: UITableViewCell.cellPadding),
