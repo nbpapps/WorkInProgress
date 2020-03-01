@@ -1,14 +1,15 @@
 //
-//  MainViewController.swift
+//  BanksListViewController.swift
 //  DiscontBankApp
 //
-//  Created by niv ben-porath on 26/01/2020.
+//  Created by niv ben-porath on 01/03/2020.
 //  Copyright © 2020 nbpApps. All rights reserved.
 //
 
 import UIKit
 
-class MainViewController: UIViewController, UICollectionViewDelegate{
+class BanksListViewController: UIViewController, UICollectionViewDelegate {
+    
     
     private lazy var bankListCollectionView = makeCollectionView()
     let bankListCollectionViewDatasource = BankListDataSource()
@@ -59,7 +60,3 @@ class MainViewController: UIViewController, UICollectionViewDelegate{
         }
     }
 }
-
-
-
-
