@@ -50,7 +50,7 @@ class DiscontBankAppTests: XCTestCase {
                                [{ "name":"First Intl", "stk":"FINT","img":"http://fint.com/pic","priority":"111"}]
                                """
         let bankJsonData = Data(bankJsonString.utf8)
-        let bankDataSource = BankListDataSource()
+        let bankDataSource = BanksListViewModel()
         let testExpectation = expectation(description: "Expected bank to be fetched")
         
         bankDataSource.extractBankList(from: bankJsonData) {

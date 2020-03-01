@@ -12,7 +12,8 @@ class BanksListViewController: UIViewController, UICollectionViewDelegate {
     
     
     private lazy var bankListCollectionView = makeCollectionView()
-    let bankListCollectionViewDatasource = BankListDataSource()
+//    let bankListCollectionViewDatasource = BankListDataSource()
+    let banksListViewModel = BanksListViewModel()
     
     
     override func viewDidLoad() {
@@ -40,11 +41,11 @@ class BanksListViewController: UIViewController, UICollectionViewDelegate {
         bankListCollectionView.backgroundColor = .systemBackground
         bankListCollectionView.register(BankCollectionViewCell.self, forCellWithReuseIdentifier: BankCollectionViewCell.reuseId)
         bankListCollectionView.delegate = self
-        bankListCollectionView.dataSource = bankListCollectionViewDatasource
+        bankListCollectionView.dataSource = banksListViewModel
     }
     
     func configureBankListDataSource() {
-        bankListCollectionViewDatasource.extractBankList(from: Bundle.main.data(from: BankListDataSource.bankListEndPointJson)) {
+        banksListViewModel.extractBankList(from: Bundle.main.data(from: BanksListViewModel.bankListEndPointJson)) {
             DispatchQueue.main.async {
                 self.bankListCollectionView.reloadData()
             }
@@ -54,7 +55,7 @@ class BanksListViewController: UIViewController, UICollectionViewDelegate {
     //MARK: - collection view delegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let destViewController = IntradayViewController()
-        if let bank = bankListCollectionViewDatasource.bank(at: indexPath.row) {
+        if let bank = banksListViewModel.bank(at: indexPath.row) {
             destViewController.bank = bank
             navigationController?.pushViewController(destViewController, animated: true)
         }

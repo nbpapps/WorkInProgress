@@ -6,8 +6,69 @@
 //  Copyright © 2020 nbpApps. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class BanksListViewModel {
+#warning("I turned the ")
+final class BanksListViewModel : NSObject, UICollectionViewDataSource {
     
+    private var bankList : [Bank]?
+    
+    func bank(at index : Int) -> Bank? {
+        guard let bank = bankList?[index] else {
+            return nil
+        }
+        return bank
+    }
+    
+}
+
+//This is for extracting the banks from the JSON
+
+extension BanksListViewModel {
+    static let bankListEndPointJson = "banks.json"
+    
+    typealias fetchCompletion = () -> Void
+    
+    func extractBankList(from data : Data,with completion : @escaping fetchCompletion) {
+        let banksParser = JsonParser(data: data)
+        let banksResult : Result<[Bank],JsonError> = banksParser.decode()
+        switch banksResult {
+        case .success(let banks):
+            
+            bankList = banks.sorted(by: { (lhs, rhs) -> Bool in
+                guard let lhsPriority = Int(lhs.priority), let rhsPriority = Int(rhs.priority) else{
+                    return false
+                }
+                return lhsPriority > rhsPriority
+            })
+            
+            completion()
+            
+        case .failure(let error):
+            print("extractBankList \(error)")
+        }
+    }
+    
+}
+
+//This is for the collection view Data Source
+extension BanksListViewModel {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return bankList?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BankCollectionViewCell.reuseId, for: indexPath) as? BankCollectionViewCell else {
+            preconditionFailure(Strings.incorrectCell)
+        }
+        
+        guard let bank = bankList?[indexPath.row] else {
+            preconditionFailure(Strings.noItemInRow)
+        }
+        
+        cell.bankNameLabel.text = bank.name
+        cell.bankImageView.downloadBankImageWithCache(bank.img)
+        return cell
+    }
 }
