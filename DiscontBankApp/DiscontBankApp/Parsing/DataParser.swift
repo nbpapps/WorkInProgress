@@ -15,10 +15,11 @@ struct DataParser {
         self.data = data
     }
     
-    func decode(with timeInterval : String) -> Result<[TimeSeriesValues],DataParseError>{
+    func decode(with timeInterval : String) -> Result<[TimeSeriesValues],DataParseError> {
         var timeSeriesArray = [TimeSeriesValues]()
         do {
             if let dict = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any] , let timeSeries = dict["Time Series ("+timeInterval+")"] as? [String:Any] {
+//                print(dict)
                 for (key,value) in timeSeries {
                     if let ohlcv = value as? [String:String] {
                         let time = key

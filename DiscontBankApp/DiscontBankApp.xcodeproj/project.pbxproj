@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E8204C92240BCD500033D999 /* IntradayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8204C91240BCD500033D999 /* IntradayViewModel.swift */; };
 		E82B2B1523DF31DF001AF680 /* DBAImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B1423DF31DF001AF680 /* DBAImageView.swift */; };
 		E82B2B1723DF36EE001AF680 /* UIImageView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B1623DF36EE001AF680 /* UIImageView+Utils.swift */; };
 		E82B2B1A23DF3766001AF680 /* DataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B1923DF3766001AF680 /* DataFetch.swift */; };
@@ -36,9 +37,10 @@
 		E851185B2407EDBC0026EB89 /* UISegment+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E851185A2407EDBC0026EB89 /* UISegment+Config.swift */; };
 		E851185D2407FB380026EB89 /* UIImage+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E851185C2407FB380026EB89 /* UIImage+Config.swift */; };
 		E851185F2407FCBA0026EB89 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E851185E2407FCBA0026EB89 /* Colors.swift */; };
+		E8579AF4240BA3FE00DD2606 /* BanksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8579AF3240BA3FE00DD2606 /* BanksListViewController.swift */; };
+		E8579AF7240BA4F700DD2606 /* BanksListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8579AF6240BA4F700DD2606 /* BanksListViewModel.swift */; };
 		E8A9A84024084B9500B53188 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A9A83F24084B9500B53188 /* TestVC.swift */; };
 		E8B38B4023DEFBC6009B7E7E /* Bundle+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B38B3F23DEFBC6009B7E7E /* Bundle+Utils.swift */; };
-		E8B38B4423DF2B79009B7E7E /* BankListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B38B4323DF2B79009B7E7E /* BankListDataSource.swift */; };
 		E8C1568B23DEE4FA004C6DDB /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C1568A23DEE4FA004C6DDB /* JsonParser.swift */; };
 		E8C1568E23DEE77A004C6DDB /* UIconfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C1568D23DEE77A004C6DDB /* UIconfig.swift */; };
 		E8C1569023DEEEE6004C6DDB /* DBAErrror.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C1568F23DEEEE5004C6DDB /* DBAErrror.swift */; };
@@ -50,11 +52,13 @@
 		E8C2CF1823DDF30500301EE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8C2CF1623DDF30500301EE1 /* LaunchScreen.storyboard */; };
 		E8C2CF2323DDF30500301EE1 /* DiscontBankAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C2CF2223DDF30500301EE1 /* DiscontBankAppTests.swift */; };
 		E8C2CF2E23DDF3F500301EE1 /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C2CF2D23DDF3F500301EE1 /* Bank.swift */; };
-		E8C2CF3423DDFE6300301EE1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C2CF3323DDFE6300301EE1 /* MainViewController.swift */; };
 		E8C2CF3A23DE184200301EE1 /* DBALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C2CF3923DE184200301EE1 /* DBALabel.swift */; };
 		E8C2CF3D23DE188400301EE1 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C2CF3C23DE188400301EE1 /* Strings.swift */; };
 		E8C2CF3F23DE1AA300301EE1 /* Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C2CF3E23DE1AA300301EE1 /* Values.swift */; };
 		E8C2CF4123DE231100301EE1 /* BankCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C2CF4023DE231100301EE1 /* BankCollectionViewCell.swift */; };
+		E8C70247240C605300518438 /* BankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C70246240C605300518438 /* BankViewModel.swift */; };
+		E8C70249240C622400518438 /* BankViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C70248240C622400518438 /* BankViewModelTests.swift */; };
+		E8C7024B240C668F00518438 /* TimeInrevalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7024A240C668F00518438 /* TimeInrevalsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +72,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E8204C91240BCD500033D999 /* IntradayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntradayViewModel.swift; sourceTree = "<group>"; };
 		E82B2B1423DF31DF001AF680 /* DBAImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBAImageView.swift; sourceTree = "<group>"; };
 		E82B2B1623DF36EE001AF680 /* UIImageView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Utils.swift"; sourceTree = "<group>"; };
 		E82B2B1923DF3766001AF680 /* DataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetch.swift; sourceTree = "<group>"; };
@@ -94,9 +99,10 @@
 		E851185A2407EDBC0026EB89 /* UISegment+Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegment+Config.swift"; sourceTree = "<group>"; };
 		E851185C2407FB380026EB89 /* UIImage+Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Config.swift"; sourceTree = "<group>"; };
 		E851185E2407FCBA0026EB89 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		E8579AF3240BA3FE00DD2606 /* BanksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanksListViewController.swift; sourceTree = "<group>"; };
+		E8579AF6240BA4F700DD2606 /* BanksListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanksListViewModel.swift; sourceTree = "<group>"; };
 		E8A9A83F24084B9500B53188 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
 		E8B38B3F23DEFBC6009B7E7E /* Bundle+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Utils.swift"; sourceTree = "<group>"; };
-		E8B38B4323DF2B79009B7E7E /* BankListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankListDataSource.swift; sourceTree = "<group>"; };
 		E8C1568A23DEE4FA004C6DDB /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		E8C1568D23DEE77A004C6DDB /* UIconfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIconfig.swift; sourceTree = "<group>"; };
 		E8C1568F23DEEEE5004C6DDB /* DBAErrror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBAErrror.swift; sourceTree = "<group>"; };
@@ -112,11 +118,13 @@
 		E8C2CF2223DDF30500301EE1 /* DiscontBankAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscontBankAppTests.swift; sourceTree = "<group>"; };
 		E8C2CF2423DDF30500301EE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8C2CF2D23DDF3F500301EE1 /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
-		E8C2CF3323DDFE6300301EE1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E8C2CF3923DE184200301EE1 /* DBALabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBALabel.swift; sourceTree = "<group>"; };
 		E8C2CF3C23DE188400301EE1 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		E8C2CF3E23DE1AA300301EE1 /* Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Values.swift; sourceTree = "<group>"; };
 		E8C2CF4023DE231100301EE1 /* BankCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCollectionViewCell.swift; sourceTree = "<group>"; };
+		E8C70246240C605300518438 /* BankViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewModel.swift; sourceTree = "<group>"; };
+		E8C70248240C622400518438 /* BankViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewModelTests.swift; sourceTree = "<group>"; };
+		E8C7024A240C668F00518438 /* TimeInrevalsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInrevalsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,10 +164,19 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		E8579AF5240BA4DF00DD2606 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E8579AF6240BA4F700DD2606 /* BanksListViewModel.swift */,
+				E8204C91240BCD500033D999 /* IntradayViewModel.swift */,
+				E8C70246240C605300518438 /* BankViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		E8B38B4523DF2B8E009B7E7E /* DataSourse */ = {
 			isa = PBXGroup;
 			children = (
-				E8B38B4323DF2B79009B7E7E /* BankListDataSource.swift */,
 				E82B2B2C23E06C68001AF680 /* TimeSeriesDataSource.swift */,
 			);
 			path = DataSourse;
@@ -214,6 +231,7 @@
 		E8C2CF0723DDF30200301EE1 /* DiscontBankApp */ = {
 			isa = PBXGroup;
 			children = (
+				E8579AF5240BA4DF00DD2606 /* ViewModels */,
 				E82B2B3423E191F4001AF680 /* Data */,
 				E82B2B1823DF3752001AF680 /* Network */,
 				E8B38B4523DF2B8E009B7E7E /* DataSourse */,
@@ -235,6 +253,8 @@
 			children = (
 				E8C2CF2223DDF30500301EE1 /* DiscontBankAppTests.swift */,
 				E8C2CF2423DDF30500301EE1 /* Info.plist */,
+				E8C70248240C622400518438 /* BankViewModelTests.swift */,
+				E8C7024A240C668F00518438 /* TimeInrevalsTests.swift */,
 			);
 			path = DiscontBankAppTests;
 			sourceTree = "<group>";
@@ -242,10 +262,10 @@
 		E8C2CF3123DDFD2500301EE1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E8C2CF3323DDFE6300301EE1 /* MainViewController.swift */,
 				E82B2B1B23DF7000001AF680 /* IntradayViewController.swift */,
 				E82B2B3D23E1D86E001AF680 /* LoadingViewController.swift */,
 				E8A9A83F24084B9500B53188 /* TestVC.swift */,
+				E8579AF3240BA3FE00DD2606 /* BanksListViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -403,6 +423,7 @@
 				E82B2B3823E197B5001AF680 /* DBAButton.swift in Sources */,
 				E8C2CF3A23DE184200301EE1 /* DBALabel.swift in Sources */,
 				E82B2B3623E19213001AF680 /* TimeSeriesData.swift in Sources */,
+				E8C70247240C605300518438 /* BankViewModel.swift in Sources */,
 				E82B2B2023DF7362001AF680 /* IntradayTableViewCell.swift in Sources */,
 				E8C1568E23DEE77A004C6DDB /* UIconfig.swift in Sources */,
 				E8C2CF3F23DE1AA300301EE1 /* Values.swift in Sources */,
@@ -417,6 +438,7 @@
 				E8C2CF2E23DDF3F500301EE1 /* Bank.swift in Sources */,
 				E85118572407EB780026EB89 /* UITableView+Config.swift in Sources */,
 				E8C2CF0923DDF30200301EE1 /* AppDelegate.swift in Sources */,
+				E8579AF4240BA3FE00DD2606 /* BanksListViewController.swift in Sources */,
 				E82B2B4023E1D9AC001AF680 /* UIViewController+Utils.swift in Sources */,
 				E8C1568B23DEE4FA004C6DDB /* JsonParser.swift in Sources */,
 				E8C2CF0B23DDF30200301EE1 /* SceneDelegate.swift in Sources */,
@@ -431,12 +453,12 @@
 				E851185B2407EDBC0026EB89 /* UISegment+Config.swift in Sources */,
 				E82B2B3C23E1C9E2001AF680 /* DBASegmentControl.swift in Sources */,
 				E8A9A84024084B9500B53188 /* TestVC.swift in Sources */,
+				E8204C92240BCD500033D999 /* IntradayViewModel.swift in Sources */,
 				E82B2B3E23E1D86E001AF680 /* LoadingViewController.swift in Sources */,
 				E8C2CF4123DE231100301EE1 /* BankCollectionViewCell.swift in Sources */,
 				E8B38B4023DEFBC6009B7E7E /* Bundle+Utils.swift in Sources */,
-				E8B38B4423DF2B79009B7E7E /* BankListDataSource.swift in Sources */,
+				E8579AF7240BA4F700DD2606 /* BanksListViewModel.swift in Sources */,
 				E85118512407E6900026EB89 /* IntradayItemInfoView.swift in Sources */,
-				E8C2CF3423DDFE6300301EE1 /* MainViewController.swift in Sources */,
 				E82B2B2D23E06C68001AF680 /* TimeSeriesDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,7 +469,9 @@
 			files = (
 				E8C2CF2323DDF30500301EE1 /* DiscontBankAppTests.swift in Sources */,
 				E82B2B3023E17E5A001AF680 /* Strings.swift in Sources */,
+				E8C7024B240C668F00518438 /* TimeInrevalsTests.swift in Sources */,
 				E82B2B2723E04378001AF680 /* TimeIntervals.swift in Sources */,
+				E8C70249240C622400518438 /* BankViewModelTests.swift in Sources */,
 				E82B2B3123E17E5D001AF680 /* Values.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -26,8 +26,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func createMainNavCont() -> UINavigationController {
-        let mainViewController = MainViewController()
-        return UINavigationController(rootViewController: mainViewController)
+        let bankListViewModel = BanksListViewModel()
+        let banksListViewController = BanksListViewController(banksListViewModel: bankListViewModel)
+        return UINavigationController(rootViewController: banksListViewController)
     }
     
     

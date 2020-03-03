@@ -1,20 +1,33 @@
 //
-//  BankListDataSource.swift
+//  BanksListViewModel.swift
 //  DiscontBankApp
 //
-//  Created by niv ben-porath on 27/01/2020.
+//  Created by niv ben-porath on 01/03/2020.
 //  Copyright © 2020 nbpApps. All rights reserved.
 //
 
 import UIKit
 
-final class BankListDataSource : NSObject, UICollectionViewDataSource {
-    
-    typealias fetchCompletion = () -> Void
+#warning("I changed the class to be a VM instead of DataSource")
+final class BanksListViewModel : NSObject, UICollectionViewDataSource {
     
     private var bankList : [Bank]?
     
+    func bank(at index : Int) -> Bank? {
+        guard let bank = bankList?[index] else {
+            return nil
+        }
+        return bank
+    }
+    
+}
+
+//This is for extracting the banks from the JSON
+
+extension BanksListViewModel {
     static let bankListEndPointJson = "banks.json"
+    
+    typealias fetchCompletion = () -> Void
     
     func extractBankList(from data : Data,with completion : @escaping fetchCompletion) {
         let banksParser = JsonParser(data: data)
@@ -36,6 +49,10 @@ final class BankListDataSource : NSObject, UICollectionViewDataSource {
         }
     }
     
+}
+
+//This is for the collection view Data Source
+extension BanksListViewModel {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return bankList?.count ?? 0
     }
@@ -53,12 +70,5 @@ final class BankListDataSource : NSObject, UICollectionViewDataSource {
         cell.bankNameLabel.text = bank.name
         cell.bankImageView.downloadBankImageWithCache(bank.img)
         return cell
-    }
-    
-    func bank(at index : Int) -> Bank? {
-        guard let bank = bankList?[index] else {
-            return nil
-        }
-        return bank
     }
 }
