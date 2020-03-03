@@ -17,11 +17,14 @@ class TimeSeriesDataSource: NSObject, UITableViewDataSource {
     //MARK:- retrive data
     func fetchIntradayData(for symbol : String, and timeInterval : String,with completion : @escaping fetchCompletion) {
         let key = symbol + timeInterval
-        
+        print(key)
+        //check if we already have a saved time series for this key
         if let timeSeriesArray = TimeSeriesData.shared.timeSeriesArray(for: key) {
+            //if so, just retrive it so we don't make a new network request
             self.timeSeriesArray = timeSeriesArray
             completion(nil,true)
         }else{
+            //if not, fetch this time series
             let dataFetch = DataFetch()
             dataFetch.fetchTimeSeriesIntraday(for: symbol, and: timeInterval) { [weak self] (result) in
                 self?.parse(result: result, with: completion, for: symbol, and: timeInterval)

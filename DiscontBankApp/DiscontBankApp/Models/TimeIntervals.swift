@@ -17,7 +17,7 @@ struct TimeIntervals {
     func getInterval(at index : Int) -> String{
         guard timeIntervals.count > index else {
             if timeIntervals.isEmpty {
-                return Strings.defualtInterval
+                return getDefualtInterval()
             }else{
                 return timeIntervals.last!
             }
@@ -27,6 +27,10 @@ struct TimeIntervals {
     
     func getAllIntervalOptions() -> [String] {
         return timeIntervals
+    }
+    
+    func getDefualtInterval() -> String {
+        return Strings.defualtInterval
     }
 }
 

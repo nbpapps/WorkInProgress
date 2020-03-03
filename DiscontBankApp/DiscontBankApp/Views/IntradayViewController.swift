@@ -10,15 +10,28 @@ import UIKit
 
 final class IntradayViewController: UIViewController {
     
-    var bank : Bank!
+    let bankViewModel : BankViewModel
+    
     let timeSeriesDataSource = TimeSeriesDataSource()
     
     private lazy var timeSeriesTableView  = makeTimeSeriesTableView()
     private lazy var timeIntervalSelectionSegmentControl = makeSegmentControl()
     
     let loadingViewController = LoadingViewController()
+    let timeIntervals : TimeIntervals
     
     //MARK: - life cycle
+    
+    init(bankViewModel : BankViewModel,timeIntervals : TimeIntervals) {
+        self.bankViewModel = bankViewModel
+        self.timeIntervals = timeIntervals
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError(Strings.noStoryboardImplementation)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
@@ -29,7 +42,7 @@ final class IntradayViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        getIntradayData(for: bank.stk, and: Strings.defualtInterval)
+        getIntradayData(for: bankViewModel.bankStk, and: timeIntervals.getDefualtInterval())
     }
     
     //MARK: - factory
@@ -39,7 +52,7 @@ final class IntradayViewController: UIViewController {
     }
     
     private func makeSegmentControl() -> UISegmentedControl {
-        let allTimeIntevals = TimeIntervals().getAllIntervalOptions()
+        let allTimeIntevals = timeIntervals.getAllIntervalOptions()
         let segCont = DBASegmentControl(items: allTimeIntevals)
         return segCont
     }
@@ -64,7 +77,7 @@ final class IntradayViewController: UIViewController {
     
     //MARK:- configure
     func configureView() {
-        title = bank.name
+        title = bankViewModel.bankName
         view.backgroundColor = .systemBackground
     }
     
@@ -79,7 +92,7 @@ final class IntradayViewController: UIViewController {
     
     
     func configureTimeIntervalSegments() {
-        let allTimeIntevals = TimeIntervals().getAllIntervalOptions()
+        let allTimeIntevals = timeIntervals.getAllIntervalOptions()
         timeIntervalSelectionSegmentControl = DBASegmentControl(items: allTimeIntevals)
         timeIntervalSelectionSegmentControl.addTarget(self, action: #selector(userSelectedTimeInterval(sender:)), for: .valueChanged)
         view.addSubview(timeIntervalSelectionSegmentControl)
@@ -88,17 +101,18 @@ final class IntradayViewController: UIViewController {
     //MARK:- get Intraday data
     func getIntradayData(for symbol : String, and timeInterval : String) {
         showLoading()
-        timeSeriesDataSource.fetchIntradayData(for: symbol, and: timeInterval) { (error,success) in      DispatchQueue.main.async {
-            self.timeSeriesTableView.reloadData()
-            self.removeLoading()
+        timeSeriesDataSource.fetchIntradayData(for: symbol, and: timeInterval) { [weak self] (error,success) in
+            DispatchQueue.main.async {
+                self?.timeSeriesTableView.reloadData()
+                self?.removeLoading()
             }
         }
     }
     
     //MARK:- time intervall segment control
     @objc func userSelectedTimeInterval(sender : DBASegmentControl) {
-        let timeInterval = TimeIntervals().getInterval(at: sender.selectedSegmentIndex)
-        getIntradayData(for: bank.stk, and: timeInterval)
+        let timeInterval = timeIntervals.getInterval(at: sender.selectedSegmentIndex)
+        getIntradayData(for: bankViewModel.bankStk, and: timeInterval)
     }
     
     //MARK:- loading
