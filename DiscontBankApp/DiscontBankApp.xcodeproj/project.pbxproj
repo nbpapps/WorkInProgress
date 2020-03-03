@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E8204C92240BCD500033D999 /* IntradayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8204C91240BCD500033D999 /* IntradayViewModel.swift */; };
 		E82B2B1523DF31DF001AF680 /* DBAImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B1423DF31DF001AF680 /* DBAImageView.swift */; };
 		E82B2B1723DF36EE001AF680 /* UIImageView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B1623DF36EE001AF680 /* UIImageView+Utils.swift */; };
 		E82B2B1A23DF3766001AF680 /* DataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B1923DF3766001AF680 /* DataFetch.swift */; };
@@ -39,7 +38,6 @@
 		E851185F2407FCBA0026EB89 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E851185E2407FCBA0026EB89 /* Colors.swift */; };
 		E8579AF4240BA3FE00DD2606 /* BanksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8579AF3240BA3FE00DD2606 /* BanksListViewController.swift */; };
 		E8579AF7240BA4F700DD2606 /* BanksListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8579AF6240BA4F700DD2606 /* BanksListViewModel.swift */; };
-		E8A9A84024084B9500B53188 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A9A83F24084B9500B53188 /* TestVC.swift */; };
 		E8B38B4023DEFBC6009B7E7E /* Bundle+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B38B3F23DEFBC6009B7E7E /* Bundle+Utils.swift */; };
 		E8C1568B23DEE4FA004C6DDB /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C1568A23DEE4FA004C6DDB /* JsonParser.swift */; };
 		E8C1568E23DEE77A004C6DDB /* UIconfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C1568D23DEE77A004C6DDB /* UIconfig.swift */; };
@@ -72,7 +70,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E8204C91240BCD500033D999 /* IntradayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntradayViewModel.swift; sourceTree = "<group>"; };
 		E82B2B1423DF31DF001AF680 /* DBAImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBAImageView.swift; sourceTree = "<group>"; };
 		E82B2B1623DF36EE001AF680 /* UIImageView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Utils.swift"; sourceTree = "<group>"; };
 		E82B2B1923DF3766001AF680 /* DataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetch.swift; sourceTree = "<group>"; };
@@ -101,7 +98,6 @@
 		E851185E2407FCBA0026EB89 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		E8579AF3240BA3FE00DD2606 /* BanksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanksListViewController.swift; sourceTree = "<group>"; };
 		E8579AF6240BA4F700DD2606 /* BanksListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanksListViewModel.swift; sourceTree = "<group>"; };
-		E8A9A83F24084B9500B53188 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
 		E8B38B3F23DEFBC6009B7E7E /* Bundle+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Utils.swift"; sourceTree = "<group>"; };
 		E8C1568A23DEE4FA004C6DDB /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		E8C1568D23DEE77A004C6DDB /* UIconfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIconfig.swift; sourceTree = "<group>"; };
@@ -168,7 +164,6 @@
 			isa = PBXGroup;
 			children = (
 				E8579AF6240BA4F700DD2606 /* BanksListViewModel.swift */,
-				E8204C91240BCD500033D999 /* IntradayViewModel.swift */,
 				E8C70246240C605300518438 /* BankViewModel.swift */,
 			);
 			path = ViewModels;
@@ -264,7 +259,6 @@
 			children = (
 				E82B2B1B23DF7000001AF680 /* IntradayViewController.swift */,
 				E82B2B3D23E1D86E001AF680 /* LoadingViewController.swift */,
-				E8A9A83F24084B9500B53188 /* TestVC.swift */,
 				E8579AF3240BA3FE00DD2606 /* BanksListViewController.swift */,
 			);
 			path = Views;
@@ -452,8 +446,6 @@
 				E85118532407EA670026EB89 /* UICollectionView+Config.swift in Sources */,
 				E851185B2407EDBC0026EB89 /* UISegment+Config.swift in Sources */,
 				E82B2B3C23E1C9E2001AF680 /* DBASegmentControl.swift in Sources */,
-				E8A9A84024084B9500B53188 /* TestVC.swift in Sources */,
-				E8204C92240BCD500033D999 /* IntradayViewModel.swift in Sources */,
 				E82B2B3E23E1D86E001AF680 /* LoadingViewController.swift in Sources */,
 				E8C2CF4123DE231100301EE1 /* BankCollectionViewCell.swift in Sources */,
 				E8B38B4023DEFBC6009B7E7E /* Bundle+Utils.swift in Sources */,

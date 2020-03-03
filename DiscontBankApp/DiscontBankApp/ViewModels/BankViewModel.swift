@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+#warning("I added this VM")
 struct BankViewModel {
     private var bank : Bank
     
