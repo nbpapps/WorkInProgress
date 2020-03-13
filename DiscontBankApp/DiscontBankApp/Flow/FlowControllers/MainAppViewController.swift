@@ -10,13 +10,25 @@ import UIKit
 
 class MainAppViewController: UIViewController {
     
-    private let navigator : BankInfoNavigator
+    private lazy var ownedNavigationController: UINavigationController = {
+           UINavigationController(rootViewController: )
+       }()
     
     //MARK: -init
-    init(navigator: BankInfoNavigator) {
-        self.navigator = navigator
+    init() {
         super.init(nibName: nil, bundle: nil)
     }
+    
+//    init(mainAppNavController : UINavigationController) {
+//        self.mainAppNavController = mainAppNavController
+//        super.init(nibName: nil, bundle: nil)
+//    }
+    
+    
+//    init(navigator: BankInfoNavigator) {
+//        self.navigator = navigator
+//        super.init(nibName: nil, bundle: nil)
+//    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -25,7 +37,8 @@ class MainAppViewController: UIViewController {
     //MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigator.navigate(to: .showBankIntraday)
+        view.backgroundColor = .red
+//        self.navigator.navigate(to: .showBankIntraday)
     }
     
     
