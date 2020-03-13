@@ -28,7 +28,7 @@ class BanksListViewController: UIViewController, UICollectionViewDelegate {
         super.viewDidLoad()
         configureView()
         configureCollectionView()
-        configureBankListDataSource()
+//        configureBankListDataSource()
     }
     
     private func makeCollectionView() -> UICollectionView {
@@ -50,20 +50,24 @@ class BanksListViewController: UIViewController, UICollectionViewDelegate {
         bankListCollectionView.dataSource = banksListViewModel
     }
     
-    func configureBankListDataSource() {
-        banksListViewModel.extractBankList(from: Bundle.main.data(from: BanksListViewModel.bankListEndPointJson)) {[weak self] in
-            DispatchQueue.main.async {
-                self?.bankListCollectionView.reloadData()
-            }
-        }
+    func presentBanksList() {
+        self.bankListCollectionView.reloadData()
     }
+    
+//    func configureBankListDataSource() {
+//        banksListViewModel.extractBankList(from: Bundle.main.data(from: BanksListViewModel.bankListEndPointJson)) {[weak self] in
+//            DispatchQueue.main.async {
+//
+//            }
+//        }
+//    }
     
     //MARK: - collection view delegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let bank = banksListViewModel.bank(at: indexPath.row) {
-            let bankViewModel = BankViewModel(bank:bank)
-            let intradayViewController = IntradayViewController(bankViewModel: bankViewModel, timeIntervals: TimeIntervals())
-            navigationController?.pushViewController(intradayViewController, animated: true)
+//            let bankViewModel = BankViewModel(bank:bank)
+//            let intradayViewController = IntradayViewController(bankViewModel: bankViewModel, timeIntervals: TimeIntervals())
+//            navigationController?.pushViewController(intradayViewController, animated: true)
         }
     }
 }
