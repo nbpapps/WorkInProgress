@@ -57,6 +57,7 @@
 		E8C70247240C605300518438 /* BankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C70246240C605300518438 /* BankViewModel.swift */; };
 		E8C70249240C622400518438 /* BankViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C70248240C622400518438 /* BankViewModelTests.swift */; };
 		E8C7024B240C668F00518438 /* TimeInrevalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7024A240C668F00518438 /* TimeInrevalsTests.swift */; };
+		E8E9AC00241BA2510048A95B /* NavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E9ABFF241BA2510048A95B /* NavigatorProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		E8C70246240C605300518438 /* BankViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewModel.swift; sourceTree = "<group>"; };
 		E8C70248240C622400518438 /* BankViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewModelTests.swift; sourceTree = "<group>"; };
 		E8C7024A240C668F00518438 /* TimeInrevalsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInrevalsTests.swift; sourceTree = "<group>"; };
+		E8E9ABFF241BA2510048A95B /* NavigatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 		E8C2CF0723DDF30200301EE1 /* DiscontBankApp */ = {
 			isa = PBXGroup;
 			children = (
+				E8E9ABFE241B9FD30048A95B /* FlowNavigators */,
 				E8579AF5240BA4DF00DD2606 /* ViewModels */,
 				E82B2B3423E191F4001AF680 /* Data */,
 				E82B2B1823DF3752001AF680 /* Network */,
@@ -308,6 +311,14 @@
 				E851185E2407FCBA0026EB89 /* Colors.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		E8E9ABFE241B9FD30048A95B /* FlowNavigators */ = {
+			isa = PBXGroup;
+			children = (
+				E8E9ABFF241BA2510048A95B /* NavigatorProtocol.swift */,
+			);
+			path = FlowNavigators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,6 +435,7 @@
 				E8C2CF1323DDF30200301EE1 /* DiscontBankApp.xcdatamodeld in Sources */,
 				E82B2B2423E03474001AF680 /* UrlBuilder.swift in Sources */,
 				E8C2CF3D23DE188400301EE1 /* Strings.swift in Sources */,
+				E8E9AC00241BA2510048A95B /* NavigatorProtocol.swift in Sources */,
 				E82B2B1523DF31DF001AF680 /* DBAImageView.swift in Sources */,
 				E82B2B1C23DF7000001AF680 /* IntradayViewController.swift in Sources */,
 				E82B2B2F23E09448001AF680 /* DataParser.swift in Sources */,
