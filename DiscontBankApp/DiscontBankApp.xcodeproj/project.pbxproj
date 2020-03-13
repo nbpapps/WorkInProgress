@@ -58,6 +58,8 @@
 		E8C70249240C622400518438 /* BankViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C70248240C622400518438 /* BankViewModelTests.swift */; };
 		E8C7024B240C668F00518438 /* TimeInrevalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7024A240C668F00518438 /* TimeInrevalsTests.swift */; };
 		E8E9AC00241BA2510048A95B /* NavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E9ABFF241BA2510048A95B /* NavigatorProtocol.swift */; };
+		E8E9AC06241BB0BC0048A95B /* MainAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E9AC05241BB0BC0048A95B /* MainAppViewController.swift */; };
+		E8E9AC08241BB0F30048A95B /* BankInfoNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E9AC07241BB0F30048A95B /* BankInfoNavigator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +125,8 @@
 		E8C70248240C622400518438 /* BankViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewModelTests.swift; sourceTree = "<group>"; };
 		E8C7024A240C668F00518438 /* TimeInrevalsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInrevalsTests.swift; sourceTree = "<group>"; };
 		E8E9ABFF241BA2510048A95B /* NavigatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorProtocol.swift; sourceTree = "<group>"; };
+		E8E9AC05241BB0BC0048A95B /* MainAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppViewController.swift; sourceTree = "<group>"; };
+		E8E9AC07241BB0F30048A95B /* BankInfoNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankInfoNavigator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,18 +232,15 @@
 		E8C2CF0723DDF30200301EE1 /* DiscontBankApp */ = {
 			isa = PBXGroup;
 			children = (
-				E8E9ABFE241B9FD30048A95B /* FlowNavigators */,
+				E8E9AC04241BAFDF0048A95B /* DataHandling */,
+				E8E9AC03241BAF5A0048A95B /* GUI */,
+				E8E9AC01241BAF1F0048A95B /* Flow */,
 				E8579AF5240BA4DF00DD2606 /* ViewModels */,
 				E82B2B3423E191F4001AF680 /* Data */,
-				E82B2B1823DF3752001AF680 /* Network */,
-				E8B38B4523DF2B8E009B7E7E /* DataSourse */,
 				E8C1568C23DEE75D004C6DDB /* Utils */,
-				E8C1568923DEE4DE004C6DDB /* Parsing */,
 				E8C2CF3B23DE186A00301EE1 /* Constants */,
-				E8C2CF3623DE16C600301EE1 /* CustomViews */,
 				E8C2CF3523DE001600301EE1 /* Models */,
 				E8C2CF3223DDFD3700301EE1 /* Support */,
-				E8C2CF3123DDFD2500301EE1 /* Views */,
 				E8C2CF1923DDF30500301EE1 /* Info.plist */,
 				E8C1569523DEF340004C6DDB /* banks.json */,
 			);
@@ -317,8 +318,45 @@
 			isa = PBXGroup;
 			children = (
 				E8E9ABFF241BA2510048A95B /* NavigatorProtocol.swift */,
+				E8E9AC07241BB0F30048A95B /* BankInfoNavigator.swift */,
 			);
 			path = FlowNavigators;
+			sourceTree = "<group>";
+		};
+		E8E9AC01241BAF1F0048A95B /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				E8E9AC02241BAF340048A95B /* FlowControllers */,
+				E8E9ABFE241B9FD30048A95B /* FlowNavigators */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		E8E9AC02241BAF340048A95B /* FlowControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E8E9AC05241BB0BC0048A95B /* MainAppViewController.swift */,
+			);
+			path = FlowControllers;
+			sourceTree = "<group>";
+		};
+		E8E9AC03241BAF5A0048A95B /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				E8C2CF3623DE16C600301EE1 /* CustomViews */,
+				E8C2CF3123DDFD2500301EE1 /* Views */,
+			);
+			path = GUI;
+			sourceTree = "<group>";
+		};
+		E8E9AC04241BAFDF0048A95B /* DataHandling */ = {
+			isa = PBXGroup;
+			children = (
+				E8C1568923DEE4DE004C6DDB /* Parsing */,
+				E8B38B4523DF2B8E009B7E7E /* DataSourse */,
+				E82B2B1823DF3752001AF680 /* Network */,
+			);
+			path = DataHandling;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,11 +461,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E82B2B4223E1F25A001AF680 /* ImageCache.swift in Sources */,
+				E8E9AC08241BB0F30048A95B /* BankInfoNavigator.swift in Sources */,
 				E851185D2407FB380026EB89 /* UIImage+Config.swift in Sources */,
 				E82B2B2623E04030001AF680 /* TimeIntervals.swift in Sources */,
 				E82B2B3823E197B5001AF680 /* DBAButton.swift in Sources */,
 				E8C2CF3A23DE184200301EE1 /* DBALabel.swift in Sources */,
 				E82B2B3623E19213001AF680 /* TimeSeriesData.swift in Sources */,
+				E8E9AC06241BB0BC0048A95B /* MainAppViewController.swift in Sources */,
 				E8C70247240C605300518438 /* BankViewModel.swift in Sources */,
 				E82B2B2023DF7362001AF680 /* IntradayTableViewCell.swift in Sources */,
 				E8C1568E23DEE77A004C6DDB /* UIconfig.swift in Sources */,

@@ -12,7 +12,7 @@ class LoadingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .secondarySystemFill
+        view.backgroundColor = .red//.secondarySystemFill
         configureSpiner()
         
     }
