@@ -57,6 +57,8 @@
 		E8C70247240C605300518438 /* BankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C70246240C605300518438 /* BankViewModel.swift */; };
 		E8C70249240C622400518438 /* BankViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C70248240C622400518438 /* BankViewModelTests.swift */; };
 		E8C7024B240C668F00518438 /* TimeInrevalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7024A240C668F00518438 /* TimeInrevalsTests.swift */; };
+		E8E9AC00241BA2510048A95B /* NavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E9ABFF241BA2510048A95B /* NavigatorProtocol.swift */; };
+		E8E9AC0A241E80CC0048A95B /* MainAppFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E9AC09241E80CC0048A95B /* MainAppFlowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +123,8 @@
 		E8C70246240C605300518438 /* BankViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewModel.swift; sourceTree = "<group>"; };
 		E8C70248240C622400518438 /* BankViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewModelTests.swift; sourceTree = "<group>"; };
 		E8C7024A240C668F00518438 /* TimeInrevalsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInrevalsTests.swift; sourceTree = "<group>"; };
+		E8E9ABFF241BA2510048A95B /* NavigatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorProtocol.swift; sourceTree = "<group>"; };
+		E8E9AC09241E80CC0048A95B /* MainAppFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppFlowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,17 +230,15 @@
 		E8C2CF0723DDF30200301EE1 /* DiscontBankApp */ = {
 			isa = PBXGroup;
 			children = (
+				E8E9AC04241BAFDF0048A95B /* DataHandling */,
+				E8E9AC03241BAF5A0048A95B /* GUI */,
+				E8E9AC01241BAF1F0048A95B /* Flow */,
 				E8579AF5240BA4DF00DD2606 /* ViewModels */,
 				E82B2B3423E191F4001AF680 /* Data */,
-				E82B2B1823DF3752001AF680 /* Network */,
-				E8B38B4523DF2B8E009B7E7E /* DataSourse */,
 				E8C1568C23DEE75D004C6DDB /* Utils */,
-				E8C1568923DEE4DE004C6DDB /* Parsing */,
 				E8C2CF3B23DE186A00301EE1 /* Constants */,
-				E8C2CF3623DE16C600301EE1 /* CustomViews */,
 				E8C2CF3523DE001600301EE1 /* Models */,
 				E8C2CF3223DDFD3700301EE1 /* Support */,
-				E8C2CF3123DDFD2500301EE1 /* Views */,
 				E8C2CF1923DDF30500301EE1 /* Info.plist */,
 				E8C1569523DEF340004C6DDB /* banks.json */,
 			);
@@ -308,6 +310,50 @@
 				E851185E2407FCBA0026EB89 /* Colors.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		E8E9ABFE241B9FD30048A95B /* FlowNavigators */ = {
+			isa = PBXGroup;
+			children = (
+				E8E9ABFF241BA2510048A95B /* NavigatorProtocol.swift */,
+			);
+			path = FlowNavigators;
+			sourceTree = "<group>";
+		};
+		E8E9AC01241BAF1F0048A95B /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				E8E9AC02241BAF340048A95B /* FlowControllers */,
+				E8E9ABFE241B9FD30048A95B /* FlowNavigators */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		E8E9AC02241BAF340048A95B /* FlowControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E8E9AC09241E80CC0048A95B /* MainAppFlowController.swift */,
+			);
+			path = FlowControllers;
+			sourceTree = "<group>";
+		};
+		E8E9AC03241BAF5A0048A95B /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				E8C2CF3623DE16C600301EE1 /* CustomViews */,
+				E8C2CF3123DDFD2500301EE1 /* Views */,
+			);
+			path = GUI;
+			sourceTree = "<group>";
+		};
+		E8E9AC04241BAFDF0048A95B /* DataHandling */ = {
+			isa = PBXGroup;
+			children = (
+				E8C1568923DEE4DE004C6DDB /* Parsing */,
+				E8B38B4523DF2B8E009B7E7E /* DataSourse */,
+				E82B2B1823DF3752001AF680 /* Network */,
+			);
+			path = DataHandling;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,6 +470,7 @@
 				E8C2CF1323DDF30200301EE1 /* DiscontBankApp.xcdatamodeld in Sources */,
 				E82B2B2423E03474001AF680 /* UrlBuilder.swift in Sources */,
 				E8C2CF3D23DE188400301EE1 /* Strings.swift in Sources */,
+				E8E9AC00241BA2510048A95B /* NavigatorProtocol.swift in Sources */,
 				E82B2B1523DF31DF001AF680 /* DBAImageView.swift in Sources */,
 				E82B2B1C23DF7000001AF680 /* IntradayViewController.swift in Sources */,
 				E82B2B2F23E09448001AF680 /* DataParser.swift in Sources */,
@@ -433,6 +480,7 @@
 				E85118572407EB780026EB89 /* UITableView+Config.swift in Sources */,
 				E8C2CF0923DDF30200301EE1 /* AppDelegate.swift in Sources */,
 				E8579AF4240BA3FE00DD2606 /* BanksListViewController.swift in Sources */,
+				E8E9AC0A241E80CC0048A95B /* MainAppFlowController.swift in Sources */,
 				E82B2B4023E1D9AC001AF680 /* UIViewController+Utils.swift in Sources */,
 				E8C1568B23DEE4FA004C6DDB /* JsonParser.swift in Sources */,
 				E8C2CF0B23DDF30200301EE1 /* SceneDelegate.swift in Sources */,
