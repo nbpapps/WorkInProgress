@@ -20,26 +20,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         
         //set the root VC we want to show
-        window?.rootViewController = createMainNavCont()
+        window?.rootViewController = MainAppFlowController()
         window?.makeKeyAndVisible()
         
     }
     
-    func createMainNavCont() -> UINavigationController {
-        
-        let mainAppVC = MainAppViewController()
-        let navController = UINavigationController(rootViewController: mainAppVC)
-        navController.setNavigationBarHidden(true, animated: false)
-        return navController
-        
-//        let bankListViewModel = BanksListViewModel()
-//        let banksListViewController = BanksListViewController(banksListViewModel: bankListViewModel)
-//        let bankNav = BankInfoNavigator(navigationController: <#T##UINavigationController#>)
-//        let mainAppVC = MainAppViewController(navigator: <#T##BankInfoNavigator#>)
-//        return UINavigationController(rootViewController: mainAppVC)
-    }
-    
-    
+//    func createMainNavCont() -> UINavigationController {
+//        let mainAppVC = MainAppViewController()
+//        let navController = UINavigationController(rootViewController: mainAppVC)
+//        return navController
+//    }
     
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
