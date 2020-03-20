@@ -11,7 +11,8 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
-    
+    var mainCoordinator : MainFlowController?
+
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -19,17 +20,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds) //fill the screen
         window?.windowScene = windowScene
         
+        //the app is build around a navigation
+        let navController = UINavigationController()
+        
+        //the main flow controller will start the flow
+        mainCoordinator = MainFlowController(navController: navController)
+        mainCoordinator?.start()
+        
         //set the root VC we want to show
-        window?.rootViewController = MainAppFlowController()
+        window?.rootViewController = navController
         window?.makeKeyAndVisible()
         
     }
     
-//    func createMainNavCont() -> UINavigationController {
-//        let mainAppVC = MainAppViewController()
-//        let navController = UINavigationController(rootViewController: mainAppVC)
-//        return navController
-//    }
     
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

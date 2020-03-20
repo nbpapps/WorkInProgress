@@ -8,8 +8,10 @@
 
 import Foundation
 
-protocol Navigator {
-    associatedtype Destination
-    
-    func navigate(to destination : Destination)
+protocol FlowCoordinator {
+    associatedtype Destination // for each Flow controller, we can have a different set of destinations we want to go to. (login could be to go thru the different steps; onboarding could show different app features)
+       
+    func start()//when each FC is instantiated, we 'start' it and in this function it will deside what to do/show (show the first login step)
+       
+    func navigate(to  destination : Destination)//when a action in a VC takes place, we will let the FC know by calling this
 }

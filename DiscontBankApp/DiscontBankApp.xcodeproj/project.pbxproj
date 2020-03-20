@@ -57,6 +57,7 @@
 		E8C70247240C605300518438 /* BankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C70246240C605300518438 /* BankViewModel.swift */; };
 		E8C70249240C622400518438 /* BankViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C70248240C622400518438 /* BankViewModelTests.swift */; };
 		E8C7024B240C668F00518438 /* TimeInrevalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7024A240C668F00518438 /* TimeInrevalsTests.swift */; };
+		E8E5014F2424D368003761CC /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E5014E2424D368003761CC /* MainFlowController.swift */; };
 		E8E9AC00241BA2510048A95B /* NavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E9ABFF241BA2510048A95B /* NavigatorProtocol.swift */; };
 		E8E9AC0A241E80CC0048A95B /* MainAppFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E9AC09241E80CC0048A95B /* MainAppFlowController.swift */; };
 /* End PBXBuildFile section */
@@ -123,6 +124,7 @@
 		E8C70246240C605300518438 /* BankViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewModel.swift; sourceTree = "<group>"; };
 		E8C70248240C622400518438 /* BankViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewModelTests.swift; sourceTree = "<group>"; };
 		E8C7024A240C668F00518438 /* TimeInrevalsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInrevalsTests.swift; sourceTree = "<group>"; };
+		E8E5014E2424D368003761CC /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
 		E8E9ABFF241BA2510048A95B /* NavigatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorProtocol.swift; sourceTree = "<group>"; };
 		E8E9AC09241E80CC0048A95B /* MainAppFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppFlowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -333,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				E8E9AC09241E80CC0048A95B /* MainAppFlowController.swift */,
+				E8E5014E2424D368003761CC /* MainFlowController.swift */,
 			);
 			path = FlowControllers;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				E8E9AC00241BA2510048A95B /* NavigatorProtocol.swift in Sources */,
 				E82B2B1523DF31DF001AF680 /* DBAImageView.swift in Sources */,
 				E82B2B1C23DF7000001AF680 /* IntradayViewController.swift in Sources */,
+				E8E5014F2424D368003761CC /* MainFlowController.swift in Sources */,
 				E82B2B2F23E09448001AF680 /* DataParser.swift in Sources */,
 				E85118552407EAFD0026EB89 /* UICollectionViewCell+Config.swift in Sources */,
 				E82B2B2B23E061DB001AF680 /* TimeSerisValues.swift in Sources */,
