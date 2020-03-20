@@ -8,28 +8,38 @@
 
 import UIKit
 
-enum Destination {
-    case showIntradayForBankAt(indexPath : IndexPath)
-}
+//enum Destination {
+//    case showIntradayForBankAt(indexPath : IndexPath)
+//}
 
-class MainAppFlowController: UIViewController,Navigator {
+class MainAppFlowController: UIViewController {
     
     //MARK: - properties
-    private lazy var ownedNavigationController: UINavigationController = {
-        UINavigationController(rootViewController: self.banksListViewController)
+    lazy var ownedNavigationController : UINavigationController = {
+        print("ownedNavigationController")
+        return UINavigationController(rootViewController: self.bankInfoFlowController)
     }()
     
-    private lazy var banksListViewController : BanksListViewController = {
-        let bankListVC = BanksListViewController(banksListViewModel: banksListViewModel, flowController: self)
-        bankListVC.view.backgroundColor = .systemBackground
-        bankListVC.title = Strings.selectBankTitle
-        return bankListVC
+    private lazy var bankInfoFlowController : BankInfoFlowController = {
+//        BankInfoFlowController(navController: ownedNavigationController, parentFlowController: self)
+        print("bankInfoFlowController")
+        return BankInfoFlowController(parentFlowController: self)
+
     }()
     
-    private lazy var banksListViewModel : BanksListViewModel = {
-        let banksListViewModel = BanksListViewModel()
-        return banksListViewModel
-    }()
+    
+//    
+//    private lazy var banksListViewController : BanksListViewController = {
+//        let bankListVC = BanksListViewController(banksListViewModel: banksListViewModel, flowController: self)
+//        bankListVC.view.backgroundColor = .systemBackground
+//        bankListVC.title = Strings.selectBankTitle
+//        return bankListVC
+//    }()
+//    
+//    private lazy var banksListViewModel : BanksListViewModel = {
+//        let banksListViewModel = BanksListViewModel()
+//        return banksListViewModel
+//    }()
     
     //MARK: - init
     init() {
@@ -43,46 +53,46 @@ class MainAppFlowController: UIViewController,Navigator {
     //MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadInitialBanksData()
+//        loadInitialBanksData()
     }
     
     override func loadView() {
         view = UIView()
-        view.backgroundColor = .clear
+        view.backgroundColor = .red//.clear
         add(ownedNavigationController)
     }
     
-    //MARK: - load initial data
-    private func loadInitialBanksData() {
-        banksListViewModel.extractBankList(from: Bundle.main.data(from: BanksListViewModel.bankListEndPointJson)) { [weak self] in
-            DispatchQueue.main.async {
-                self?.banksListViewController.presentBanksList()
-            }
-        }
-    }
+//    //MARK: - load initial data
+//    private func loadInitialBanksData() {
+//        banksListViewModel.extractBankList(from: Bundle.main.data(from: BanksListViewModel.bankListEndPointJson)) { [weak self] in
+//            DispatchQueue.main.async {
+//                self?.banksListViewController.presentBanksList()
+//            }
+//        }
+//    }
     
-    //MARK:- Navigator protocol
+//    //MARK:- Navigator protocol
+//    
+//    func navigate(to destination: Destination) {
+//        let viewController = makeViewController(for: destination)
+//        ownedNavigationController.pushViewController(viewController, animated: true)
+//    }
     
-    func navigate(to destination: Destination) {
-        let viewController = makeViewController(for: destination)
-        ownedNavigationController.pushViewController(viewController, animated: true)
-    }
     
-    
-    //MARK: - make VC for destination
-    private func makeViewController(for destination : Destination) -> UIViewController {
-
-        switch destination {
-        case .showIntradayForBankAt(indexPath: let indexPath):
-            if let bank = banksListViewModel.bank(at: indexPath.row) {
-                let bankViewModel = BankViewModel(bank: bank)
-                return IntradayViewController(bankViewModel: bankViewModel, timeIntervals: TimeIntervals())
-            }
-            
-            else{
-                //TODO: show error VC
-                return UIViewController()
-            }
-        }
-    }
+//    //MARK: - make VC for destination
+//    private func makeViewController(for destination : Destination) -> UIViewController {
+//
+//        switch destination {
+//        case .showIntradayForBankAt(indexPath: let indexPath):
+//            if let bank = banksListViewModel.bank(at: indexPath.row) {
+//                let bankViewModel = BankViewModel(bank: bank)
+//                return IntradayViewController(bankViewModel: bankViewModel, timeIntervals: TimeIntervals())
+//            }
+//            
+//            else{
+//                //TODO: show error VC
+//                return UIViewController()
+//            }
+//        }
+//    }
 }

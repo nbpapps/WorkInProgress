@@ -8,8 +8,8 @@
 
 import Foundation
 
-protocol Navigator {
-    associatedtype Destination
+protocol BankInfoNavigator {
+    associatedtype BankInfoDestination
     
-    func navigate(to destination : Destination)
+    func navigate(to destination : BankInfoDestination)
 }

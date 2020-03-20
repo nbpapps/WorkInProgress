@@ -11,7 +11,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
-    
+    var mainFlowController : MainFlowController?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -20,16 +20,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         
         //set the root VC we want to show
-        window?.rootViewController = MainAppFlowController()
+        let navController = UINavigationController()
+        mainFlowController = MainFlowController(mainNavigationController: navController)
+        window?.rootViewController = mainFlowController //MainAppFlowController()
         window?.makeKeyAndVisible()
         
+        //can you see this?
+        
     }
-    
-//    func createMainNavCont() -> UINavigationController {
-//        let mainAppVC = MainAppViewController()
-//        let navController = UINavigationController(rootViewController: mainAppVC)
-//        return navController
-//    }
     
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
