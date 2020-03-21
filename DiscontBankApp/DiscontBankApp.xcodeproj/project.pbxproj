@@ -38,6 +38,7 @@
 		E851185F2407FCBA0026EB89 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E851185E2407FCBA0026EB89 /* Colors.swift */; };
 		E8579AF4240BA3FE00DD2606 /* BanksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8579AF3240BA3FE00DD2606 /* BanksListViewController.swift */; };
 		E8579AF7240BA4F700DD2606 /* BanksListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8579AF6240BA4F700DD2606 /* BanksListViewModel.swift */; };
+		E8A32F3824263BE500740E33 /* OBFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A32F3724263BE500740E33 /* OBFirstViewController.swift */; };
 		E8B38B4023DEFBC6009B7E7E /* Bundle+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B38B3F23DEFBC6009B7E7E /* Bundle+Utils.swift */; };
 		E8C1568B23DEE4FA004C6DDB /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C1568A23DEE4FA004C6DDB /* JsonParser.swift */; };
 		E8C1568E23DEE77A004C6DDB /* UIconfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C1568D23DEE77A004C6DDB /* UIconfig.swift */; };
@@ -101,6 +102,7 @@
 		E851185E2407FCBA0026EB89 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		E8579AF3240BA3FE00DD2606 /* BanksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanksListViewController.swift; sourceTree = "<group>"; };
 		E8579AF6240BA4F700DD2606 /* BanksListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanksListViewModel.swift; sourceTree = "<group>"; };
+		E8A32F3724263BE500740E33 /* OBFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBFirstViewController.swift; sourceTree = "<group>"; };
 		E8B38B3F23DEFBC6009B7E7E /* Bundle+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Utils.swift"; sourceTree = "<group>"; };
 		E8C1568A23DEE4FA004C6DDB /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		E8C1568D23DEE77A004C6DDB /* UIconfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIconfig.swift; sourceTree = "<group>"; };
@@ -173,6 +175,21 @@
 				E8C70246240C605300518438 /* BankViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E8A32F352426397900740E33 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				E8A32F3724263BE500740E33 /* OBFirstViewController.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		E8A32F362426398F00740E33 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		E8B38B4523DF2B8E009B7E7E /* DataSourse */ = {
@@ -343,6 +360,8 @@
 		E8E9AC03241BAF5A0048A95B /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				E8A32F362426398F00740E33 /* Settings */,
+				E8A32F352426397900740E33 /* OnBoarding */,
 				E8C2CF3623DE16C600301EE1 /* CustomViews */,
 				E8C2CF3123DDFD2500301EE1 /* Views */,
 			);
@@ -470,6 +489,7 @@
 				E82B2B2023DF7362001AF680 /* IntradayTableViewCell.swift in Sources */,
 				E8C1568E23DEE77A004C6DDB /* UIconfig.swift in Sources */,
 				E8C2CF3F23DE1AA300301EE1 /* Values.swift in Sources */,
+				E8A32F3824263BE500740E33 /* OBFirstViewController.swift in Sources */,
 				E8C2CF1323DDF30200301EE1 /* DiscontBankApp.xcdatamodeld in Sources */,
 				E82B2B2423E03474001AF680 /* UrlBuilder.swift in Sources */,
 				E8C2CF3D23DE188400301EE1 /* Strings.swift in Sources */,
