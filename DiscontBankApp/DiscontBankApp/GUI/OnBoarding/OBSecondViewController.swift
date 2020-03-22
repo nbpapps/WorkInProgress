@@ -1,5 +1,5 @@
 //
-//  OBFirstViewController.swift
+//  OBSecondViewController.swift
 //  DiscontBankApp
 //
 //  Created by niv ben-porath on 21/03/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OBFirstViewController: UIViewController {
+class OBSecondViewController: UIViewController {
     
     let flowController : OnboardingFlowController
     
@@ -24,7 +24,7 @@ class OBFirstViewController: UIViewController {
     private lazy var titleLabel : UILabel = {
         let l = UILabel(frame: .zero)
         l.textAlignment = .center
-        l.text = "First Onboarding screen"
+        l.text = "Second Onboarding screen"
         l.translatesAutoresizingMaskIntoConstraints = false
         
         return l
@@ -32,7 +32,7 @@ class OBFirstViewController: UIViewController {
     
     private lazy var nextButton : UIButton = {
         let b = UIButton(frame: .zero)
-        b.setTitle("next", for: .normal)
+        b.setTitle("Done", for: .normal)
         b.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         b.translatesAutoresizingMaskIntoConstraints = false
         return b
@@ -40,9 +40,10 @@ class OBFirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
         layoutView()
+        view.backgroundColor = .orange
     }
+    
     
     private func layoutView() {
         let stack = UIStackView(arrangedSubviews: [titleLabel,nextButton])
@@ -60,7 +61,8 @@ class OBFirstViewController: UIViewController {
     
     
     @objc func nextButtonTapped() {
-        flowController.navigate(to: .NextPage)
+        flowController.navigate(to: .Done)
     }
+    
     
 }

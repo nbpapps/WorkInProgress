@@ -2,15 +2,14 @@
 
 This code was written by Niv Ben-Porath
 
-Bank list Screen:
-* Shows a grid of banks.
-* The information shown will be the Bank name and image. The banks are ordered by Priority value, from high to low
-* The Bank list will be created from a static JSON file
-* When selecting a bank, the user will be taken to a screen with the Time Series information
+My journey of implementing MVVM, POP and other aspect of iOS dev
 
-Time Series information Screen:
-* The banks "skt" value and a defult "timeInterval" value of "1min" are used to populate the Time Series table view
-* Change the Time Interval is done with the segment control at the top of the page
+MVVM:
+* Updated IntradayViewController to use a ViewModel
+
+Navigator:
+* The navigation between screens is handled by a Flow Controller
+
 
 
 Known issues and bugs

@@ -13,25 +13,37 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     var mainCoordinator : MainFlowController?
 
+    let testingScreen = false
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        
+//        UserDefaultsConfig.hasSeenOnboarding = false
+
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds) //fill the screen
         window?.windowScene = windowScene
         
         //the app is build around a navigation
-        let navController = UINavigationController()
+        let navController = UINavigationController(rootViewController: RootForNavViewController())
         
         //the main flow controller will start the flow
         mainCoordinator = MainFlowController(navController: navController)
         mainCoordinator?.start()
         
         //set the root VC we want to show
-        window?.rootViewController = navController
-        window?.makeKeyAndVisible()
+        if testingScreen {
+//            let shownScreen = MainSelectionViewController(flowController: <#T##MainFlowController#>)
+//            window?.rootViewController = shownScreen
+        }else{
+            window?.rootViewController = navController
+        }
         
+        window?.makeKeyAndVisible()
     }
+    
+    
     
     
     func sceneDidDisconnect(_ scene: UIScene) {
