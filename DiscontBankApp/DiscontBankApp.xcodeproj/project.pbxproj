@@ -66,6 +66,7 @@
 		E8C70247240C605300518438 /* BankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C70246240C605300518438 /* BankViewModel.swift */; };
 		E8C70249240C622400518438 /* BankViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C70248240C622400518438 /* BankViewModelTests.swift */; };
 		E8C7024B240C668F00518438 /* TimeInrevalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7024A240C668F00518438 /* TimeInrevalsTests.swift */; };
+		E8CF1D0F2429F0BE004B9E1B /* SettingsFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CF1D0E2429F0BE004B9E1B /* SettingsFlowController.swift */; };
 		E8E5014F2424D368003761CC /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E5014E2424D368003761CC /* MainFlowController.swift */; };
 		E8E9AC00241BA2510048A95B /* NavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E9ABFF241BA2510048A95B /* NavigatorProtocol.swift */; };
 		E8E9AC0A241E80CC0048A95B /* MainAppFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E9AC09241E80CC0048A95B /* MainAppFlowController.swift */; };
@@ -151,6 +152,7 @@
 		E8C70246240C605300518438 /* BankViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewModel.swift; sourceTree = "<group>"; };
 		E8C70248240C622400518438 /* BankViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewModelTests.swift; sourceTree = "<group>"; };
 		E8C7024A240C668F00518438 /* TimeInrevalsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInrevalsTests.swift; sourceTree = "<group>"; };
+		E8CF1D0E2429F0BE004B9E1B /* SettingsFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFlowController.swift; sourceTree = "<group>"; };
 		E8E5014E2424D368003761CC /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
 		E8E9ABFF241BA2510048A95B /* NavigatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorProtocol.swift; sourceTree = "<group>"; };
 		E8E9AC09241E80CC0048A95B /* MainAppFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppFlowController.swift; sourceTree = "<group>"; };
@@ -403,6 +405,7 @@
 				E8E5014E2424D368003761CC /* MainFlowController.swift */,
 				E8A32F4F2426A31400740E33 /* OnboardingFlowController.swift */,
 				E8A32F5324276AA800740E33 /* BanksListFlowController.swift */,
+				E8CF1D0E2429F0BE004B9E1B /* SettingsFlowController.swift */,
 			);
 			path = FlowControllers;
 			sourceTree = "<group>";
@@ -578,6 +581,7 @@
 				E8C1568E23DEE77A004C6DDB /* UIconfig.swift in Sources */,
 				E8C2CF3F23DE1AA300301EE1 /* Values.swift in Sources */,
 				E8A32F3824263BE500740E33 /* OBFirstViewController.swift in Sources */,
+				E8CF1D0F2429F0BE004B9E1B /* SettingsFlowController.swift in Sources */,
 				E8C2CF1323DDF30200301EE1 /* DiscontBankApp.xcdatamodeld in Sources */,
 				E82B2B2423E03474001AF680 /* UrlBuilder.swift in Sources */,
 				E8C2CF3D23DE188400301EE1 /* Strings.swift in Sources */,

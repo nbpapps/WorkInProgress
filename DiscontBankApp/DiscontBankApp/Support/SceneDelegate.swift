@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         
         //the app is build around a navigation
-        let navController = UINavigationController(rootViewController: RootForNavViewController())
+        let navController = UINavigationController()
         
         //the main flow controller will start the flow
         mainCoordinator = MainFlowController(navController: navController)

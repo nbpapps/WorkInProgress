@@ -18,6 +18,9 @@ class MainFlowController : FlowCoordinator,HigherOrderFlowCoordinator {
     
     private var navControler : UINavigationController
     private var onboardingFlowController : OnboardingFlowController?
+    private var banksFlowController : BanksFlowController?
+    private var settingsFlowController : SettingsFlowContoller?
+    
     
     //MARK: - inits
     init(navController : UINavigationController) {
@@ -26,42 +29,43 @@ class MainFlowController : FlowCoordinator,HigherOrderFlowCoordinator {
     
     //MARK: - FlowCoordinator protocol
     func start() {
-        navControler.setNavigationBarHidden(true, animated: false)//the back button should on;y be shown when we are in the main flow and the user selected am action (banks,setting)
-        
-        if UserDefaultsConfig.hasSeenOnboarding {
-            //if the user has already seen the On-boarding, we will show the main screen
-            showMainSelectionScreen(forAppLuanch: true)
-        }else{
-            startOnboardingFlow()//if not, we will show the On-boarding
+        showMainSelectionScreen(forAppLuanch: true)//we always start with the main screen. it will be our root VC. if we need to show the OB, we just transition to it afterwards
+
+        if !UserDefaultsConfig.hasSeenOnboarding {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.startOnboardingFlow()
+            }
         }
     }
     
     //MARK: - flow destinations
     private func showMainSelectionScreen(forAppLuanch appLuanch : Bool) {
-        if !appLuanch {
+        if appLuanch {
+           let mainAppScreen = MainSelectionViewController(flowController: self)
+           navControler.pushViewController(mainAppScreen, animated: false)
+        }else{
             //if we are transitioning to a new flow, we nedd to "clear" the nav controller from all other VCs
-            navControler.popToRootViewController(animated: false)
+            navControler.popToRootViewController(animated: true)
+            navControler.setNavigationBarHidden(false, animated: true)//the back button should only be shown when we are in the main flow and the user selected am action (banks,setting)
         }
-        
-        let mainAppScreen = MainSelectionViewController(flowController: self)
-        navControler.pushViewController(mainAppScreen, animated: false)//if we set the animated to true (!appLuanch), we see a sliver of the RootForNavVC during to transition. is there something else that could be done?
     }
     
     private func startOnboardingFlow() {
+        navControler.setNavigationBarHidden(true, animated: false)//the back button should only be shown when we are in the main flow and the user selected am action (banks,setting)
+
         onboardingFlowController = OnboardingFlowController(navController: navControler, mainFlowController: self)
         onboardingFlowController?.start()
     }
     
     private func startBanksFlow() {
-        let banksFlowController = BanksFlowController(navController: navControler)
-        banksFlowController.start()
+        banksFlowController = BanksFlowController(navController: navControler)
+        banksFlowController?.start()
     }
     
     private func startSettingFlow() {
-        
+        settingsFlowController = SettingsFlowContoller(navController: navControler)
+        settingsFlowController?.start()
     }
-    
-    
     
     //MARK:- protocol action
     func navigate(to destination: Destination) {
@@ -83,7 +87,6 @@ class MainFlowController : FlowCoordinator,HigherOrderFlowCoordinator {
             print("")
         case .Settings:
             print("")
-            
         }
     }
     
@@ -92,17 +95,5 @@ class MainFlowController : FlowCoordinator,HigherOrderFlowCoordinator {
         onboardingFlowController = nil
         showMainSelectionScreen(forAppLuanch: false)
     }
-    
-    //MARK: - helper
-//    private func makeViewController(for destination : Destination) -> UIViewController {
-//        switch destination {
-//        case .OnboardingFlow:
-//            break
-//        case .BanksList:
-//           print("")
-//        case .Settings:
-//            print("")
-//        }
-//    }
     
 }

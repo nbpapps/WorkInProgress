@@ -71,16 +71,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BAF4FB6F-82A6-492F-B255-9591F5FDD484"
+            uuid = "8DAD3B35-8670-4137-8ABB-35236156BEF9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DiscontBankApp/GUI/Views/MainSelectionViewController.swift"
+            filePath = "DiscontBankApp/GUI/Views/BanksListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "banksButtonTapped()"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "viewDidDisappear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

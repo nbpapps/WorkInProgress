@@ -15,11 +15,11 @@ class OnboardingFlowController : FlowCoordinator {
         case Done
     }
     
-    var navControler : UINavigationController
-    var mainFlowController : MainFlowController
+    private weak var navControler : UINavigationController?
+    private weak var mainFlowController : MainFlowController?
     
     //MARK: - inits
-    init(navController : UINavigationController,mainFlowController : MainFlowController) {
+    init(navController : UINavigationController,mainFlowController : MainFlowController ) {
         self.navControler = navController
         self.mainFlowController = mainFlowController
     }
@@ -27,16 +27,16 @@ class OnboardingFlowController : FlowCoordinator {
     //MARK: - FlowCoordinator protocol
     func start() {
         let firstOnboardingViewController = OBFirstViewController(flowController: self)
-        navControler.pushViewController(firstOnboardingViewController, animated: false)
+        navControler?.pushViewController(firstOnboardingViewController, animated: true)
     }
     
     func navigate(to destination: Destination) {
         switch destination {
         case .NextPage:
             let secondOnboardingViewController = OBSecondViewController(flowController: self)
-            navControler.pushViewController(secondOnboardingViewController, animated: true)
+            navControler?.pushViewController(secondOnboardingViewController, animated: true)
         case .Done:
-            mainFlowController.didFinishFlow(for: .OnboardingFlow)
+            mainFlowController?.didFinishFlow(for: .OnboardingFlow)
         }
     }
 }

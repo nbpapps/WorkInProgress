@@ -12,8 +12,10 @@ class RootForNavViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // this VC should have a BG image with the "brand" or logo of the app
         view.backgroundColor = .clear
-
+        
+        
     }
 
 }

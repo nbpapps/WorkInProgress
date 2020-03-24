@@ -12,11 +12,11 @@ class BanksListViewController: UIViewController, UICollectionViewDelegate {
     
     private lazy var bankListCollectionView = makeCollectionView()
     let banksListViewModel : BanksListViewModel
-//    let flowController : MainAppFlowController
+    let flowController : BanksFlowController
     
     //MARK: - init
-    init(banksListViewModel : BanksListViewModel) {//}  ,flowController : MainAppFlowController) {
-//        self.flowController = flowController
+    init(banksListViewModel : BanksListViewModel,flowController : BanksFlowController) {
+        self.flowController = flowController
         self.banksListViewModel = banksListViewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -64,6 +64,15 @@ class BanksListViewController: UIViewController, UICollectionViewDelegate {
     
     //MARK: - collection view delegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        flowController.navigate(to: .showIntradayForBankAt(indexPath: indexPath))
+        print(indexPath)
+        flowController.navigate(to: .intradayForBankAt(indexPath: indexPath))
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        
+    }
+    
+    
+    
 }
+

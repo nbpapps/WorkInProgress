@@ -11,34 +11,39 @@ import UIKit
 class BanksFlowController : FlowCoordinator {
     
     enum Destination {
-       case bankInfo
+       case intradayForBankAt(indexPath: IndexPath)
     }
     
-    var navControler : UINavigationController
-//    var mainFlowController : MainFlowController
+    private weak var navControler : UINavigationController?
+    
+    private lazy var banksListViewModel : BanksListViewModel = {
+        return BanksListViewModel()
+    }()
+
     
     //MARK: - inits
-    init(navController : UINavigationController) { //},mainFlowController : MainFlowController) {
+    init(navController : UINavigationController) {
         self.navControler = navController
-//        self.mainFlowController = mainFlowController
     }
     
     //MARK: - FlowCoordinator protocol
     func start() {
-        let banksListViewModel = BanksListViewModel()
-        let banksListViewController = BanksListViewController(banksListViewModel: banksListViewModel)
-        navControler.pushViewController(banksListViewController, animated: true)
-//        let firstOnboardingViewController = OBFirstViewController(flowController: self)
-//        navControler.pushViewController(firstOnboardingViewController, animated: false)
+        let banksListViewController = BanksListViewController(banksListViewModel: banksListViewModel, flowController: self)
+        navControler?.pushViewController(banksListViewController, animated: true)
     }
     
     func navigate(to destination: Destination) {
-//        switch destination {
-//        case .NextPage:
-//            let secondOnboardingViewController = OBSecondViewController(flowController: self)
-//            navControler.pushViewController(secondOnboardingViewController, animated: true)
-//        case .Done:
-//            mainFlowController.didFinishFlow(for: .OnboardingFlow)
-//        }
+        print(destination)
+        switch destination {
+        case .intradayForBankAt(let indexPath):
+            if let bank = banksListViewModel.bank(at: indexPath.row) {
+                let bankViewModel = BankViewModel(bank: bank)
+                let intradayViewController = IntradayViewController(bankViewModel: bankViewModel, timeIntervals: TimeIntervals())
+                navControler?.pushViewController(intradayViewController, animated: true)
+            }else{
+                print("else")
+                //we show an error VC
+            }
+        }
     }
 }
