@@ -67,9 +67,8 @@
 		E8C70249240C622400518438 /* BankViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C70248240C622400518438 /* BankViewModelTests.swift */; };
 		E8C7024B240C668F00518438 /* TimeInrevalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7024A240C668F00518438 /* TimeInrevalsTests.swift */; };
 		E8CF1D0F2429F0BE004B9E1B /* SettingsFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CF1D0E2429F0BE004B9E1B /* SettingsFlowController.swift */; };
+		E8CF1D11242A1AF1004B9E1B /* FlowCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CF1D10242A1AF1004B9E1B /* FlowCoordinatorProtocol.swift */; };
 		E8E5014F2424D368003761CC /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E5014E2424D368003761CC /* MainFlowController.swift */; };
-		E8E9AC00241BA2510048A95B /* NavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E9ABFF241BA2510048A95B /* NavigatorProtocol.swift */; };
-		E8E9AC0A241E80CC0048A95B /* MainAppFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E9AC09241E80CC0048A95B /* MainAppFlowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,9 +152,8 @@
 		E8C70248240C622400518438 /* BankViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewModelTests.swift; sourceTree = "<group>"; };
 		E8C7024A240C668F00518438 /* TimeInrevalsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInrevalsTests.swift; sourceTree = "<group>"; };
 		E8CF1D0E2429F0BE004B9E1B /* SettingsFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFlowController.swift; sourceTree = "<group>"; };
+		E8CF1D10242A1AF1004B9E1B /* FlowCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		E8E5014E2424D368003761CC /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
-		E8E9ABFF241BA2510048A95B /* NavigatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorProtocol.swift; sourceTree = "<group>"; };
-		E8E9AC09241E80CC0048A95B /* MainAppFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppFlowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -384,7 +382,7 @@
 		E8E9ABFE241B9FD30048A95B /* FlowNavigators */ = {
 			isa = PBXGroup;
 			children = (
-				E8E9ABFF241BA2510048A95B /* NavigatorProtocol.swift */,
+				E8CF1D10242A1AF1004B9E1B /* FlowCoordinatorProtocol.swift */,
 			);
 			path = FlowNavigators;
 			sourceTree = "<group>";
@@ -401,7 +399,6 @@
 		E8E9AC02241BAF340048A95B /* FlowControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E8E9AC09241E80CC0048A95B /* MainAppFlowController.swift */,
 				E8E5014E2424D368003761CC /* MainFlowController.swift */,
 				E8A32F4F2426A31400740E33 /* OnboardingFlowController.swift */,
 				E8A32F5324276AA800740E33 /* BanksListFlowController.swift */,
@@ -585,7 +582,6 @@
 				E8C2CF1323DDF30200301EE1 /* DiscontBankApp.xcdatamodeld in Sources */,
 				E82B2B2423E03474001AF680 /* UrlBuilder.swift in Sources */,
 				E8C2CF3D23DE188400301EE1 /* Strings.swift in Sources */,
-				E8E9AC00241BA2510048A95B /* NavigatorProtocol.swift in Sources */,
 				E82B2B1523DF31DF001AF680 /* DBAImageView.swift in Sources */,
 				E8A32F502426A31400740E33 /* OnboardingFlowController.swift in Sources */,
 				E82B2B1C23DF7000001AF680 /* IntradayViewController.swift in Sources */,
@@ -599,7 +595,6 @@
 				E8A32F5224274D5800740E33 /* RootForNavViewController.swift in Sources */,
 				E8C2CF0923DDF30200301EE1 /* AppDelegate.swift in Sources */,
 				E8579AF4240BA3FE00DD2606 /* BanksListViewController.swift in Sources */,
-				E8E9AC0A241E80CC0048A95B /* MainAppFlowController.swift in Sources */,
 				E8A32F4A24267A5F00740E33 /* SettingsViewController.swift in Sources */,
 				E82B2B4023E1D9AC001AF680 /* UIViewController+Utils.swift in Sources */,
 				E8C1568B23DEE4FA004C6DDB /* JsonParser.swift in Sources */,
@@ -612,6 +607,7 @@
 				E82B2B1A23DF3766001AF680 /* DataFetch.swift in Sources */,
 				E85118592407EBF20026EB89 /* UILabel+Config.swift in Sources */,
 				E8C1569023DEEEE6004C6DDB /* DBAErrror.swift in Sources */,
+				E8CF1D11242A1AF1004B9E1B /* FlowCoordinatorProtocol.swift in Sources */,
 				E85118532407EA670026EB89 /* UICollectionView+Config.swift in Sources */,
 				E8A32F4E2426994D00740E33 /* UserDefaults.swift in Sources */,
 				E8A32F5424276AA800740E33 /* BanksListFlowController.swift in Sources */,

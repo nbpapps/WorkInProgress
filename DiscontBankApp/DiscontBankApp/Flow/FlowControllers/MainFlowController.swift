@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainFlowController : FlowCoordinator,HigherOrderFlowCoordinator {
+class MainFlowController : NSObject, FlowCoordinator,ParentFlowCoordinator,UINavigationControllerDelegate {
     
     enum Destination {
         case OnboardingFlow
@@ -29,6 +29,7 @@ class MainFlowController : FlowCoordinator,HigherOrderFlowCoordinator {
     
     //MARK: - FlowCoordinator protocol
     func start() {
+        navControler.delegate = self
         showMainSelectionScreen(forAppLuanch: true)//we always start with the main screen. it will be our root VC. if we need to show the OB, we just transition to it afterwards
 
         if !UserDefaultsConfig.hasSeenOnboarding {
@@ -79,14 +80,15 @@ class MainFlowController : FlowCoordinator,HigherOrderFlowCoordinator {
         }
     }
     
+    //MARK: - calls when flow finish by actions (e.g. done button)
     func didFinishFlow(for destination: Destination) {
         switch destination {
         case .OnboardingFlow:
             didFinishOnboarding()
         case .Banks:
-            print("")
+            break
         case .Settings:
-            print("")
+            break
         }
     }
     
@@ -94,6 +96,20 @@ class MainFlowController : FlowCoordinator,HigherOrderFlowCoordinator {
         UserDefaultsConfig.hasSeenOnboarding = true
         onboardingFlowController = nil
         showMainSelectionScreen(forAppLuanch: false)
+    }
+    
+    private func didMoveBackToMainScreen() {
+        banksFlowController = nil
+        settingsFlowController = nil
+    }
+    
+    //MARK: - nav controller delegate
+    
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        if let _ = navigationController.transitionCoordinator?.viewController(forKey: .to) as? MainSelectionViewController {
+            //we know we are moving to the MainSelectionViewController, so we can "nil" all the FCs
+            didMoveBackToMainScreen()
+        }
     }
     
 }

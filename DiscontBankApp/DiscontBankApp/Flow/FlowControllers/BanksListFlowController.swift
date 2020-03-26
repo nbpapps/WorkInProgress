@@ -33,7 +33,6 @@ class BanksFlowController : FlowCoordinator {
     }
     
     func navigate(to destination: Destination) {
-        print(destination)
         switch destination {
         case .intradayForBankAt(let indexPath):
             if let bank = banksListViewModel.bank(at: indexPath.row) {
@@ -41,7 +40,6 @@ class BanksFlowController : FlowCoordinator {
                 let intradayViewController = IntradayViewController(bankViewModel: bankViewModel, timeIntervals: TimeIntervals())
                 navControler?.pushViewController(intradayViewController, animated: true)
             }else{
-                print("else")
                 //we show an error VC
             }
         }

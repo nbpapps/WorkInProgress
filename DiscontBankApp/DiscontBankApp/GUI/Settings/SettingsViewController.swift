@@ -18,15 +18,7 @@ class SettingsViewController: UIViewController {
         
         return l
     }()
-    
-//    private lazy var nextButton : UIButton = {
-//        let b = UIButton(frame: .zero)
-//        b.setTitle("Done", for: .normal)
-//        b.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
-//        b.translatesAutoresizingMaskIntoConstraints = false
-//        return b
-//    }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutView()
@@ -48,10 +40,4 @@ class SettingsViewController: UIViewController {
             stack.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20)
         ])
     }
-    
-    
-//    @objc func nextButtonTapped() {
-//        print("nextButtonTapped")
-//    }
-    
 }

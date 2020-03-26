@@ -18,10 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        
 //        UserDefaultsConfig.hasSeenOnboarding = false
 
-        
         window = UIWindow(frame: windowScene.coordinateSpace.bounds) //fill the screen
         window?.windowScene = windowScene
         
@@ -32,19 +30,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         mainCoordinator = MainFlowController(navController: navController)
         mainCoordinator?.start()
         
-        //set the root VC we want to show
         if testingScreen {
-//            let shownScreen = MainSelectionViewController(flowController: <#T##MainFlowController#>)
-//            window?.rootViewController = shownScreen
+            //if we want to test out how a specific VC is seen.
+            let shownScreen = BanksListViewController(banksListViewModel: BanksListViewModel(), flowController: BanksFlowController(navController: navController))
+            window?.rootViewController = shownScreen
         }else{
-            window?.rootViewController = navController
+            window?.rootViewController = navController //set the root VC we want to show
+
         }
         
         window?.makeKeyAndVisible()
     }
-    
-    
-    
     
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

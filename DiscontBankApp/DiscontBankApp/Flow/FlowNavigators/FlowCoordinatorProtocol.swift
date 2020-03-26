@@ -1,8 +1,8 @@
 //
-//  NavigatorProtocol.swift
+//  FlowCoordinatorProtocol.swift
 //  DiscontBankApp
 //
-//  Created by niv ben-porath on 13/03/2020.
+//  Created by niv ben-porath on 24/03/2020.
 //  Copyright © 2020 nbpApps. All rights reserved.
 //
 
@@ -17,7 +17,7 @@ protocol FlowCoordinator {
     
 }
 
-protocol HigherOrderFlowCoordinator {
+protocol ParentFlowCoordinator {
     associatedtype Destination
     
     func didFinishFlow(for destination : Destination)//when a specific flow had finished (the last screen was shown), we need to let a higher order FC know about it. This is useful if the flow ends after a specific action (e.g. done button)

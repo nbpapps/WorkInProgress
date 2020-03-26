@@ -71,16 +71,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8DAD3B35-8670-4137-8ABB-35236156BEF9"
+            uuid = "17FD8411-51A3-408D-8064-C0F11EE3F181"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DiscontBankApp/GUI/Views/BanksListViewController.swift"
+            filePath = "DiscontBankApp/Flow/FlowControllers/MainFlowController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "viewDidDisappear(_:)"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "startBanksFlow()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FBD24E6E-A86C-4A67-A90F-D3AEC5A0890D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DiscontBankApp/Flow/FlowControllers/MainFlowController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "startSettingFlow()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

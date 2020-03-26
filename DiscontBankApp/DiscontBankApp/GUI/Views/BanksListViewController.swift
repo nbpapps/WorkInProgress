@@ -64,15 +64,8 @@ class BanksListViewController: UIViewController, UICollectionViewDelegate {
     
     //MARK: - collection view delegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath)
         flowController.navigate(to: .intradayForBankAt(indexPath: indexPath))
     }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        
-    }
-    
-    
     
 }
 
