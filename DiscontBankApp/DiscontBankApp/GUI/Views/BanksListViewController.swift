@@ -12,10 +12,10 @@ class BanksListViewController: UIViewController, UICollectionViewDelegate {
     
     private lazy var bankListCollectionView = makeCollectionView()
     let banksListViewModel : BanksListViewModel
-    let flowController : MainAppFlowController
+    let flowController : BanksFlowController
     
     //MARK: - init
-    init(banksListViewModel : BanksListViewModel,flowController : MainAppFlowController) {
+    init(banksListViewModel : BanksListViewModel,flowController : BanksFlowController) {
         self.flowController = flowController
         self.banksListViewModel = banksListViewModel
         super.init(nibName: nil, bundle: nil)
@@ -29,6 +29,7 @@ class BanksListViewController: UIViewController, UICollectionViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
+        loadInitialBanksData()
     }
     
     //MARK:- factory
@@ -47,6 +48,14 @@ class BanksListViewController: UIViewController, UICollectionViewDelegate {
         bankListCollectionView.dataSource = banksListViewModel
     }
     
+    //MARK: - load initial data
+    private func loadInitialBanksData() {
+        banksListViewModel.extractBankList(from: Bundle.main.data(from: BanksListViewModel.bankListEndPointJson)) { [weak self] in
+            DispatchQueue.main.async {
+                self?.presentBanksList()
+            }
+        }
+    }
     
     func presentBanksList() {
         self.bankListCollectionView.reloadData()
@@ -55,6 +64,8 @@ class BanksListViewController: UIViewController, UICollectionViewDelegate {
     
     //MARK: - collection view delegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        flowController.navigate(to: .showIntradayForBankAt(indexPath: indexPath))
+        flowController.navigate(to: .intradayForBankAt(indexPath: indexPath))
     }
+    
 }
+

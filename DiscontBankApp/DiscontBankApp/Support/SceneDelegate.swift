@@ -11,25 +11,36 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
-    
+    var mainCoordinator : MainFlowController?
+
+    let testingScreen = false
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
+//        UserDefaultsConfig.hasSeenOnboarding = false
+
         window = UIWindow(frame: windowScene.coordinateSpace.bounds) //fill the screen
         window?.windowScene = windowScene
         
-        //set the root VC we want to show
-        window?.rootViewController = MainAppFlowController()
-        window?.makeKeyAndVisible()
+        //the app is build around a navigation
+        let navController = UINavigationController()
         
+        //the main flow controller will start the flow
+        mainCoordinator = MainFlowController(navController: navController)
+        mainCoordinator?.start()
+        
+        if testingScreen {
+            //if we want to test out how a specific VC is seen.
+            let shownScreen = BanksListViewController(banksListViewModel: BanksListViewModel(), flowController: BanksFlowController(navController: navController))
+            window?.rootViewController = shownScreen
+        }else{
+            window?.rootViewController = navController //set the root VC we want to show
+
+        }
+        
+        window?.makeKeyAndVisible()
     }
-    
-//    func createMainNavCont() -> UINavigationController {
-//        let mainAppVC = MainAppViewController()
-//        let navController = UINavigationController(rootViewController: mainAppVC)
-//        return navController
-//    }
     
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
