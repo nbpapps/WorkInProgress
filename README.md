@@ -11,7 +11,8 @@ MVVM:
 Navigator:
 * The navigation between screens is handled by a Flow Controller
 
-
+View Logic:
+* Intraday screen is split up to two controllers - logic (for fetching the data for the requested intraday) and view (for redering the screen for each state - loading,present and error)
 
 Known issues and bugs
 * bank images are sometimes shown under the wrong bank
