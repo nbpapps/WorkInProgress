@@ -33,4 +33,19 @@ extension UIViewController {
         view.removeFromSuperview()
         removeFromParent()
     }
+    
+    func presentAlertWith(title : String,message :String,buttonTitle : String) {
+        let alertVC = AlertViewController(title: title, message: message, buttonTitle: buttonTitle)
+        alertVC.modalPresentationStyle = .overFullScreen
+        alertVC.modalTransitionStyle = .crossDissolve
+        self.present(alertVC, animated: true, completion: nil)
+    }
+    
+    func showBasicAlertViewWith(title : String, message  : String, buttonTitle : String) {
+        let alertViewController = AlertViewController(title: title, message: message, buttonTitle: buttonTitle)
+        alertViewController.onDismiss = {
+            alertViewController.remove()
+        }
+        self.add(alertViewController)
+    }
 }

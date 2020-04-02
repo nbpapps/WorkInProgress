@@ -37,7 +37,8 @@ class BanksFlowController : FlowCoordinator {
         case .intradayForBankAt(let indexPath):
             if let bank = banksListViewModel.bank(at: indexPath.row) {
                 let bankViewModel = BankViewModel(bank: bank)
-                let intradayViewController = IntradayViewController(bankViewModel: bankViewModel, timeIntervals: TimeIntervals())
+                let intradayLogicController = IntradayLogicController()
+                let intradayViewController = IntradayViewController(bankViewModel: bankViewModel, timeIntervals: TimeIntervals(),logicController:intradayLogicController)
                 navControler?.pushViewController(intradayViewController, animated: true)
             }else{
                 //we show an error VC
