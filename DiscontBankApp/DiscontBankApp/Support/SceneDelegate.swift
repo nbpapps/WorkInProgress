@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     var mainCoordinator : MainFlowController?
 
-    let testingScreen = false
+    let testingScreen = true
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -37,7 +37,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if testingScreen {
             //if we want to test out how a specific VC is seen.
-            let shownScreen = BanksListViewController(banksListViewModel: BanksListViewModel(), flowController: BanksFlowController(navController: navController))
+            let bank = Bank(name: "Test", stk: "BAC", img: "", priority: "")
+            let bankViewModel = BankViewModel(bank: bank)
+            let timeIntervals = TimeIntervals()
+            let logicCntrl = IntradayLogicController()
+            let shownScreen = IntradayViewController(bankViewModel: bankViewModel, timeIntervals: timeIntervals, logicController: logicCntrl)
+                //BanksListViewController(banksListViewModel: BanksListViewModel(), flowController: BanksFlowController(navController: navController))
             window?.rootViewController = shownScreen
         }else{
             window?.rootViewController = navController //set the root VC we want to show

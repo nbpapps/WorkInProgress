@@ -39,6 +39,7 @@ class MainSelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = Strings.mainScreen
         view.backgroundColor = .systemTeal
         layoutView()
     }

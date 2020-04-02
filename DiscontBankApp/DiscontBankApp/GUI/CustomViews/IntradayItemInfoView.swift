@@ -10,8 +10,8 @@ import UIKit
 
 class IntradayItemInfoView: UIView {
     
-    let itemTitleLabel = DBALabel(textAlignment: .left, fontSize: UILabel.timeSeriesLabelFontSize, weight: .regular, color: .systemBlue)
-    let itemValueLabel = DBALabel(textAlignment: .right, fontSize: UILabel.timeSeriesLabelFontSize, weight: .regular,color: .systemBlue)
+    let itemTitleLabel = DBALabel(textAlignment: .natural, fontSize: UILabel.timeSeriesLabelFontSize, weight: .regular, color: .systemBlue)
+    let itemValueLabel = DBALabel(textAlignment: .natural, fontSize: UILabel.timeSeriesLabelFontSize, weight: .regular,color: .systemBlue)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,9 +32,10 @@ class IntradayItemInfoView: UIView {
     }
     
     private func config() {
+        
         let stackView = UIStackView(arrangedSubviews: [itemTitleLabel,itemValueLabel])
         stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
+        stackView.distribution = .equalSpacing
         addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         translatesAutoresizingMaskIntoConstraints = false

@@ -16,7 +16,8 @@ struct Strings {
     
     
     //MARK:- titles
-    static let selectBankTitle = "Select Bank"
+    static let selectBankTitle = NSLocalizedString("Select Bank", comment: "title for the bank selection screen")
+    static let mainScreen = NSLocalizedString("Main screen", comment: "title for the main selection screen")
     
     
     //MARK:- errors
@@ -28,11 +29,11 @@ struct Strings {
     
     
     //MARK:- intra day titles
-    static let timeTitle = "time"
-    static let openTitle = "open"
-    static let highTitle = "high"
-    static let lowTitle = "low"
-    static let closeTitle = "close"
-    static let volumeTitle = "volume"
+    static let timeTitle = NSLocalizedString("time", comment: "title for intraday time")
+    static let openTitle = NSLocalizedString("open", comment: "title for intraday open")
+    static let highTitle = NSLocalizedString("high", comment: "title for intraday high")
+    static let lowTitle = NSLocalizedString("low", comment: "title for intraday low")
+    static let closeTitle = NSLocalizedString("close", comment: "title for intraday close")
+    static let volumeTitle = NSLocalizedString("volume", comment: "title for intraday volume")
     
 }

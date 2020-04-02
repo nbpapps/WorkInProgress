@@ -31,8 +31,9 @@ class IntradayTableViewCell: UITableViewCell {
     private func configue() {
         let mainStackView = UIStackView(arrangedSubviews: [timeView,openView,highView,lowView,closeView,volumeView])
         mainStackView.axis = .vertical
-        mainStackView.distribution = .fill
+        mainStackView.distribution = .fillEqually
         mainStackView.translatesAutoresizingMaskIntoConstraints = false
+        translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(mainStackView)
         
         NSLayoutConstraint.activate([
