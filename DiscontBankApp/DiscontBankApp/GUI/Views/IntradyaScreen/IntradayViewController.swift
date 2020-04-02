@@ -10,7 +10,9 @@ import UIKit
 
 final class IntradayViewController: UIViewController {
     
-    let bankViewModel : BankViewModel
+    private let bankViewModel : BankViewModel
+    private let timeIntervals : TimeIntervals
+    private let logicController : IntradayLogicController
     
     let timeSeriesDataSource = TimeSeriesDataSource()
     
@@ -18,13 +20,13 @@ final class IntradayViewController: UIViewController {
     private lazy var timeIntervalSelectionSegmentControl = makeSegmentControl()
     
     let loadingViewController = LoadingViewController()
-    let timeIntervals : TimeIntervals
     
     //MARK: - life cycle
     
-    init(bankViewModel : BankViewModel,timeIntervals : TimeIntervals) {
+    init(bankViewModel : BankViewModel,timeIntervals : TimeIntervals,logicController : IntradayLogicController) {
         self.bankViewModel = bankViewModel
         self.timeIntervals = timeIntervals
+        self.logicController = logicController
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -55,6 +57,24 @@ final class IntradayViewController: UIViewController {
         let allTimeIntevals = timeIntervals.getAllIntervalOptions()
         let segCont = DBASegmentControl(items: allTimeIntevals)
         return segCont
+    }
+    
+    //MARK: - render screen for state changes
+    func renderScreenFor(state : IntradayState) {
+        switch state {
+        case .loading:
+            showLoading()
+        case .presenting:
+            removeLoading()
+            timeSeriesTableView.reloadData()
+        case .failed(let error):
+            removeLoading()
+            var errorMessage = "Please try again"
+            if let failureError = error {
+                errorMessage = failureError.localizedDescription
+            }
+            show(errorMessage: errorMessage)
+        }
     }
     
     //MARK: - layout
@@ -100,12 +120,9 @@ final class IntradayViewController: UIViewController {
     
     //MARK:- get Intraday data
     func getIntradayData(for symbol : String, and timeInterval : String) {
-        showLoading()
-        timeSeriesDataSource.fetchIntradayData(for: symbol, and: timeInterval) { [weak self] (error,success) in
-            DispatchQueue.main.async {
-                self?.timeSeriesTableView.reloadData()
-                self?.removeLoading()
-            }
+        renderScreenFor(state: .loading)
+        logicController.loadBankStk(bankStk: symbol, andTimeInterval: timeInterval, fromDataSource: timeSeriesDataSource) {[weak self] (state) in
+            self?.renderScreenFor(state: state)
         }
     }
     
@@ -124,6 +141,11 @@ final class IntradayViewController: UIViewController {
     func removeLoading() {
         view.alpha = 1.0
         self.loadingViewController.remove()
+    }
+    
+    //MARK: - error
+    private func show(errorMessage : String) {
+        showBasicAlertViewWith(title: "Something went wrong", message: errorMessage, buttonTitle: "ok")
     }
 }
 
