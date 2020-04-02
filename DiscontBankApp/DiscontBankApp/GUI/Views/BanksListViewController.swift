@@ -28,6 +28,7 @@ class BanksListViewController: UIViewController, UICollectionViewDelegate {
     //MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = Strings.selectBankTitle
         configureCollectionView()
         loadInitialBanksData()
     }
