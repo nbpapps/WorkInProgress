@@ -17,8 +17,10 @@ protocol FlowCoordinator {
     
 }
 
-protocol ParentFlowCoordinator {
+protocol ParentFlowCoordinator : FlowCoordinator {
     associatedtype Destination
     
     func didFinishFlow(for destination : Destination)//when a specific flow had finished (the last screen was shown), we need to let a higher order FC know about it. This is useful if the flow ends after a specific action (e.g. done button)
+    
+//    var childFlowCoordinators : [FlowCoordinator] {get set}
 }

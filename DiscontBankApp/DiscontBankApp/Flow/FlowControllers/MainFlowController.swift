@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainFlowController : NSObject, FlowCoordinator,ParentFlowCoordinator,UINavigationControllerDelegate {
+class MainFlowController : NSObject,ParentFlowCoordinator,UINavigationControllerDelegate {
     
     enum Destination {
         case OnboardingFlow
@@ -17,11 +17,12 @@ class MainFlowController : NSObject, FlowCoordinator,ParentFlowCoordinator,UINav
     }
     
     private var navControler : UINavigationController
+    
+    #warning("I tryied to use an array of child FlowControllers, but the compiler could not infer their type")
     private var onboardingFlowController : OnboardingFlowController?
     private var banksFlowController : BanksFlowController?
     private var settingsFlowController : SettingsFlowContoller?
-    
-    
+        
     //MARK: - inits
     init(navController : UINavigationController) {
         self.navControler = navController

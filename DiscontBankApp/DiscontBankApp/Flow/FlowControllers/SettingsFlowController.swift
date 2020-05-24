@@ -28,7 +28,7 @@ class SettingsFlowContoller : FlowCoordinator {
     }
     
     func navigate(to destination: Destination) {
-
+        
     }
 
 }
