@@ -13,11 +13,24 @@ struct ImageCache {
     
     private var imageCache = NSCache<NSString, UIImage>()
     
+    private var queue = DispatchQueue(label: "imageCache.queue", attributes: .concurrent)
+
     func getImage(for key : String) -> UIImage? {
-        return imageCache.object(forKey: NSString(string: key))
+        
+        return queue.sync {
+            imageCache.object(forKey: NSString(string: key))
+        }
+        
+//        return imageCache.object(forKey: NSString(string: key))
     }
     
     func set(image : UIImage, for key : String) {
-        imageCache.setObject(image, forKey: NSString(string: key))
+        
+        queue.sync(flags: .barrier) {
+            imageCache.setObject(image, forKey: NSString(string: key))
+        }
+        
+        
+//        imageCache.setObject(image, forKey: NSString(string: key))
     }
 }
