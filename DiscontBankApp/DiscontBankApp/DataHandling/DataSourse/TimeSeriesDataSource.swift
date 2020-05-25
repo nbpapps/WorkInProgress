@@ -17,7 +17,7 @@ class TimeSeriesDataSource: NSObject, UITableViewDataSource {
     //MARK:- retrive data
     func fetchIntradayData(for symbol : String, and timeInterval : String,with completion : @escaping fetchCompletion) {
         let key = symbol + timeInterval
-        print(key)
+//        print(key)
         //check if we already have a saved time series for this key
         if let timeSeriesArray = TimeSeriesData.shared.timeSeriesArray(for: key) {
             //if so, just retrive it so we don't make a new network request

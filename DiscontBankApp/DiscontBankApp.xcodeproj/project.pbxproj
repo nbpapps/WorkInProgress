@@ -28,6 +28,8 @@
 		E82B2B3E23E1D86E001AF680 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B3D23E1D86E001AF680 /* LoadingViewController.swift */; };
 		E82B2B4023E1D9AC001AF680 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B3F23E1D9AC001AF680 /* UIViewController+Utils.swift */; };
 		E82B2B4223E1F25A001AF680 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B4123E1F25A001AF680 /* ImageCache.swift */; };
+		E84356E5247BB2C70016FFB7 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84356E4247BB2C70016FFB7 /* ImageLoader.swift */; };
+		E84356E7247BBB900016FFB7 /* UIImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84356E6247BBB900016FFB7 /* UIImageLoader.swift */; };
 		E85118512407E6900026EB89 /* IntradayItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85118502407E6900026EB89 /* IntradayItemInfoView.swift */; };
 		E85118532407EA670026EB89 /* UICollectionView+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85118522407EA670026EB89 /* UICollectionView+Config.swift */; };
 		E85118552407EAFD0026EB89 /* UICollectionViewCell+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85118542407EAFD0026EB89 /* UICollectionViewCell+Config.swift */; };
@@ -110,6 +112,8 @@
 		E82B2B3D23E1D86E001AF680 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		E82B2B3F23E1D9AC001AF680 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		E82B2B4123E1F25A001AF680 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		E84356E4247BB2C70016FFB7 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		E84356E6247BBB900016FFB7 /* UIImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageLoader.swift; sourceTree = "<group>"; };
 		E85118502407E6900026EB89 /* IntradayItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntradayItemInfoView.swift; sourceTree = "<group>"; };
 		E85118522407EA670026EB89 /* UICollectionView+Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Config.swift"; sourceTree = "<group>"; };
 		E85118542407EAFD0026EB89 /* UICollectionViewCell+Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Config.swift"; sourceTree = "<group>"; };
@@ -207,6 +211,15 @@
 				E8A32F4D2426994D00740E33 /* UserDefaults.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		E84356E3247BB2B40016FFB7 /* ImageLoading */ = {
+			isa = PBXGroup;
+			children = (
+				E84356E4247BB2C70016FFB7 /* ImageLoader.swift */,
+				E84356E6247BBB900016FFB7 /* UIImageLoader.swift */,
+			);
+			path = ImageLoading;
 			sourceTree = "<group>";
 		};
 		E8579AF5240BA4DF00DD2606 /* ViewModels */ = {
@@ -439,6 +452,7 @@
 		E8E9AC04241BAFDF0048A95B /* DataHandling */ = {
 			isa = PBXGroup;
 			children = (
+				E84356E3247BB2B40016FFB7 /* ImageLoading */,
 				E8C1568923DEE4DE004C6DDB /* Parsing */,
 				E8B38B4523DF2B8E009B7E7E /* DataSourse */,
 				E82B2B1823DF3752001AF680 /* Network */,
@@ -623,6 +637,7 @@
 				E8C2CF2E23DDF3F500301EE1 /* Bank.swift in Sources */,
 				E85118572407EB780026EB89 /* UITableView+Config.swift in Sources */,
 				E8A32F5224274D5800740E33 /* RootForNavViewController.swift in Sources */,
+				E84356E5247BB2C70016FFB7 /* ImageLoader.swift in Sources */,
 				E8C2CF0923DDF30200301EE1 /* AppDelegate.swift in Sources */,
 				E8579AF4240BA3FE00DD2606 /* BanksListViewController.swift in Sources */,
 				E8A32F4A24267A5F00740E33 /* SettingsViewController.swift in Sources */,
@@ -649,6 +664,7 @@
 				E8B38B4023DEFBC6009B7E7E /* Bundle+Utils.swift in Sources */,
 				E8579AF7240BA4F700DD2606 /* BanksListViewModel.swift in Sources */,
 				E85118512407E6900026EB89 /* IntradayItemInfoView.swift in Sources */,
+				E84356E7247BBB900016FFB7 /* UIImageLoader.swift in Sources */,
 				E82B2B2D23E06C68001AF680 /* TimeSeriesDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

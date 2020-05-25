@@ -15,7 +15,6 @@ class BankCollectionViewCell: UICollectionViewCell {
     let bankImageView = DBAImageView(frame: .zero)
     let bankNameLabel = DBALabel(textAlignment: .center, fontSize: UILabel.bankNameLabelFontSize, weight: .bold)
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -46,4 +45,11 @@ class BankCollectionViewCell: UICollectionViewCell {
             
         ])
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        bankImageView.cancelImageLoad()
+        bankImageView.image = nil
+    }
+    
 }

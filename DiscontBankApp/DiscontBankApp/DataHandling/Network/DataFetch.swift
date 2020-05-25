@@ -11,18 +11,6 @@ import Foundation
 typealias networkCompletion =  (Result<Data,NetworkError>) -> Void
 
 struct DataFetch {
-    func fetchBankImage(foUrlString : String, with completion : @escaping networkCompletion) {
-        guard let url = URL(string: foUrlString) else {
-            print("fail fetchBankImage")
-            completion(.failure(.invalidUrl(errorMessage: "The input was \(foUrlString)")))
-            return
-        }
-        
-        let networkService = NetworkService()
-        networkService.makeNetworkCall(for: url) { (result) in
-            completion(result)
-        }
-    }
     
     func fetchTimeSeriesIntraday(for symbol : String,and timeInterval : String, with completion : @escaping networkCompletion) {
         let queryItmes : [URLQueryItem] = [
