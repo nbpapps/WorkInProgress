@@ -12,28 +12,4 @@ extension UIImageView {
     
     static let imageViewCornerRadius : CGFloat = 10
     
-    func downloadBankImageWithCache(_ bankImageUrlString: String) {        
-        //check if we have an image in cache
-        if let imageFromCache = ImageCache.shared.getImage(for: bankImageUrlString) {
-            self.image = imageFromCache
-            return
-        }else{
-            let dataFetch = DataFetch()
-            dataFetch.fetchBankImage(foUrlString: bankImageUrlString) { (result) in
-                switch result {
-                case .failure(_):
-                    DispatchQueue.main.async {
-                        self.image = UIImage(named: UIImage.imagePlaceHolderName)
-                    }
-                case .success(let data):
-                    if let downloadedImage = UIImage(data: data) {
-                        ImageCache.shared.set(image: downloadedImage, for: bankImageUrlString)
-                        DispatchQueue.main.async {
-                            self.image = downloadedImage
-                        }
-                    }
-                }
-            }
-        }
-    }
 }

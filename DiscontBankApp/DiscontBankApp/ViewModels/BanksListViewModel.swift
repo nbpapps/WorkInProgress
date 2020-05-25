@@ -12,7 +12,8 @@ import UIKit
 final class BanksListViewModel : NSObject, UICollectionViewDataSource {
     
     private var bankList : [Bank]?
-    
+    private let imageLoader = ImageLoader()
+
     func bank(at index : Int) -> Bank? {
         guard let bank = bankList?[index] else {
             return nil
@@ -68,7 +69,11 @@ extension BanksListViewModel {
         }
         
         cell.bankNameLabel.text = bank.name
-        cell.bankImageView.downloadBankImageWithCache(bank.img)
+
+        if let url = URL(string: bank.img) {
+            cell.bankImageView.loadImage(at : url)
+        }
+        
         return cell
     }
 }
