@@ -7,12 +7,12 @@
 //
 
 import UIKit
+import ImageLoading
 
 #warning("I changed the class to be a VM instead of DataSource")
 final class BanksListViewModel : NSObject, UICollectionViewDataSource {
     
     private var bankList : [Bank]?
-    private let imageLoader = ImageLoader()
 
     func bank(at index : Int) -> Bank? {
         guard let bank = bankList?[index] else {
