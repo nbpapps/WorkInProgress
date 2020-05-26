@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ImageLoading
 
 class BankCollectionViewCell: UICollectionViewCell {
     
