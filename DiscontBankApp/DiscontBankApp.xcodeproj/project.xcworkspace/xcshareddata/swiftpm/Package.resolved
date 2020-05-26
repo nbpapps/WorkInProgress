@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "ImageLoading",
+        "repositoryURL": "https://github.com/nbpapps/ImageLoading.git",
+        "state": {
+          "branch": "master",
+          "revision": "eb89b202594c449a0330655fce1b9cd59dc25586",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
