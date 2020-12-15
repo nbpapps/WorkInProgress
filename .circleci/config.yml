@@ -25,7 +25,8 @@ jobs: # a basic unit of work in a run
 #             - vendor/bundle
       - run:
           name: fastlane
-          command: bundle exec fastlane $FASTLANE_LANE --verbose
+          command: fastlane scan
+#           command: bundle exec fastlane $FASTLANE_LANE --verbose
           environment:
             SCAN_DEVICE: iPhone 6
             SCAN_SCHEME: DiscontBankApp
