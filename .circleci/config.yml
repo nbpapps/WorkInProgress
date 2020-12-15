@@ -1,31 +1,38 @@
 version: 2.1
 orbs:
   go: gotest/tools@0.0.10
+  mac-permissions: circleci/macos
 jobs: # a basic unit of work in a run 
   build: # runs not using `Workflows` must have a `build` job as entry point
     macos:  # indicate that we are using the macOS executor
       xcode: 11.3.0 # indicate our selected version of Xcode
-    working_directory: /Users/distiller/project/WorkInProgress #/project
+    working_directory: /Users/distiller/project #/project
+    environment:
+      FL_OUTPUT_DIR: output
+      FASTLANE_LANE: test
     shell: /bin/bash --login -o pipefail
     steps: # a series of commands to run
       - checkout  # pull down code from your version control system.
-#       - go/mod-download:
-#           prefix: v1-mac
-#           path: /Users/distiller/go/pkg/mod
-#       - run: bundle install
-      - run: whoami
+      - run: bundle install
       - run:
+          name: Fastlane
+          command: bundle exec fastlane $FASTLANE_LANE
+      - store_artifacts:
+          path: output
+      - store_test_results:
+          path: output/scan
+#       - run:
           # run our tests using xcode's cli tool `xcodebuild`
-          name: Run Unit Tests
-          command: xcodebuild test -scheme DiscontBankApp
-      - run:
-          # build our application
-          name: Build Application
-          command: xcodebuild
-      - run:
-          # compress Xcode's build output so that it can be stored as an artifact
-          name: Compress app for storage
-          command: zip -r app.zip build/Release/DiscontBankApp.app
-      - store_artifacts: # store this build output. Read more: https://circleci.com/docs/2.0/artifacts/
-          path: app.zip
-          destination: app
+#           name: Run Unit Tests
+#           command: xcodebuild test -scheme DiscontBankApp
+#       - run:
+#           # build our application
+#           name: Build Application
+#           command: xcodebuild
+#       - run:
+#           # compress Xcode's build output so that it can be stored as an artifact
+#           name: Compress app for storage
+#           command: zip -r app.zip build/Release/DiscontBankApp.app
+#       - store_artifacts: # store this build output. Read more: https://circleci.com/docs/2.0/artifacts/
+#           path: app.zip
+#           destination: app
