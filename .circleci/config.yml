@@ -10,7 +10,7 @@ jobs: # a basic unit of work in a run
       - checkout  # pull down code from your version control system.
       - go/mod-download:
           prefix: v1-mac
-          path: /Users/distiller/project
+          path: /Users/distiller/go/pkg/mod
       - run:
           # run our tests using xcode's cli tool `xcodebuild`
           name: Run Unit Tests
