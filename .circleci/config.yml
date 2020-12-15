@@ -1,7 +1,6 @@
 version: 2.1
 orbs:
   go: gotest/tools@0.0.10
-  mac-permissions: circleci/macos
 jobs: # a basic unit of work in a run 
   build: # runs not using `Workflows` must have a `build` job as entry point
     macos:  # indicate that we are using the macOS executor
