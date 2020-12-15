@@ -5,7 +5,7 @@ jobs: # a basic unit of work in a run
   build: # runs not using `Workflows` must have a `build` job as entry point
     macos:  # indicate that we are using the macOS executor
       xcode: 11.3.0 # indicate our selected version of Xcode
-    working_directory: /Users/distiller/WorkInProgress #/project
+    working_directory: /Users/distiller/project/WorkInProgress #/project
     shell: /bin/bash --login -o pipefail
     steps: # a series of commands to run
       - checkout  # pull down code from your version control system.
