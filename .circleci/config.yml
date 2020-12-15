@@ -8,7 +8,7 @@ jobs: # a basic unit of work in a run
       - run:
           # run our tests using xcode's cli tool `xcodebuild`
           name: Run Unit Tests
-          command: xcodebuild test -scheme DiscontBankApp
+          command: xcodebuild test -scheme # DiscontBankApp
       - run:
           # build our application
           name: Build Application
