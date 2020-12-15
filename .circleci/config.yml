@@ -6,10 +6,13 @@ jobs: # a basic unit of work in a run
     shell: /bin/bash --login -o pipefail
     steps: # a series of commands to run
       - checkout  # pull down code from your version control system.
+      - go/mod-download:
+          prefix: v1-mac
+          path: /Users/distiller/project
       - run:
           # run our tests using xcode's cli tool `xcodebuild`
           name: Run Unit Tests
-          command: xcodebuild test -scheme app # DiscontBankApp
+          command: xcodebuild test -scheme DiscontBankApp
       - run:
           # build our application
           name: Build Application
