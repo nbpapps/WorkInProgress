@@ -13,7 +13,7 @@ import XCTest
 class BankViewModelTests: XCTestCase {
     
     func testBankNameAndStk() {
-        let bank = Bank(name: "myBank1", stk: "MB", img: "http://nbpapps.com/myBankImage", priority: "123")
+        let bank = Bank(name: "myBank", stk: "MB", img: "http://nbpapps.com/myBankImage", priority: "123")
         let bankViewModel = BankViewModel(bank: bank)
         
         XCTAssertEqual(bankViewModel.bankName, "myBank", "bank name in incorrect")
