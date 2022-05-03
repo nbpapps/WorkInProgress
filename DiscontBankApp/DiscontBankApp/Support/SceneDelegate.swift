@@ -9,11 +9,11 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    #warning("""
-            I added the coordinator pattern. I have a main flow controller and 3 child FCs.
-            I also seperated the intraday screen to a Logic Controller and View Controller
-            I added an error message screen. I just could not figure out if there could be a way to add it as a child VC and have a cross disolve option (see presentAlertWith method for example)
-    """)
+//    #warning("""
+//            I added the coordinator pattern. I have a main flow controller and 3 child FCs.
+//            I also seperated the intraday screen to a Logic Controller and View Controller
+//            I added an error message screen. I just could not figure out if there could be a way to add it as a child VC and have a cross disolve option (see presentAlertWith method for example)
+//    """)
 
     var window: UIWindow?
     var mainCoordinator : MainFlowController?

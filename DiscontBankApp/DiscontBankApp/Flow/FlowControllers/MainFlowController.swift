@@ -18,7 +18,7 @@ class MainFlowController : NSObject,ParentFlowCoordinator,UINavigationController
     
     private var navControler : UINavigationController
     
-    #warning("I tryied to use an array of child FlowControllers, but the compiler could not infer their type")
+//    #warning("I tryied to use an array of child FlowControllers, but the compiler could not infer their type")
     private var onboardingFlowController : OnboardingFlowController?
     private var banksFlowController : BanksFlowController?
     private var settingsFlowController : SettingsFlowContoller?

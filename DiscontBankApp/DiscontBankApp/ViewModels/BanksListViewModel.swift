@@ -9,7 +9,7 @@
 import UIKit
 import ImageLoading
 
-#warning("I changed the class to be a VM instead of DataSource")
+//#warning("I changed the class to be a VM instead of DataSource")
 final class BanksListViewModel : NSObject, UICollectionViewDataSource {
     
     private var bankList : [Bank]?

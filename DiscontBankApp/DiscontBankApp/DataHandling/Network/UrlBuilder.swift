@@ -11,7 +11,7 @@ import Foundation
 struct UrlBuilder {
     private var queryItmes : [URLQueryItem]
     
-    #warning("Is this more of what you had in mind for the URL builder? I wanted the query items to be in the 'DataFetch' class as they get changed for each request. I split the params to scheme and host, so that I get the URL 'built' by the url method on URLComponents ")
+//    #warning("Is this more of what you had in mind for the URL builder? I wanted the query items to be in the 'DataFetch' class as they get changed for each request. I split the params to scheme and host, so that I get the URL 'built' by the url method on URLComponents ")
     
     
     //https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=JPM&interval=1min&apikey=Z8EW6CI3PHR9SUTK
