@@ -10,4 +10,9 @@ platform :ios do
     scan
     snapshot
   end
+  desc "Internal Testers"
+  lane :beta do
+    build_app
+    upload_to_testflight
+  end
  end
