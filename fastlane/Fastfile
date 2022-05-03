@@ -2,7 +2,7 @@ default_platform :ios
 
 platform :ios do
   before_all do
-    setup_circle_ci
+#     setup_circle_ci
   end
 
   desc "Runs all the tests"
@@ -12,7 +12,7 @@ platform :ios do
   end
   desc "Internal Testers"
   lane :beta do
-    build_app
+#     build_app
     upload_to_testflight
   end
  end
