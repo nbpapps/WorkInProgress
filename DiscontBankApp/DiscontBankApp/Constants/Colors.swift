@@ -13,7 +13,7 @@ extension UIColor {
     static let timeColor = UIColor.systemBlue
     static let openColor = UIColor.systemOrange
     static let highColor = UIColor.systemGreen
-    static let lowColor = UIColor.systemMint
+    static let lowColor = UIColor.systemRed
     static let closeColor = UIColor.systemPurple
     static let volumeColor = UIColor.systemIndigo
 }
