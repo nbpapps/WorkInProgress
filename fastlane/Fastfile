@@ -16,7 +16,8 @@ platform :ios do
     upload_to_testflight(
       ipa:ENV['BITRISE_IPA_PATH'],
       changelog: ENV['GIT_CLONE_COMMIT_MESSAGE_SUBJECT'],
-      distribute_external: true
+      distribute_external: true,
+      groups: -g "BPs"
     )
   end
  end
