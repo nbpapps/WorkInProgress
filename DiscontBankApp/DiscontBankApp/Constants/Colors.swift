@@ -15,5 +15,5 @@ extension UIColor {
     static let highColor = UIColor.systemGreen
     static let lowColor = UIColor.systemRed
     static let closeColor = UIColor.systemPurple
-    static let volumeColor = UIColor.systemPink
+    static let volumeColor = UIColor.systemMint
 }
