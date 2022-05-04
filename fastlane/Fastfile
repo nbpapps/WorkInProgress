@@ -13,6 +13,9 @@ platform :ios do
   desc "Internal Testers"
   lane :beta do
 #     build_app
-    upload_to_testflight(ipa:ENV['BITRISE_IPA_PATH'])
+    upload_to_testflight(
+      ipa:ENV['BITRISE_IPA_PATH'],
+      changelog: "Cool new features"
+    )
   end
  end
