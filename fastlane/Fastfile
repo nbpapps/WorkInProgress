@@ -15,7 +15,8 @@ platform :ios do
 #     build_app
     upload_to_testflight(
       ipa:ENV['BITRISE_IPA_PATH'],
-      changelog: ENV['GIT_CLONE_COMMIT_MESSAGE_SUBJECT']
+      changelog: ENV['GIT_CLONE_COMMIT_MESSAGE_SUBJECT'],
+      distribute_external: true
     )
   end
  end
