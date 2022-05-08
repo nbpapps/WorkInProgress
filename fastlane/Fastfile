@@ -10,6 +10,7 @@ platform :ios do
     scan
     snapshot
   end
+
   desc "Internal Testers"
   lane :beta do
 #     build_app
@@ -22,4 +23,25 @@ platform :ios do
       ],
     )
   end
+
+  desc "Submit to review"
+  lane :release do 
+     upload_to_testflight(
+     ipa:ENV['BITRISE_IPA_PATH'],
+     changelog: ENV['GIT_CLONE_COMMIT_MESSAGE_SUBJECT'],
+     distribute_external: true,
+     groups: [
+       "BPs",
+     ],
+     )
+     deliver(
+       submit_for_review: true,
+       force: false,
+       automatic_release: false,
+       submission_information: {
+         add_id_info_uses_idfa: false
+       }
+     )
+
  end
+
