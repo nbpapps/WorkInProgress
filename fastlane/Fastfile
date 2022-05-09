@@ -16,9 +16,9 @@ platform :ios do
     upload_to_testflight(
       ipa:ENV['BITRISE_IPA_PATH'],
       changelog: ENV['GIT_CLONE_COMMIT_MESSAGE_SUBJECT'],
-      # distribute_external: false,
-      submit_beta_review: false
-      # reject_build_waiting_for_review: true,
+      # distribute_external: false
+      # reject_build_waiting_for_review: true
+      submit_beta_review: false,
       app_identifier: "com.nbpapps.DiscontBankApp-Staging",
       groups: [
         "BPs",
