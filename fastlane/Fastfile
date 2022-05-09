@@ -17,6 +17,7 @@ platform :ios do
       ipa:ENV['BITRISE_IPA_PATH'],
       changelog: ENV['GIT_CLONE_COMMIT_MESSAGE_SUBJECT'],
       distribute_external: true,
+      app_identifier: "com.nbpapps.DiscontBankApp-Staging",
       groups: [
         "BPs",
       ],
