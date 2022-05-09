@@ -18,7 +18,8 @@ platform :ios do
       changelog: ENV['GIT_CLONE_COMMIT_MESSAGE_SUBJECT'],
       # distribute_external: false
       # reject_build_waiting_for_review: true
-      submit_beta_review: false,
+      # submit_beta_review: false
+      skip_submission: true
       app_identifier: "com.nbpapps.DiscontBankApp-Staging",
       groups: [
         "BPs",
