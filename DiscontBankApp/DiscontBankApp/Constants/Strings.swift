@@ -15,6 +15,7 @@ struct Strings {
     static let defualtInterval = "1min"
     
     
+    
     //MARK:- titles
     static let selectBankTitle = NSLocalizedString("Select Bank", comment: "title for the bank selection screen")
     static let mainScreen = NSLocalizedString("Main screen", comment: "title for the main selection screen")
