@@ -8,10 +8,6 @@ platform :ios do
 
   desc "Runs all the tests"
   lane :test do
-    Dir.chdir("..") do
-      sh("xcodebuild","-resolvePackageDependencies")
-    end
-    
     begin
       test_action()
     rescue => execption
@@ -69,8 +65,8 @@ platform :ios do
 
 def test_action
     scan(
-      # skip_package_dependencies_resolution: true,
-      # disable_package_automatic_updates: true,
+      skip_package_dependencies_resolution: true,
+      disable_package_automatic_updates: true,
       scheme: "DiscontBankApp",
       devices: ["iPhone 13"],
 #       output_types: "junit",
