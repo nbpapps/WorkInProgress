@@ -67,7 +67,7 @@ def test_action
     scan(
       # skip_package_dependencies_resolution: true,
       # disable_package_automatic_updates: true,
-      scheme: "Niv",
+      scheme: "DiscontBankApp",
       devices: ["iPhone 13"],
 #       output_types: "junit",
 #       output_directory: "./reports"
