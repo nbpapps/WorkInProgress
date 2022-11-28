@@ -21,10 +21,10 @@ jobs:
 
     - name: Fastlane
       run: |
-        mkdir -p ./reports
+#        mkdir -p ./reports
         fastlane test
-        cd reports/
-        ls -la
+ #       cd reports/
+  #      ls -la
       env:
           IFTTT_API_KEY: ${{ secrets.IFTTT_API_KEY }}
 
