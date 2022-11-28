@@ -8,7 +8,11 @@ platform :ios do
 
   desc "Runs all the tests"
   lane :test do
-     begin
+    Dir.chdir("..") do
+      sh("xcodebuild","-resolvePackageDependencies")
+    end
+    
+    begin
       test_action()
     rescue => execption
       on_error(execption)
