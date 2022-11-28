@@ -28,10 +28,10 @@ jobs:
       env:
           IFTTT_API_KEY: ${{ secrets.IFTTT_API_KEY }}
 
-    - name: Publish Report
-      uses: mikepenz/action-junit-report@v3
-      if: always()
-      with:
-        check_name: Test Report
-        report_paths: ./reports/
+#     - name: Publish Report
+#       uses: mikepenz/action-junit-report@v3
+#       if: always()
+#       with:
+#         check_name: Test Report
+#         report_paths: ./reports/
 
