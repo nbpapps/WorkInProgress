@@ -24,9 +24,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    # - name: Install iOS Simulator ${{ matrix.ios }}
-    #   if: ${{ matrix.ios != 'latest' }}
-    #   run: xcversion simulators --install='iOS ${{ matrix.ios }}' || true
+    - name: Install iOS Simulator ${{ matrix.ios }}
+      if: ${{ matrix.ios != 'latest' }}
+      run: xcversion simulators --install='iOS ${{ matrix.ios }}' || true
 
     - name: Fastlane
       run: |
