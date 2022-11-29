@@ -61,7 +61,7 @@ def test_action
 #       skip_package_dependencies_resolution: true,
 #       disable_package_automatic_updates: true,
       scheme: "DiscontBankApp",
-      devices: ["iPhone 13"],
+      devices: ["iPhone 13 (14.5)"],
 #       output_types: "junit",
 #       output_directory: "./reports"
     )

@@ -14,13 +14,14 @@ on:
 jobs:
   
   build_and_test:
-    runs-on: macOS-11
+    runs-on: macOS-latest
     
     steps:
     - uses: actions/checkout@v3
 
     - name: Fastlane
       run: |
+        xcversion simulators --install='iOS 14.5'
         fastlane test
       env:
           IFTTT_API_KEY: ${{ secrets.IFTTT_API_KEY }}
