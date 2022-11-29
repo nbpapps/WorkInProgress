@@ -29,7 +29,7 @@ platform :ios do
 
     # Setting up device names
     device_name = ios.reverse.drop(1).reverse.map { |v| "#{options[:device]} (#{v})" }.append(options[:device])
-    puts("lane")
+    puts("lane test")
     puts(device_name)
 
     begin
