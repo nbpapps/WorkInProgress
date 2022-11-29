@@ -22,7 +22,7 @@ platform :ios do
   desc "Runs all the tests"
   lane :test do 
     begin
-      test_action()
+      test_action(device_name)
     rescue => execption
       on_error(execption)
     end
@@ -68,7 +68,7 @@ platform :ios do
  	end
  end
 
-def test_action
+def test_action(device_name)
     scan(
       project: "DiscontBankApp/DiscontBankApp.xcodeproj",
 #       skip_package_dependencies_resolution: true,
