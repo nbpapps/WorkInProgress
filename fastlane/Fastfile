@@ -5,7 +5,7 @@ device_name = nil
 default_platform :ios
 
 platform :ios do
-  before_all do |options]
+  before_all do |options|
     device_name = options[:ios] == 'latest' ? options[:device] : "#{options[:device]} (#{ios})"
     update_fastlane
     setup_circle_ci
