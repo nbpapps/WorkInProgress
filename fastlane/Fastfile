@@ -20,9 +20,9 @@ platform :ios do
   end
 
   desc "Runs all the tests"
-  lane :test do 
+  lane :test do |options|
 
-    ios = ['14.8', '16.0']
+    ios = ['14.5', '16.0']
 
     # Installing iOS Simulators if required
     ios.each { |version| sh("xcversion simulators --install='iOS #{version}' || true") if version != ios.last }
