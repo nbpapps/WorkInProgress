@@ -16,7 +16,7 @@ jobs:
   build_and_test:
     strategy:
       matrix:
-        ios: [14.5, latest]
+        ios: [14.5, 16.0]
         device: ["iPhone 12"]
 
     runs-on: macOS-latest
