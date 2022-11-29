@@ -19,7 +19,7 @@ jobs:
         ios: [14.5]
         device: ["iPhone 12"]
 
-    runs-on: macOS-latest
+    runs-on: macOS-11
     
     steps:
     - uses: actions/checkout@v3
