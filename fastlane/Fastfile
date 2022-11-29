@@ -8,7 +8,7 @@ platform :ios do
   before_all do |options|
     # device_name = options[:ios] == 'latest' ? options[:device] : "#{options[:device]} (#{ios})"
     puts("#{options[:device]} (#{options[:ios]})")
-    puts({options[:device]} ({ios}))
+    puts({options[:device]} ({options[:ios]}))
     device_name = "#{options[:device]} (#{options[:ios]})"
     update_fastlane
     setup_circle_ci
