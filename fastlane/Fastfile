@@ -70,15 +70,15 @@ platform :ios do
 
 def test_action
     puts(device_name)
-    scan(
-      project: "DiscontBankApp/DiscontBankApp.xcodeproj",
-#       skip_package_dependencies_resolution: true,
-#       disable_package_automatic_updates: true,
-      scheme: "DiscontBankApp",
-      devices: [device_name],
-#       output_types: "junit",
-#       output_directory: "./reports"
-    )
+#     scan(
+#       project: "DiscontBankApp/DiscontBankApp.xcodeproj",
+# #       skip_package_dependencies_resolution: true,
+# #       disable_package_automatic_updates: true,
+#       scheme: "DiscontBankApp",
+#       devices: [device_name],
+# #       output_types: "junit",
+# #       output_directory: "./reports"
+#     )
 end
 
 def on_error(execption)
