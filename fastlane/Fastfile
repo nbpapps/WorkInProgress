@@ -1,13 +1,18 @@
+
+# global declrations
+device_name = nil
+
 default_platform :ios
 
 platform :ios do
-  before_all do
+  before_all do |options]
+    device_name = options[:ios] == 'latest' ? options[:device] : "#{options[:device]} (#{ios})"
     update_fastlane
     setup_circle_ci
   end
 
   desc "Runs all the tests"
-  lane :test do
+  lane :test do 
     begin
       test_action()
     rescue => execption
@@ -61,7 +66,7 @@ def test_action
 #       skip_package_dependencies_resolution: true,
 #       disable_package_automatic_updates: true,
       scheme: "DiscontBankApp",
-      devices: ["iPhone 13 (14.5)"],
+      devices: [device_name],
 #       output_types: "junit",
 #       output_directory: "./reports"
     )

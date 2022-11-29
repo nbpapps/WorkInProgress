@@ -14,15 +14,23 @@ on:
 jobs:
   
   build_and_test:
+    strategy:
+      matrix:
+        ios: [14.5, latest]
+        device: ["iPhone 12"]
+
     runs-on: macOS-latest
     
     steps:
     - uses: actions/checkout@v3
 
+    - name: Install iOS Simulator ${{ matrix.ios }}
+      if: ${{ matrix.ios != 'latest' }}
+      run: xcversion simulators --install='iOS ${{ matrix.ios }}' || true
+
     - name: Fastlane
       run: |
-        xcversion simulators --install='iOS 14.5'
-        fastlane test
+        fastlane test device:"${{ matrix.device }}" ios:"${{ matrix.ios }}"
       env:
           IFTTT_API_KEY: ${{ secrets.IFTTT_API_KEY }}
 
