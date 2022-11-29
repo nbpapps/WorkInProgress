@@ -30,8 +30,6 @@ jobs:
 
     - name: Fastlane
       run: |
-#              fastlane test device:"${{ matrix.device }}" ios:"${{ matrix.ios }}"
-
         fastlane test device:"iPhone 8"
       env:
           IFTTT_API_KEY: ${{ secrets.IFTTT_API_KEY }}
