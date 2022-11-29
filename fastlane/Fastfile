@@ -13,14 +13,6 @@ platform :ios do
     rescue => execption
       on_error(execption)
     end
-#     scan
-#     scan(
-#       scheme: "DiscontBankApp",
-#       devices: ["iPhone 11"],
-#       output_types: "junit",
-#       output_directory: "./reports"
-#     )
-#     snapshot
   end
 
   desc "Internal Testers for Staging"
