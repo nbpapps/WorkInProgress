@@ -28,9 +28,6 @@ jobs:
     #   if: ${{ matrix.ios != 'latest' }}
     #   run: xcversion simulators --install='iOS ${{ matrix.ios }}' || true
 
-    - run: bundle install
-
-
     - name: Fastlane
       run: |
         fastlane test device:"iPhone 8"
