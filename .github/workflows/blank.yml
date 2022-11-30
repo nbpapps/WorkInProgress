@@ -30,7 +30,7 @@ jobs:
 
     - name: Fastlane
       run: |
-        fastlane test device:"iPhone 8"
+        fastlane test device:"iPhone 12"
       env:
           IFTTT_API_KEY: ${{ secrets.IFTTT_API_KEY }}
 
