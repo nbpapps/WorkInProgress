@@ -31,7 +31,7 @@ platform :ios do
     device_name = ios.reverse.drop(1).reverse.map { |v| "#{options[:device]} (#{v})" }.append(options[:device])
     puts("lane test")
     puts(device_name)
-
+    sh("xcrun simctl list")
     begin
       test_action(device_name)
     rescue => execption
