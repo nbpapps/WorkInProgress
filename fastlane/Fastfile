@@ -22,13 +22,20 @@ platform :ios do
   desc "Runs all the tests"
   lane :test do |options|
 
-    ios = ['14.5', '16.0']
+    if is_ci
+      puts("ON CI!!!")
+    else
+      puts("Local!!!")
+    end 
+
+    # ios = ['14.5', '16.0']
 
     # Installing iOS Simulators if required
-    ios.each { |version| sh("xcversion simulators --install='iOS #{version}' || true") if version != ios.last }
+    # ios.each { |version| sh("xcversion simulators --install='iOS #{version}' || true") if version != ios.last }
 
     # Setting up device names
-    device_name = ios.reverse.drop(1).reverse.map { |v| "#{options[:device]} (#{v})" }.append(options[:device])
+    # device_name = ios.reverse.drop(1).reverse.map { |v| "#{options[:device]} (#{v})" }.append(options[:device])
+    device_name = [""]
     puts("lane test")
     puts(device_name)
     sh("xcrun simctl list")

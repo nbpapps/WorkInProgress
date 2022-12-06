@@ -39,7 +39,7 @@ class DiscontBankAppTests: XCTestCase {
         let jsonParser = JsonParser(data: bankJsonData)
         let banks : Result<Bank,JsonError> = jsonParser.decode()
         let bankList = try! banks.get()
-        XCTAssertEqual(bankList.name, "First Intl1", "bank name is incorrect")
+        XCTAssertEqual(bankList.name, "First Intl", "bank name is incorrect")
         XCTAssertEqual(bankList.stk, "FINT", "bank stk is incorrect")
         XCTAssertEqual(bankList.img, "http://fint.com/pic", "bank image is incorrect")
         XCTAssertEqual(bankList.priority, "111", "bank priority is incorrect")
