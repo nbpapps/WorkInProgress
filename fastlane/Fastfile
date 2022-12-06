@@ -34,6 +34,7 @@ platform :ios do
     sh("xcrun simctl list")
     begin
       test_action(device_name)
+      onSuccess()
     rescue => execption
       on_error(execption)
     end
@@ -85,7 +86,7 @@ def test_action(device_name)
 #       skip_package_dependencies_resolution: true,
 #       disable_package_automatic_updates: true,
       scheme: "DiscontBankApp",
-      devices: device_name,
+      # devices: device_name,
 #       output_types: "junit",
 #       output_directory: "./reports"
     )
@@ -93,6 +94,19 @@ def test_action(device_name)
     puts(device_name)
 
 end
+
+def onSuccess
+  notification(
+    title: "Fastlane Done",
+    message: "All test have passed"
+  )
+  ifttt(
+    api_key: ENV['IFTTT_API_KEY'], #can be found here - https://ifttt.com/maker_webhooks/settings
+    event_name: "done",
+    value1: "All test have passed"
+  )
+end
+
 
 def on_error(execption)
   puts("error")
