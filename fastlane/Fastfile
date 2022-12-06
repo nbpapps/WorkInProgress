@@ -95,7 +95,7 @@ def test_action(device_name)
       project: "DiscontBankApp/DiscontBankApp.xcodeproj",
 #       skip_package_dependencies_resolution: true,
 #       disable_package_automatic_updates: true,
-      scheme: "DiscontBankApp___",
+      scheme: "DiscontBankApp",
       # devices: device_name,
 #       output_types: "junit",
 #       output_directory: "./reports"
