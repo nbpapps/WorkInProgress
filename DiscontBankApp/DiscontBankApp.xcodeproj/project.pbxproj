@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5803209C298BB68E00DEF47C /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5803209B298BB68E00DEF47C /* Disk.swift */; };
+		5803209E298BB71200DEF47C /* DiskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5803209D298BB71200DEF47C /* DiskTests.swift */; };
 		E82B2B1523DF31DF001AF680 /* DBAImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B1423DF31DF001AF680 /* DBAImageView.swift */; };
 		E82B2B1723DF36EE001AF680 /* UIImageView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B1623DF36EE001AF680 /* UIImageView+Utils.swift */; };
 		E82B2B1A23DF3766001AF680 /* DataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B2B1923DF3766001AF680 /* DataFetch.swift */; };
@@ -93,6 +95,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5803209B298BB68E00DEF47C /* Disk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disk.swift; sourceTree = "<group>"; };
+		5803209D298BB71200DEF47C /* DiskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskTests.swift; sourceTree = "<group>"; };
 		E82B2B1423DF31DF001AF680 /* DBAImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBAImageView.swift; sourceTree = "<group>"; };
 		E82B2B1623DF36EE001AF680 /* UIImageView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Utils.swift"; sourceTree = "<group>"; };
 		E82B2B1923DF3766001AF680 /* DataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetch.swift; sourceTree = "<group>"; };
@@ -207,6 +211,7 @@
 				E82B2B3523E19212001AF680 /* TimeSeriesData.swift */,
 				E82B2B4123E1F25A001AF680 /* ImageCache.swift */,
 				E8A32F4D2426994D00740E33 /* UserDefaults.swift */,
+				5803209B298BB68E00DEF47C /* Disk.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 				E8C2CF2423DDF30500301EE1 /* Info.plist */,
 				E8C70248240C622400518438 /* BankViewModelTests.swift */,
 				E8C7024A240C668F00518438 /* TimeInrevalsTests.swift */,
+				5803209D298BB71200DEF47C /* DiskTests.swift */,
 			);
 			path = DiscontBankAppTests;
 			sourceTree = "<group>";
@@ -620,6 +626,7 @@
 				E82B2B2423E03474001AF680 /* UrlBuilder.swift in Sources */,
 				E8C2CF3D23DE188400301EE1 /* Strings.swift in Sources */,
 				E82B2B1523DF31DF001AF680 /* DBAImageView.swift in Sources */,
+				5803209C298BB68E00DEF47C /* Disk.swift in Sources */,
 				E8A32F502426A31400740E33 /* OnboardingFlowController.swift in Sources */,
 				E82B2B1C23DF7000001AF680 /* IntradayViewController.swift in Sources */,
 				E8CF1D16242F78D8004B9E1B /* IntradayLogicController.swift in Sources */,
@@ -665,6 +672,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5803209E298BB71200DEF47C /* DiskTests.swift in Sources */,
 				E8C2CF2323DDF30500301EE1 /* DiscontBankAppTests.swift in Sources */,
 				E82B2B3023E17E5A001AF680 /* Strings.swift in Sources */,
 				E8C7024B240C668F00518438 /* TimeInrevalsTests.swift in Sources */,
