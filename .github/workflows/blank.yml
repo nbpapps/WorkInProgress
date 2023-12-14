@@ -19,10 +19,14 @@ jobs:
     #     ios: [14.8]
     #     device: ["iPhone 12"]
 
-    runs-on: macOS-12
+    runs-on: macOS-13
     
     steps:
     - uses: actions/checkout@v3
+
+    - uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: '^15'
 
     # - name: Install iOS Simulator ${{ matrix.ios }}
     #   if: ${{ matrix.ios != 'latest' }}
@@ -30,7 +34,7 @@ jobs:
 
     - name: Fastlane
       run: |
-        fastlane test device:"iPhone 12"
+        fastlane test device:"iPhone 15"
       env:
           IFTTT_API_KEY: ${{ secrets.IFTTT_API_KEY }}
 
