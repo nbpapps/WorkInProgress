@@ -31,10 +31,10 @@ jobs:
     # - name: Install iOS Simulator ${{ matrix.ios }}
     #   if: ${{ matrix.ios != 'latest' }}
     #   run: xcversion simulators --install='iOS ${{ matrix.ios }}' || true
-
+# device:"iPhone 15"
     - name: Fastlane
       run: |
-        fastlane test device:"iPhone 15"
+        fastlane test 
       env:
           IFTTT_API_KEY: ${{ secrets.IFTTT_API_KEY }}
 
