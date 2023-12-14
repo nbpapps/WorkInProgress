@@ -6,17 +6,17 @@ default_platform :ios
 
 platform :ios do
   before_all do |lane, options|
-    device_name = options[:ios] == 'latest' ? options[:device] : "#{options[:device]} (#{options[:ios]})"
-    puts("niv")
-    puts("#{options[:device]} (#{options[:ios]})")
-    puts(device_name)
+    # device_name = options[:ios] == 'latest' ? options[:device] : "#{options[:device]} (#{options[:ios]})"
+    # puts("niv")
+    # puts("#{options[:device]} (#{options[:ios]})")
+    # puts(device_name)
     # puts("niv")
     # puts(options[:ios])
     # device_name = options[:ios] == 'latest' ? options[:device] : "#{options[:device]} (#{ios})"
     # puts({options[:device]} ({options[:ios]}))
     # device_name = "#{options[:device]} (#{options[:ios]})"
     update_fastlane
-    setup_circle_ci
+    # setup_circle_ci
   end
 
   desc "Runs all the tests"
@@ -29,7 +29,7 @@ platform :ios do
 
     # Setting up device names
     # device_name = ios.reverse.drop(1).reverse.map { |v| "#{options[:device]} (#{v})" }.append(options[:device])
-    device_name = [""]
+    # device_name = [""]
 
     if is_ci
       puts("ON CI!!!")
@@ -96,9 +96,9 @@ def test_action(device_name)
 #       skip_package_dependencies_resolution: true,
 #       disable_package_automatic_updates: true,
       scheme: "DiscontBankApp",
-      # devices: device_name,
-#       output_types: "junit",
-#       output_directory: "./reports"
+      devices:  ["iPhone 15"],
+       output_types: "junit",
+       output_directory: "./reports"
     )
     puts("niv")
     puts(device_name)
