@@ -12,6 +12,13 @@ typealias networkCompletion =  (Result<Data,NetworkError>) -> Void
 
 struct DataFetch {
     
+    internal init(networkService: NetworkService = NetworkService()) {
+        self.networkService = networkService
+    }
+    
+    private let networkService: NetworkService
+    
+    
     func fetchTimeSeriesIntraday(for symbol : String,and timeInterval : String, with completion : @escaping networkCompletion) {
         let queryItmes : [URLQueryItem] = [
             URLQueryItem(name: UrlBuilder.apiKey, value: UrlBuilder.apiValue),
@@ -21,7 +28,6 @@ struct DataFetch {
         ]
         
         let timeSeriesIntradayUrl = UrlBuilder(queryItmes: queryItmes).buildUrlForTimeSeriesIntraday()
-        let networkService = NetworkService()
         networkService.makeNetworkCall(for: timeSeriesIntradayUrl) { (result) in
             completion(result)
         }
