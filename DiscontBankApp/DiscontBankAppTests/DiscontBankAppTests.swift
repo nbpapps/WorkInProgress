@@ -87,4 +87,95 @@ class DiscontBankAppTests: XCTestCase {
             XCTFail()
         }
     }
+    
+    func testNetwork_insertInvalidResponseFailure_shouldResultInAFailure() {
+        var finalResult: (Result<Data,NetworkError>)?
+        let result: (Result<Data,NetworkError>) = .failure(.invalidResponse(errorMessage: "invalidResponse"))
+        let nsm = NetworkServiceMock(result: result)
+        let df = DataFetch(networkService: nsm)
+        let expectation = self.expectation(description: "net")
+        df.fetchTimeSeriesIntraday(for: "", and: "") { r in
+            finalResult = r
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1, handler: nil)
+        switch finalResult {
+        case .success:
+            XCTFail()
+        case .failure(let failure):
+            XCTAssertEqual(failure.localizedDescription, NetworkError.invalidResponse(errorMessage: "invalidResponse").localizedDescription)
+        case nil:
+            XCTFail()
+        }
+    }
+    
+    func testNetwork_insertInvalidURLFailure_shouldResultInAFailure() {
+        var finalResult: (Result<Data,NetworkError>)?
+        let result: (Result<Data,NetworkError>) = .failure(.invalidUrl(errorMessage: "invalidURL"))
+        let nsm = NetworkServiceMock(result: result)
+        let df = DataFetch(networkService: nsm)
+        let expectation = self.expectation(description: "net")
+        df.fetchTimeSeriesIntraday(for: "", and: "") { r in
+            finalResult = r
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1, handler: nil)
+        switch finalResult {
+        case .success:
+            XCTFail()
+        case .failure(let failure):
+            XCTAssertEqual(failure.localizedDescription, NetworkError.invalidUrl(errorMessage: "invalidURL").localizedDescription)
+        case nil:
+            XCTFail()
+        }
+    }
+    
+    func testNetwork_insertNetworkErrorFailure_shouldResultInAFailure() {
+        var finalResult: (Result<Data,NetworkError>)?
+        let result: (Result<Data,NetworkError>) = .failure(.netwokError(errorMessage: "error"))
+        let nsm = NetworkServiceMock(result: result)
+        let df = DataFetch(networkService: nsm)
+        let expectation = self.expectation(description: "net")
+        df.fetchTimeSeriesIntraday(for: "", and: "") { r in
+            finalResult = r
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1, handler: nil)
+        switch finalResult {
+        case .success:
+            XCTFail()
+        case .failure(let failure):
+            XCTAssertEqual(failure.localizedDescription, NetworkError.netwokError(errorMessage: "error").localizedDescription)
+        case nil:
+            XCTFail()
+        }
+    }
+    
+    func testNetwork_insertData_shouldResultTheData() {
+        var finalResult: (Result<Data,NetworkError>)?
+        let string = "someString"
+        let initialData: Data = Data(string.utf8)
+        let result: (Result<Data,NetworkError>) = .success(initialData)
+        let nsm = NetworkServiceMock(result: result)
+        let df = DataFetch(networkService: nsm)
+        let expectation = self.expectation(description: "net")
+        df.fetchTimeSeriesIntraday(for: "", and: "") { r in
+            finalResult = r
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1, handler: nil)
+        switch finalResult {
+        case .success(let data):
+            XCTAssertEqual(String(decoding: data, as: UTF8.self), string)
+        case .failure:
+            XCTFail()
+           
+        case nil:
+            XCTFail()
+        }
+    }
 }
