@@ -12,11 +12,11 @@ typealias networkCompletion =  (Result<Data,NetworkError>) -> Void
 
 struct DataFetch {
     
-    internal init(networkService: NetworkService = NetworkService()) {
+    internal init(networkService: NetworkServicing = NetworkService()) {
         self.networkService = networkService
     }
     
-    private let networkService: NetworkService
+    private let networkService: NetworkServicing
     
     
     func fetchTimeSeriesIntraday(for symbol : String,and timeInterval : String, with completion : @escaping networkCompletion) {

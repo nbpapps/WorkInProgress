@@ -8,7 +8,22 @@
 
 import Foundation
 
-struct NetworkService {
+protocol NetworkServicing {
+    func makeNetworkCall(for url : URL,with completion : @escaping networkCompletion)
+}
+
+struct NetworkServiceMock: NetworkServicing {
+    
+    var result: (Result<Data,NetworkError>)?
+    
+    func makeNetworkCall(for url: URL, with completion: @escaping networkCompletion) {
+        if let result {
+            completion(result)
+        }
+    }
+}
+
+struct NetworkService: NetworkServicing {
     func makeNetworkCall(for url : URL,with completion : @escaping networkCompletion) {
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
