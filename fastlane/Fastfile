@@ -33,11 +33,11 @@ platform :ios do
 
     if is_ci
       puts("ON CI!!!")
-      test_action(device_name)
+      test_action()
     else
       puts("Local!!!")
       begin
-        test_action(device_name)
+        test_action()
         onSuccess()
       rescue => execption
         on_error(execption)
@@ -90,7 +90,7 @@ platform :ios do
  	end
  end
 
-def test_action(device_name)
+def test_action()
     scan(
       project: "DiscontBankApp/DiscontBankApp.xcodeproj",
 #       skip_package_dependencies_resolution: true,
@@ -100,8 +100,6 @@ def test_action(device_name)
        output_types: "junit",
        output_directory: "./reports"
     )
-    puts("niv")
-    puts(device_name)
 
 end
 
