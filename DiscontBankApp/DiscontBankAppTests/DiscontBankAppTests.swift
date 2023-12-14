@@ -65,4 +65,26 @@ class DiscontBankAppTests: XCTestCase {
         
         waitForExpectations(timeout: 1, handler: nil)
     }
+    
+    func testNetwork_insertInvalidDataFailure_shouldResultInAFailure() {
+        var finalResult: (Result<Data,NetworkError>)?
+        let result: (Result<Data,NetworkError>) = .failure(.invalidData)
+        let nsm = NetworkServiceMock(result: result)
+        let df = DataFetch(networkService: nsm)
+        let expectation = self.expectation(description: "net")
+        df.fetchTimeSeriesIntraday(for: "", and: "") { r in
+            finalResult = r
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1, handler: nil)
+        switch finalResult {
+        case .success:
+            XCTFail()
+        case .failure(let failure):
+            XCTAssertEqual(failure.localizedDescription, NetworkError.invalidData.localizedDescription)
+        case nil:
+            XCTFail()
+        }
+    }
 }
